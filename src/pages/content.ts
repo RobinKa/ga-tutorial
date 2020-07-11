@@ -32,8 +32,8 @@ export const textA3 = `Multiplying two same basis vectors together will result i
 The product which defines Geometric Algebra and is its most important aspect is called the Geometric Product. Let's verify these results with the code again this time just logging some text instead of visualizing.
 `
 
-export const codeA3 = `console.log("e0^2:", ga.geometricProduct({ e0: 1 }, { e0: 1 }))
-console.log("e1^2:", ga.geometricProduct({ e1: 1 }, { e1: 1 }))`
+export const codeA3 = `log("e0^2:", ga.geometricProduct({ e0: 1 }, { e0: 1 }))
+log("e1^2:", ga.geometricProduct({ e1: 1 }, { e1: 1 }))`
 
 export const textB = `What is new is that we can also multiply two different basis vectors and the result will not be zero, but can't be simplified further $e_x e_y = e_{xy}$.
 $e_xy$ here is not something new, it just stands for the two basis vectors multiplied together as a shorthand way of writing. These elements made up of two basis vectors are called bivectors.
@@ -43,8 +43,8 @@ export const textB2 = `
 Importantly the order of the product matters. A rule is that when you swap the factors of a product of basis vectors you pick up a minus sign, for example: $e_{xy} = e_x e_y = -e_y e_x = -e_{yx}$.
 `
 
-export const codeB = `console.log("e0 e1:", ga.geometricProduct({ e0: 1 }, { e1: 1 }))
-console.log("e1 e0:", ga.geometricProduct({ e1: 1 }, { e0: 1 }))`
+export const codeB = `log("e0 e1:", ga.geometricProduct({ e0: 1 }, { e1: 1 }))
+log("e1 e0:", ga.geometricProduct({ e1: 1 }, { e0: 1 }))`
 
 export const textC = `
 Let's now use these three basic rules we just learnt and see what some results are when we use them:
@@ -61,12 +61,12 @@ We can verify these results with the code:
 
 export const codeC = `var a = ga.geometricProduct({ e0: 1 }, { e1: 1 }) // e_x e_y
 var b = ga.geometricProduct(a, { e0: 1 }) // e_x e_y e_x
-console.log("e0 e1 e0:", b)`
+log("e0 e1 e0:", b)`
 
 export const textD = `Hopefully this gives some idea of how the rules work and how to use them. Now for something more interesting, let's see what happens if we multiply of these together, that is, squaring it:
 `
 
-export const codeD = `console.log("e01^2", ga.geometricProduct({ e01: 1 }, { e01: 1 }))`
+export const codeD = `log("e01^2", ga.geometricProduct({ e01: 1 }, { e01: 1 }))`
 
 export const textE = `
 \\begin{equation}
@@ -105,7 +105,8 @@ var rotatedP = ga.geometricProduct(r, p) // p rotated by 45°
 
 renderPointGA({ e0: 0, e1: 0 }, "purple") // Origin
 renderPointGA(p)
-renderPointGA(rotatedP, "red")`
+renderPointGA(rotatedP, "red")
+renderInfo(ga.repr(rotatedP))`
 
 export const textG = `
 \\begin{equation}

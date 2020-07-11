@@ -50,17 +50,24 @@ export function InteractiveCode(props: InteractiveCodeProps) {
 
         let codeToRun = code;
         const renderTarget = withVisualizer && visualizerRef.current
+
+        // Add helpers when using visualizer
         if (renderTarget) {
             codeToRun = `
                 var points = [];
                 var lines = [];
+                var infos = [];
                 var renderPointPGA = (p, color) => points.push({point: p, radius: 4, fill: color});
                 var renderLinePGA = (l, color) => lines.push({line: l, width: 2, stroke: color});
                 var renderPointGA = (p, color) => renderPointPGA({e02: -p.e0, e01: p.e1, e12: 1}, color);
+                var renderInfo = info => infos.push({text: info, fontSize: 4});
             ` + codeToRun + `
-                renderScene({ points: points, lines: lines }, document.getElementById("${renderTarget.id}"));
+                renderScene({ points: points, lines: lines, infos: infos }, document.getElementById("${renderTarget.id}"));
             `
         }
+
+        // Declare log() so we can write shorter code
+        codeToRun = "var log = console.log;" + codeToRun
 
         try {
             eval(codeToRun)
