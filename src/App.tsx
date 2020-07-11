@@ -9,21 +9,28 @@ import * as viz from "./ga/viz2d"
 
 export const pathToBreadcrumbs = (path: string) => {
     const pathNames = ["Geometric Algebra"]
-    const pathUrls = ["/"]
+    const pathUrls = [""]
 
     let pathSplit = path.substr(1).split("/")
 
     while (pathSplit.length > 0) {
         pathNames.push(pathSplit[0])
 
-        pathUrls.push(`${pathUrls[pathUrls.length - 1]}${pathSplit[0]}/`)
+        pathUrls.push(`${pathUrls[pathUrls.length - 1]}/${pathSplit[0]}`)
 
         pathSplit.splice(0, 1)
     }
 
+    // Make the first breadcrumb url a slash.
+    pathUrls[0] = "/"
+
     return pathNames.map((name, i) => {
         return { name: name, url: pathUrls[i] }
     })
+}
+
+function NotFound() {
+    return <h3>Not Found</h3>
 }
 
 function TutorialSite() {
@@ -53,8 +60,11 @@ function TutorialSite() {
                         <Route path="/pga">
                             <PGATutorial />
                         </Route>
-                        <Route path="/">
+                        <Route exact path="/">
                             <TutorialIndex />
+                        </Route>
+                        <Route path="*">
+                            <NotFound />
                         </Route>
                     </Switch>
                 </div>
