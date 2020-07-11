@@ -2,8 +2,8 @@
 import React, { useState, useCallback, useRef, useMemo } from "react"
 import styles from "./InteractiveCode.module.css"
 import AceEditor from "react-ace"
-import "ace-builds/src-noconflict/mode-javascript"
-import "ace-builds/src-noconflict/theme-monokai"
+import "brace/mode/javascript"
+import "brace/theme/monokai"
 import { SceneView } from "../ga/viz2d"
 
 
