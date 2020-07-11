@@ -1,5 +1,6 @@
 /* eslint-disable no-eval */
 import React, { useState, useCallback, useRef, useMemo } from "react"
+import styles from "./InteractiveCode.module.css"
 import AceEditor from "react-ace"
 import "ace-builds/src-noconflict/mode-javascript"
 import "ace-builds/src-noconflict/theme-monokai"
@@ -85,14 +86,15 @@ export function InteractiveCode(props: InteractiveCodeProps) {
                 <button style={{ border: 0, background: "#505050", color: "#FFFFFF", position: "absolute", right: 10, top: 10, fontSize: 24, zIndex: 10 }} onClick={run}>Run</button>
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignContent: "stretch" }}>
-                <div style={{ display: "flex", flexDirection: "row", alignContent: "stretch" }}>
-                    <AceEditor style={{ ...{ width: withVisualizer ? "50%" : "100%", height: undefined, minHeight: "200px" }, ...style }}
+                <div style={{ display: "flex", flexDirection: "row", alignContent: "stretch", flexWrap: "wrap" }}>
+                    <AceEditor className={withVisualizer ? styles["interactive-code-editor-with-viz"] : styles["interactive-code-editor-without-viz"]}
+                        style={{ ...{ width: undefined, height: undefined, border: undefined }, ...style }}
                         mode="javascript" theme="monokai" value={code} onChange={e => setCode(e)}
                         showPrintMargin={false}
                     />
 
                     {withVisualizer &&
-                        <div id={`#${uniqueId}`} ref={visualizerRef} style={{ ...{ width: "50%" }, ...visualizerStyle }}>
+                        <div id={`#${uniqueId}`} ref={visualizerRef} className={styles["interactive-code-viz"]} style={visualizerStyle}>
                             <SceneView scene={{}} />
                         </div>
                     }
