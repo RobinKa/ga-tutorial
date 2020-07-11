@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useEffect } from "react"
+import ReactDOM from "react-dom"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import './App.css'
 import { InteractiveCode } from "./InteractiveCode"
 import * as ga from "./ga/ga_pp"
@@ -18,8 +19,7 @@ renderLinePGA({
     e0: 10,
     e1: 1,
     e2: -1
-}, "orange");
-`
+}, "orange");`
 
 const textA = `
 Usually introductions to GA begin by defining various rules and going over derivations before doing anything useful with them. I will also define some rules but try to get to the interesting stuff more quickly.
@@ -42,8 +42,7 @@ The product which defines Geometric Algebra and is its most important aspect is 
 `
 
 const codeA3 = `console.log("e0^2:", ga.geometricProduct({ e0: 1 }, { e0: 1 }))
-console.log("e1^2:", ga.geometricProduct({ e1: 1 }, { e1: 1 }))
-`
+console.log("e1^2:", ga.geometricProduct({ e1: 1 }, { e1: 1 }))`
 
 const textB = `What is new is that we can also multiply two different basis vectors and the result will not be zero, but can't be simplified further $e_x e_y = e_{xy}$.
 $e_xy$ here is not something new, it just stands for the two basis vectors multiplied together as a shorthand way of writing. These elements made up of two basis vectors are called bivectors.
@@ -54,8 +53,7 @@ Importantly the order of the product matters. A rule is that when you swap the f
 `
 
 const codeB = `console.log("e0 e1:", ga.geometricProduct({ e0: 1 }, { e1: 1 }))
-console.log("e1 e0:", ga.geometricProduct({ e1: 1 }, { e0: 1 }))
-`
+console.log("e1 e0:", ga.geometricProduct({ e1: 1 }, { e0: 1 }))`
 
 const textC = `
 Let's now use these three basic rules we just learnt and see what some results are when we use them:
@@ -72,8 +70,7 @@ We can verify these results with the code:
 
 const codeC = `var a = ga.geometricProduct({ e0: 1 }, { e1: 1 }) // e_x e_y
 var b = ga.geometricProduct(a, { e0: 1 }) // e_x e_y e_x
-console.log("e0 e1 e0:", b)
-`
+console.log("e0 e1 e0:", b)`
 
 const textD = `Hopefully this gives some idea of how the rules work and how to use them. Now for something more interesting, let's see what happens if we multiply of these together, that is, squaring it:
 `
@@ -127,24 +124,11 @@ v R(\\phi) = (x e_x + y e_y) (cos(\\phi) + e_{xy} sin(\\phi)) = e_x (x cos(\\phi
 We can see that the imaginary unit is actually a rotation in the XY plane as the bivector $e_{xy}$ is formed by multiplying the two basis vectors together, so in some sense it represents the XY plane.
 `
 
-function App() {
+function GATutorial() {
+    // Need to retrigger equation typesetting as it's only done once on startup
     useEffect(() => {
-        // Set variables on window so we can use it in interactive code
-        const wnd = window as any
-        wnd.ga = ga
-        wnd.pga = pga
-        wnd.viz = viz
-        wnd.renderScene = (scene: viz.Scene, renderTarget: HTMLElement) => {
-            ReactDOM.render(viz.SceneView({ scene: scene }), renderTarget)
-        }
-
         // eslint-disable-next-line no-eval
-        eval(`
-            var ga = wnd.ga;
-            var pga = wnd.pga;
-            var viz = wnd.viz;
-            var renderScene = wnd.renderScene;
-        `)
+        eval("if (MathJax && MathJax.typeset) MathJax.typeset();")
     }, [])
 
     return (
@@ -175,14 +159,85 @@ function App() {
             <h3>Using GA to perform 2D rotations</h3>
             <div>{textF}</div>
             <InteractiveCode sourceCode={codeF}
-                hideOutput={false} withVisualizer={true} />
+                hideOutput={true} withVisualizer={true}
+            />
 
             <div>{textG}</div>
 
+            <h4><Link to="/pga">2. Projective Geometric Algebra</Link></h4>
+        </div>
+    )
+}
+
+function PGATutorial() {
+    // Need to retrigger equation typesetting as it's only done once on startup
+    useEffect(() => {
+        // eslint-disable-next-line no-eval
+        eval("if (MathJax && MathJax.typeset) MathJax.typeset();")
+    }, [])
+
+    return (
+        <div>
             <h3>Points and Lines</h3>
             <InteractiveCode sourceCode={visualizerExample}
                 hideOutput={true} withVisualizer={true} />
         </div>
+    )
+}
+
+function TutorialIndex() {
+    return (
+        <div>
+            <h3>Index</h3>
+            <div>
+                This tutorial tries to teach Geometric Algebra (GA) in an interactive way with runnable code and visualizations.
+                It is not meant to be an entirely bottom-up way where we try to derive every single result.
+                Instead the focus is on trying to create an understanding for GA and gradually introduce new things while
+                directly applying the learnt concepts.
+            </div>
+            <h4>Sections</h4>
+            <ol>
+                <li><Link to="/ga-basics">Geometric Algebra Basics</Link></li>
+                <li><Link to="/pga">Projective Geometric Algebra</Link></li>
+            </ol>
+        </div>
+    )
+}
+
+function App() {
+    useEffect(() => {
+        // Set variables on window so we can use it in interactive code
+        const wnd = window as any
+        wnd.ga = ga
+        wnd.pga = pga
+        wnd.viz = viz
+        wnd.renderScene = (scene: viz.Scene, renderTarget: HTMLElement) => {
+            ReactDOM.render(viz.SceneView({ scene: scene }), renderTarget)
+        }
+
+        // eslint-disable-next-line no-eval
+        eval(`
+            var ga = wnd.ga;
+            var pga = wnd.pga;
+            var viz = wnd.viz;
+            var renderScene = wnd.renderScene;
+        `)
+    }, [])
+
+    return (
+        <Router>
+            <Switch>
+                <Route path="/ga-basics">
+                    <GATutorial />
+                </Route>
+                <Route path="/pga">
+                    <PGATutorial />
+                </Route>
+                <Route path="/">
+                    <TutorialIndex />
+                </Route>
+            </Switch>
+        </Router>
     )
 }
 
