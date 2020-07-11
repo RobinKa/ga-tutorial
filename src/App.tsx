@@ -11,7 +11,12 @@ export const pathToBreadcrumbs = (path: string) => {
     const pathNames = ["Geometric Algebra"]
     const pathUrls = [""]
 
-    let pathSplit = path.substr(1).split("/")
+    let cleanedPath = path
+    if (cleanedPath[cleanedPath.length - 1] === "/") {
+        cleanedPath = cleanedPath.substr(0, cleanedPath.length - 1)
+    }
+
+    let pathSplit = cleanedPath.substr(1).split("/")
 
     while (pathSplit.length > 0) {
         pathNames.push(pathSplit[0])
