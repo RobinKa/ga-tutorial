@@ -15,7 +15,9 @@ export const pathToBreadcrumbs = (path: string) => {
 
     while (pathSplit.length > 0) {
         pathNames.push(pathSplit[0])
-        pathUrls.push(`${pathUrls[pathUrls.length - 1]}/${pathSplit[0]}`)
+
+        pathUrls.push(`${pathUrls[pathUrls.length - 1]}${pathSplit[0]}/`)
+
         pathSplit.splice(0, 1)
     }
 
