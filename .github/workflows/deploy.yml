@@ -1,0 +1,25 @@
+name: Build Test Publish
+on: push
+
+jobs:
+  build-and-publish:
+    name: Build and deploy to gh-pages branch
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+
+      - run: npm install
+      - run: npm test
+      - run: npm run build
+
+      - name: Push to gh-pages
+        if: contains(github.ref, 'master')
+        uses: JamesIves/github-pages-deploy-action@3.5.7
+        with:
+          ACCESS_TOKEN: ${{ secrets.gh_personal_access_token }}
+          BRANCH: gh-pages
+          FOLDER: "build"
