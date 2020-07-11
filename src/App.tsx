@@ -1,14 +1,13 @@
 import React, { useEffect, useMemo } from "react"
 import ReactDOM from "react-dom"
-import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route, useLocation } from "react-router-dom"
 import './App.css'
-import { InteractiveCode } from "./InteractiveCode"
+import { TutorialIndex, GATutorial, PGATutorial } from "./pages"
 import * as ga from "./ga/ga_pp"
 import * as pga from "./ga/ga_zpp"
 import * as viz from "./ga/viz2d"
-import * as cnt from "./content"
 
-const pathToBreadcrumbs = (path: string) => {
+export const pathToBreadcrumbs = (path: string) => {
     const pathNames = ["Geometric Algebra"]
     const pathUrls = ["/"]
 
@@ -23,86 +22,6 @@ const pathToBreadcrumbs = (path: string) => {
     return pathNames.map((name, i) => {
         return { name: name, url: pathUrls[i] }
     })
-}
-
-function GATutorial() {
-    // Need to retrigger equation typesetting as it's only done once on startup
-    useEffect(() => {
-        // eslint-disable-next-line no-eval
-        eval("if (MathJax && MathJax.typeset) MathJax.typeset();")
-    }, [])
-
-    return (
-        <div>
-            <h3>Geometric Algebra Basics</h3>
-            <div>{cnt.textA}</div>
-            <div>{cnt.textA2}</div>
-
-            <InteractiveCode sourceCode={cnt.codeA2}
-                hideOutput={true} withVisualizer={true}
-            />
-
-            <div>{cnt.textA3}</div>
-            <InteractiveCode sourceCode={cnt.codeA3} />
-
-            <div>{cnt.textB}</div>
-            <div>{cnt.textB2}</div>
-            <InteractiveCode sourceCode={cnt.codeB} />
-
-            <div>{cnt.textC}</div>
-            <InteractiveCode sourceCode={cnt.codeC} />
-
-            <div>{cnt.textD}</div>
-            <InteractiveCode sourceCode={cnt.codeD} />
-
-            <div>{cnt.textE}</div>
-
-            <h3>Using GA to perform 2D rotations</h3>
-            <div>{cnt.textF}</div>
-            <InteractiveCode sourceCode={cnt.codeF}
-                hideOutput={true} withVisualizer={true}
-            />
-
-            <div>{cnt.textG}</div>
-
-            <h4><Link to="/pga">2. Projective Geometric Algebra</Link></h4>
-        </div>
-    )
-}
-
-function PGATutorial() {
-    // Need to retrigger equation typesetting as it's only done once on startup
-    useEffect(() => {
-        // eslint-disable-next-line no-eval
-        eval("if (MathJax && MathJax.typeset) MathJax.typeset();")
-    }, [])
-
-    return (
-        <div>
-            <h3>Points and Lines</h3>
-            <InteractiveCode sourceCode={cnt.visualizerExample}
-                hideOutput={true} withVisualizer={true} />
-        </div>
-    )
-}
-
-function TutorialIndex() {
-    return (
-        <div>
-            <h3>Index</h3>
-            <div>
-                This tutorial tries to teach Geometric Algebra (GA) in an interactive way with runnable code and visualizations.
-                It is not meant to be an entirely bottom-up way where we try to derive every single result.
-                Instead the focus is on trying to create an understanding for GA and gradually introduce new things while
-                directly applying the learnt concepts.
-            </div>
-            <h4>Sections</h4>
-            <ol>
-                <li><Link to="/ga-basics">Geometric Algebra Basics</Link></li>
-                <li><Link to="/pga">Projective Geometric Algebra</Link></li>
-            </ol>
-        </div>
-    )
 }
 
 function TutorialSite() {

@@ -3,7 +3,7 @@ import React, { useState, useCallback, useRef, useMemo } from "react"
 import AceEditor from "react-ace"
 import "ace-builds/src-noconflict/mode-javascript"
 import "ace-builds/src-noconflict/theme-monokai"
-import * as viz from "./ga/viz2d"
+import { SceneView } from "../ga/viz2d"
 
 
 export type InteractiveCodeProps = {
@@ -93,7 +93,7 @@ export function InteractiveCode(props: InteractiveCodeProps) {
 
                     {withVisualizer &&
                         <div id={`#${uniqueId}`} ref={visualizerRef} style={{ ...{ width: "50%" }, ...visualizerStyle }}>
-                            <viz.SceneView scene={{}} />
+                            <SceneView scene={{}} />
                         </div>
                     }
                 </div>
