@@ -56,8 +56,7 @@ export function GATutorial() {
             <h4>Higher dimensions</h4>
             <div>
                 It turns out that the two dimensional rotor application formula $v' = v R$ was slightly special.
-                In the general case, and for example also necessary in three dimensions, it is necessary to use
-                a two sided product
+                In the general case it is necessary to use a two sided product
                 
                 {`
                 \\begin{equation}
@@ -70,7 +69,7 @@ export function GATutorial() {
                 As we already know from the second rule of the geometric product, such a change of order just produces a
                 minus sign for the bivectors, so {"$\\widetilde{e_{xy}} = -e_{xy}$"}.
 
-                Another thing that changes with the sandwich product is that we multiply by the rotor twice, so our rotor
+                Another thing that changes with the sandwich product is that we multiply with the rotor twice, so our rotor
                 will only need to contain half of the rotation angle. In the three dimensional case, if we wanted to create
                 a rotor that rotates in the XZ plane by $\phi$ our rotor would look like this:
 
@@ -80,7 +79,7 @@ export function GATutorial() {
                 \\end{equation}
                 `}
 
-                We can then also combine rotations in different planes into a single rotor by multiplying them. A rotor that rotates by \phi in the
+                We can then also combine rotations in different planes into a single rotor by multiplying them. A rotor that rotates by $\phi$ in the
                 XZ plane and by $\theta$ in the XY plane looks like this
 
                 {`
