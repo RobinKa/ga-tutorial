@@ -16,25 +16,30 @@ export const codeRenderPoint = `// Render point at x=10, y=-60
 renderPointGA({ e0: 10, e1: -60 })
 
 // Render point at x=-50, y=80
-renderPointGA({ e0: -50, e1: 80}, "red")`
+renderPointGA({ e0: -50, e1: 80 }, "red")`
 
-export const codeSquareBasisVectors = `log("e0^2:", ga.geometricProduct({ e0: 1 }, { e0: 1 }))
-log("e1^2:", ga.geometricProduct({ e1: 1 }, { e1: 1 }))`
+export const codeSquareBasisVectors = `var exSquared = ga.geometricProduct({ e0: 1 }, { e0: 1 })
+var eySquared = ga.geometricProduct({ e1: 1 }, { e1: 1 })
 
-export const codeExteriorProduct = `log("e0 e1:", ga.geometricProduct({ e0: 1 }, { e1: 1 }))
-log("e1 e0:", ga.geometricProduct({ e1: 1 }, { e0: 1 }))`
+log("e0^2:", exSquared)
+log("e1^2:", eySquared)`
 
-export const codeAntiCommute = `// e_x e_y
-var a = ga.geometricProduct({ e0: 1 }, { e1: 1 })
+export const codeExteriorProduct = `var exEy = ga.geometricProduct({ e0: 1 }, { e1: 1 })
+var eyEx = ga.geometricProduct({ e1: 1 }, { e0: 1 })
 
-// e_x e_y e_x
-var b = ga.geometricProduct(a, { e0: 1 })
+log("e0 e1:", exEy)
+log("e1 e0:", eyEx)`
 
-log("e0 e1 e0:", b)`
+export const codeAntiCommute = `var exEy = ga.geometricProduct({ e0: 1 }, { e1: 1 })
+var exEyEx = ga.geometricProduct(exEy, { e0: 1 })
 
-export const codeSquareBivector = `log("e01^2", ga.geometricProduct({ e01: 1 }, { e01: 1 }))`
+log("e0 e1 e0:", exEyEx)`
 
-export const codeRotate2D = `var phi = Math.PI * 3 / 4 // 3/4 pi is 135°
+export const codeSquareBivector = `var exEy = { e01: 1 }
+var exEySquared = ga.geometricProduct(exEy, exEy)
+log("e01^2", exEySquared)`
+
+export const codeRotate2D = `var phi = Math.PI * 3 / 4 // 135°
 
 // e^(phi e_{xy})
 var r = ga.exponential(
@@ -53,7 +58,7 @@ renderPointGA(p)
 renderPointGA(rotatedP, "red")
 renderInfo(ga.repr(rotatedP), "red")`
 
-export const codeGeneralRotor2D = `var phi = Math.PI * 3 / 4 // 3/4 pi is 135°
+export const codeGeneralRotor2D = `var phi = Math.PI * 3 / 4 // 135°
 
 // e^(phi/2 e_{xy})
 // Only half the angle required with sandwich product
@@ -77,8 +82,8 @@ renderPointGA(p)
 renderPointGA(rotatedP, "red")
 renderInfo(ga.repr(rotatedP), "red")`
 
-export const codeGeneralRotor3D = `var phi = Math.PI * 3 / 4
-var theta = Math.PI / 2
+export const codeGeneralRotor3D = `var phi = Math.PI * 3 / 4 // 135°
+var theta = Math.PI / 2 // 90°
 
 // XZ rotation by phi
 var r1 = ga3d.exponential(
@@ -107,4 +112,4 @@ var rotatedP = ga3d.geometricProduct(
     ga3d.geometricProduct(p, ga3d.reversion(r))
 )
 
-log("Rotated P:", ga3d.repr(rotatedP))`
+log("Rotated P:", rotatedP)`

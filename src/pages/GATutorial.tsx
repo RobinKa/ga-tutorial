@@ -52,7 +52,7 @@ export function GATutorial() {
             </div>
             <InteractiveCode sourceCode={cnt.codeSquareBasisVectors} />
 
-            <h5>Rule 2: Different basis vector anti-commute</h5>
+            <h5>Rule 2: Different basis vectors anti-commute</h5>
             <div>
                 What is new is that we can also multiply two different basis vectors and the result will not be zero,
                 but instead can't be simplified further.
