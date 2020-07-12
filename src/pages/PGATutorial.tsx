@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { InteractiveCode } from "./InteractiveCode"
-import * as cnt from "./content"
+import * as cnt from "./code"
 
 export function PGATutorial() {
     // Need to retrigger equation typesetting as it's only done once on startup

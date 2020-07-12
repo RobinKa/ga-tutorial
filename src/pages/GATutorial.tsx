@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { InteractiveCode } from "./InteractiveCode"
-import * as cnt from "./content"
+import * as cnt from "./code"
 
 export function GATutorial() {
     // Need to retrigger equation typesetting as it's only done once on startup
@@ -128,16 +128,35 @@ export function GATutorial() {
                 an element in our algebra.
             </div>
 
-            <div>We shall now look at some things we can achieve with what we already know now.</div>
+            <br />
+
+            <div>
+                There is still one caveat. While {`$e_{xy}$`} squares to $-1$, so does {`$e_{yx}$`}.
+                So which one do we use? Let's try to visualize what multiplying a vector does for both of them
+                using {`$v' = e_{xy} v$`} and {`$v' = e_{yx} v$`}.
+            </div>
+
+            <InteractiveCode sourceCode={cnt.codeRotate2DOrientation}
+                hideOutput={true} withVisualizer={true}
+            />
+
+            <div>
+                We can see that {`$e_{xy}$`} produces a clockwise rotation (CW) by 90° and {`$e_{yx}$`} produces a counter-clockwise (CCW)
+                rotation by 90°. We will stick with the CCW version using {`$e_{yx}$`}. Instead of that to make a CCW
+                rotation we could have also swapped the order of the product ({`$v' = v e_{xy}$`}) but using {`$e_{yx}$`} instead will allow us to
+                follow the usual conventions later.
+            </div>
 
             <h4>Rotating 2D vectors using rotors</h4>
+
             <div>
-                As mentioned before {`$e_{xy}$`} can be identified as the imaginary unit $i$ of complex numbers hence
-                we can represent complex numbers as {`$a + b e_{xy}$`} and a rotation by an arbitrary angle $\phi$
-                can be performed just like with complex numbers using <a href="https://en.wikipedia.org/wiki/Euler%27s_formula">Euler's formula</a>
+                As mentioned before {`$e_{yx}$`} can be identified as the imaginary unit $i$ of complex numbers hence
+                we can represent complex numbers as {`$a + b e_{yx}$`} and a CCW rotation in the XY plane
+                by an arbitrary angle $\phi$ can be performed just like with complex numbers
+                using <a href="https://en.wikipedia.org/wiki/Euler%27s_formula">Euler's formula</a>
 
                 {`\\begin{equation}
-                R(\\phi) = e^{\\phi e_{xy}} = cos(\\phi) + e_{xy} sin(\\phi)
+                R(\\phi) = e^{\\phi e_{yx}} = cos(\\phi) + e_{yx} sin(\\phi)
                 \\end{equation}`}
 
                 The object $R$ you get after exponentiating is called a rotor
@@ -151,17 +170,14 @@ export function GATutorial() {
             />
             <div>
                 {`\\begin{equation}
-                v R(\\phi) = (x e_x + y e_y) (cos(\\phi) + e_{xy} sin(\\phi)) =
-                e_x (x cos(\\phi) -y sin(\\phi)) + e_y (x sin(\\phi) + y cos(\\phi))
+                R(\\phi) v = (cos(\\phi) + e_{yx} sin(\\phi)) (x e_x + y e_y) =
+                e_x (x cos(\\phi) - y sin(\\phi)) + e_y (x sin(\\phi) + y cos(\\phi))
                 \\end{equation}`}
-
-                We can see that the imaginary unit $i$ is actually a rotation in the XY plane as the bivector {`$e_{xy}$`} is
-                formed by multiplying the two basis vectors together, so in some sense $i$ represents the XY plane.
             </div>
 
             <h4>Higher dimensions</h4>
             <div>
-                It turns out that the two dimensional rotor application formula $v' = v R$ was slightly special.
+                It turns out that the two dimensional rotor application formula $v' = R v$ was slightly special.
                 In the general case it is necessary to use a two sided product
                 
                 {`
@@ -171,9 +187,9 @@ export function GATutorial() {
                 `}
                 
                 which is also called the sandwich product. {"$\\widetilde{R}$"} here stands for <a href="https://en.wikipedia.org/wiki/Paravector#Reversion_conjugation">reversion</a> of $R$ which
-                just means reversing the order of all basis vectors. For example {"$e_{xy}$"} becomes {"$e_{yx}$"}.
+                just means reversing the order of all basis vectors. For example {"$e_{yx}$"} becomes {"$e_{xy}$"}.
                 As we already know from the second rule of the geometric product, such a change of order just produces a
-                minus sign for the bivectors, so {"$\\widetilde{e_{xy}} = -e_{xy}$"}.
+                minus sign for the bivectors, so {"$\\widetilde{e_{yx}} = -e_{xy}$"}.
             </div>
             <div>    
                 Another thing that changes with the sandwich product
@@ -181,7 +197,7 @@ export function GATutorial() {
 
                 {`
                 \\begin{equation}
-                R(\\phi) = e^{e_{xy} \\frac{\\phi}{2}}
+                R(\\phi) = e^{e_{yx} \\frac{\\phi}{2}}
                 \\end{equation}
                 `}
             </div>
@@ -195,21 +211,21 @@ export function GATutorial() {
             />
 
             <div>
-                 In the three dimensional case, if we wanted to create
-                a rotor that rotates in the XZ plane by $\phi$ our rotor would look like this:
+                In the three dimensional case, if we wanted to create
+                a rotor that rotates in the XZ plane by $\phi$ CCW our rotor would look like this:
 
                 {`
                 \\begin{equation}
-                R(\\phi) = e^{e_{xz} \\frac{\\phi}{2}}
+                R(\\phi) = e^{e_{zx} \\frac{\\phi}{2}}
                 \\end{equation}
                 `}
 
-                We can then also combine rotations in different planes into a single rotor by multiplying them. A rotor that rotates by $\phi$ in the
-                XZ plane followed by a rotation of $\theta$ in the XY plane looks like this
+                We can then also combine rotations in different planes into a single rotor by multiplying them. A rotor that rotates by $\phi$ CCW in the
+                XZ plane followed by a rotation of $\theta$ CCW in the XY plane looks like this
 
                 {`
                 \\begin{equation}
-                R(\\phi, \\theta) = e^{e_{xy} \\frac{\\theta}{2}} e^{e_{xz} \\frac{\\phi}{2}}
+                R(\\phi, \\theta) = e^{e_{yx} \\frac{\\theta}{2}} e^{e_{zx} \\frac{\\phi}{2}}
                 \\end{equation}
                 `}
             </div>
@@ -219,6 +235,17 @@ export function GATutorial() {
             <div>
                 These elements that are like the 3D version of complex numbers are called <a href="https://en.wikipedia.org/wiki/Quaternion">quaternions</a>.
             </div>
+
+            <h4>More on reversion</h4>
+            <div>
+                Applying the reversion operation on a rotor reverses its order, for example applying the reversion operation to a rotor that rotates
+                by 90° CCW will make it rotate by 90° CW (ie. -90° CCW). A result of this is that a rotor multiplied by its reversal produces the
+                identity operation {`$I = R \\widetilde{R}$`} which does nothing when applied as demonstrated in the code below. Here we also
+                make use of the <code>sandwichProduct()</code> function instead of writing the sandwich product
+                using <code>geometricProduct()</code> and <code>reversion()</code>.
+            </div>
+
+            <InteractiveCode sourceCode={cnt.codeReversionIdentity} editorStyle={{height: 300}} />
 
             <h3>Conclusion</h3>
             <div>

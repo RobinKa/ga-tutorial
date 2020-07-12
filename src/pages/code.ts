@@ -40,14 +40,27 @@ var exEySquared = ga.geometricProduct(exEy, exEy)
 
 log("e01^2", exEySquared)`
 
-export const codeRotate2D = `var phi = Math.PI * 3 / 4 // 135°
-
-// e^(phi e_{xy})
-var r = ga.exponential({ e01: phi })
+export const codeRotate2DOrientation = `var eXy = { e01: 1 }
+var eYx = { e01: -1 } // e_yx = -e_xy
 
 var p = { e0: 70, e1: 0 }
 
-// p rotated by 135°
+var a = ga.geometricProduct(p, eXy)
+var b = ga.geometricProduct(p, eYx)
+
+renderPointGA(p)
+renderPointGA(a, "red")
+renderPointGA(b, "blue")
+`
+
+export const codeRotate2D = `var phi = Math.PI * 3 / 4 // 135°
+
+// e^(phi e_{yx}) = e^(-phi e_{xy})
+var r = ga.exponential({ e01: -phi })
+
+var p = { e0: 70, e1: 0 }
+
+// p rotated by 135° counter-clockwise
 var rotatedP = ga.geometricProduct(r, p)
 
 renderPointGA(p)
@@ -56,14 +69,14 @@ renderInfo(ga.repr(rotatedP), "red")`
 
 export const codeGeneralRotor2D = `var phi = Math.PI * 3 / 4 // 135°
 
-// e^(phi/2 e_{xy})
+// e^(phi/2 e_{yx}) = e^(-phi/2 e_{xy})
 // Only half the angle required with sandwich product
-var r = ga.exponential({ e01: phi / 2 })
+var r = ga.exponential({ e01: -phi / 2 })
 
 var p = { e0: 70, e1: 0 }
 
 // R p ~R
-// p rotated by 135° using two-sided product
+// p rotated by 135° counter-clockwise using sandwich product
 var rotatedP = ga.geometricProduct(
     r,
     ga.geometricProduct(p, ga.reversion(r)) 
@@ -76,11 +89,11 @@ renderInfo(ga.repr(rotatedP), "red")`
 export const codeGeneralRotor3D = `var phi = Math.PI * 3 / 4 // 135°
 var theta = Math.PI / 2 // 90°
 
-// XZ rotation by phi
-var r1 = ga3d.exponential({ e02: phi / 2 })
+// CCW XZ rotation by phi
+var r1 = ga3d.exponential({ e02: -phi / 2 })
 
-// XY rotation by theta
-var r2 = ga3d.exponential({ e01: theta / 2 })
+// CCW XY rotation by theta
+var r2 = ga3d.exponential({ e01: -theta / 2 })
 
 // Compose XY and XZ rotation
 var r = ga3d.geometricProduct(r2, r1)
@@ -94,3 +107,22 @@ var rotatedP = ga3d.geometricProduct(
 )
 
 log("Rotated P:", rotatedP)`
+
+export const codeReversionIdentity = `var phi = Math.PI * 3 / 4 // 135°
+var theta = Math.PI / 2 // 90°
+
+var r1 = ga3d.exponential({ e02: -phi / 2 })
+var r2 = ga3d.exponential({ e01: -theta / 2 })
+
+// Compose XY and XZ rotation
+var r = ga3d.geometricProduct(r2, r1)
+
+var p = { e0: 70, e1: 0, e2: 0 }
+
+// (R ~R) p (R ~P)
+var q = ga3d.sandwichProduct(
+    p,
+    ga3d.geometricProduct(r, ga3d.reversion(r))
+)
+
+log("q:", q)`
