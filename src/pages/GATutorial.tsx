@@ -23,11 +23,11 @@ export function GATutorial() {
             />
 
             <h4>Geometric Product</h4>
-            <h5>Rule 1: basis vectors square to +1</h5>
+            <h5>Rule 1: Basis vectors square to +1</h5>
             <div>{cnt.textA3}</div>
             <InteractiveCode sourceCode={cnt.codeA3} />
 
-            <h5>Rule 2: different basis vector anti-commute</h5>
+            <h5>Rule 2: Different basis vector anti-commute</h5>
             <div>{cnt.textB}</div>
             <div>{cnt.textB2}</div>
             <InteractiveCode sourceCode={cnt.codeB} />

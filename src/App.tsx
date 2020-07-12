@@ -6,6 +6,13 @@ import * as ga from "./ga/ga_pp"
 import * as pga from "./ga/ga_zpp"
 import * as viz from "./ga/viz2d"
 
+// Dictionary of path elements to replace with full names
+// in the breadcrumbs.
+const breadcrumbPathToName: { [key: string]: string } = {
+    "pga": "Projective Geometric Algebra",
+    "ga-basics": "Geometric Algebra Basics"
+}
+
 export const pathToBreadcrumbs = (path: string) => {
     const pathNames = ["Geometric Algebra"]
     const pathUrls = [""]
@@ -18,10 +25,15 @@ export const pathToBreadcrumbs = (path: string) => {
     let pathSplit = cleanedPath.substr(1).split("/")
 
     while (pathSplit.length > 0) {
-        pathNames.push(pathSplit[0])
+        const pathElement = pathSplit[0]
 
+        // Add name
+        pathNames.push(breadcrumbPathToName[pathElement] ? breadcrumbPathToName[pathElement] : pathElement)
+
+        // Add url by taking the previous url and concatenating the new path element
         pathUrls.push(`${pathUrls[pathUrls.length - 1]}/${pathSplit[0]}`)
 
+        // Remove the element we just processed
         pathSplit.splice(0, 1)
     }
 

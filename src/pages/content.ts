@@ -47,7 +47,7 @@ export const textB = `What is new is that we can also multiply two different bas
 e_x e_y = e_{xy}
 \\end{equation}
 
-$e_{xy}$ here is not something new, it just stands for the two basis vectors multiplied together as a shorthand way of writing.
+$e_{xy}$ here is just shorthand for the two basis vectors multiplied together.
 Such elements made up of two basis vectors are called bivectors.
 `
 
