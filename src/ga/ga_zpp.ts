@@ -734,10 +734,10 @@ export const exponential = <A extends OptionalMultiVector>(a: A) => {
     }
     const s = gp.scalar as number
 
-    if (s < -0.1) {
+    if (s < 0) {
         const rootS = Math.sign(s) * Math.sqrt(Math.abs(s))
         return add({ scalar: Math.cos(rootS) }, multiply(a, Math.sin(rootS) / rootS))
-    } else if (s > 0.1) {
+    } else if (s > 0) {
         const rootS = Math.sign(s) * Math.sqrt(Math.abs(s))
         return add({ scalar: Math.cosh(rootS) }, multiply(a, Math.sinh(rootS) / rootS))
     } else {
