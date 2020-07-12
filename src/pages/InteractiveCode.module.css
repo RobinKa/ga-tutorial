@@ -1,3 +1,7 @@
+.interactive-code {
+    padding: 10px;
+}
+
 .interactive-code-editor-with-viz {
     width: 50%;
     min-height: 200px;

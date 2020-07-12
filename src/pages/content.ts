@@ -18,7 +18,7 @@ Usually introductions to GA begin by defining various rules and going over deriv
 
 export const textA2 = `
 Like for the standard 2D vector algebra in geometric algebra we have two basis vectors $e_x, e_y$ using which arbitrary vectors $v = x e_x + y e_y$ can be formed. Below is some runnable and editable code that forms
-such a vector and then displays them. The basis vectors $e_x, e_y$ are labeled e0 and e1 in the code.
+such vectors and then displays them as points. The basis vectors $e_x, e_y$ are labeled e0 and e1 in the code.
 `
 
 export const codeA2 = `// Render point at x=10, y=-60
@@ -28,8 +28,10 @@ renderPointGA({ e0: 10, e1: -60 })
 renderPointGA({ e0: -50, e1: 80}, "red")
 `
 
-export const textA3 = `Multiplying two same basis vectors together will result in $+1$ if they are the same (ie. $e_x e_x = 1, e_y e_y = 1$) similarly to how the dot product in standard vector algebra works.
-The product which defines Geometric Algebra and is its most important aspect is called the Geometric Product. Let's verify these results with the code again this time just logging some text instead of visualizing.
+export const textA3 = `The product which defines Geometric Algebra and is its most important aspect is called the geometric product.
+Multiplying two same basis vectors together with the geometric product will result in $+1$ if they are the same (ie. $e_x e_x = 1, e_y e_y = 1$)
+similarly to how the dot product in standard vector algebra works.
+Let's verify these results with the code again this time just logging some text instead of visualizing.
 `
 
 export const codeA3 = `log("e0^2:", ga.geometricProduct({ e0: 1 }, { e0: 1 }))
@@ -63,7 +65,7 @@ export const codeC = `var a = ga.geometricProduct({ e0: 1 }, { e1: 1 }) // e_x e
 var b = ga.geometricProduct(a, { e0: 1 }) // e_x e_y e_x
 log("e0 e1 e0:", b)`
 
-export const textD = `Hopefully this gives some idea of how the rules work and how to use them. Now for something more interesting, let's see what happens if we multiply of these together, that is, squaring it:
+export const textD = `Now for something more interesting, let's see what happens if we multiply of these together, that is, squaring it:
 `
 
 export const codeD = `log("e01^2", ga.geometricProduct({ e01: 1 }, { e01: 1 }))`
@@ -73,7 +75,9 @@ export const textE = `
 e_{xy}^2 = e_{xy} e_{xy} = e_{xyxy} = -e_{xyyx} = -e_{xx} = -1
 \\end{equation}
 
-We can see the square of the bivector $e_{xy}$ is $-1$, the same as the square of the imaginary unit of the complex numbers.
+We can see the square of the bivector $e_{xy}$ is $-1$. This shows that such a bivector is very similar to
+the imaginary unit $i$ of complex numbers which was specifically introduced to square to $-1$. Here we didn't have to
+introduce anything new and we automatically had such an element in our algebra.
 `
 
 export const textF = `

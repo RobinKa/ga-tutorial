@@ -8,8 +8,10 @@ import { SceneView } from "../ga/viz2d"
 
 
 export type InteractiveCodeProps = {
-    sourceCode: string
     style?: React.CSSProperties
+
+    sourceCode: string
+    editorStyle?: React.CSSProperties
 
     hideOutput?: boolean
     outputStyle?: React.CSSProperties
@@ -24,8 +26,8 @@ const formatObject = (obj: any) => {
 
 export function InteractiveCode(props: InteractiveCodeProps) {
     const {
-        sourceCode, style, hideOutput, withVisualizer, visualizerStyle,
-        outputStyle
+        sourceCode, editorStyle, hideOutput, withVisualizer, visualizerStyle,
+        outputStyle, style
     } = props
 
     // Store the edited code
@@ -88,14 +90,14 @@ export function InteractiveCode(props: InteractiveCodeProps) {
     const visualizerRef = useRef<HTMLDivElement>(null)
 
     return (
-        <div>
+        <div className={styles["interactive-code"]} style={style}>
             <div style={{ position: "relative", width: "100%" }}>
                 <button style={{ border: 0, background: "#505050", color: "#FFFFFF", position: "absolute", right: 10, top: 10, fontSize: 24, zIndex: 10 }} onClick={run}>Run</button>
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignContent: "stretch" }}>
                 <div style={{ display: "flex", flexDirection: "row", alignContent: "stretch", flexWrap: "wrap" }}>
                     <AceEditor className={withVisualizer ? styles["interactive-code-editor-with-viz"] : styles["interactive-code-editor-without-viz"]}
-                        style={{ ...{ width: undefined, height: undefined, border: undefined }, ...style }}
+                        style={{ ...{ width: undefined, height: undefined, border: undefined }, ...editorStyle }}
                         mode="javascript" theme="monokai" value={code} onChange={e => setCode(e)}
                         showPrintMargin={false}
                     />

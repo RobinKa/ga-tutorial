@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo } from "react"
 import ReactDOM from "react-dom"
 import { BrowserRouter as Router, Switch, Route, useLocation } from "react-router-dom"
-import './App.css'
 import { TutorialIndex, GATutorial, PGATutorial } from "./pages"
 import * as ga from "./ga/ga_pp"
 import * as pga from "./ga/ga_zpp"
