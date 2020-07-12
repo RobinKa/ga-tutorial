@@ -170,8 +170,8 @@ export function GATutorial() {
                 \\end{equation}
                 `}
                 
-                which is also called the sandwich product. {"$\\widetilde{R}$"} here stands for <a href="https://en.wikipedia.org/wiki/Paravector#Reversion_conjugation">reversion</a> which just means
-                reversing the order of all basis vectors. For example {"$e_{xy}$"} becomes {"$e_{yx}$"}.
+                which is also called the sandwich product. {"$\\widetilde{R}$"} here stands for <a href="https://en.wikipedia.org/wiki/Paravector#Reversion_conjugation">reversion</a> of $R$ which
+                just means reversing the order of all basis vectors. For example {"$e_{xy}$"} becomes {"$e_{yx}$"}.
                 As we already know from the second rule of the geometric product, such a change of order just produces a
                 minus sign for the bivectors, so {"$\\widetilde{e_{xy}} = -e_{xy}$"}.
             </div>
