@@ -19,6 +19,7 @@
 @media (max-width: 1280px) {
     .interactive-code-editor-with-viz {
         width: 100%;
+        min-height: 300px;
     }
 
     .interactive-code-viz {
