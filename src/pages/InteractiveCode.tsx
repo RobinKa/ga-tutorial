@@ -24,8 +24,8 @@ const formatObject = (obj: any) => {
     return typeof obj === "string" ?
         obj : (
             typeof obj === "number" ?
-            obj.toString() :
-            JSON.stringify(obj, null, 4)
+                obj.toString() :
+                JSON.stringify(obj, null, 4)
         )
 }
 

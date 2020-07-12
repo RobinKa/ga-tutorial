@@ -37,22 +37,18 @@ log("e0 e1 e0:", exEyEx)`
 
 export const codeSquareBivector = `var exEy = { e01: 1 }
 var exEySquared = ga.geometricProduct(exEy, exEy)
+
 log("e01^2", exEySquared)`
 
 export const codeRotate2D = `var phi = Math.PI * 3 / 4 // 135°
 
 // e^(phi e_{xy})
-var r = ga.exponential(
-    ga.geometricProduct(
-        { scalar: phi },
-        { e01: 1 }
-    )
-)
+var r = ga.exponential({ e01: phi })
 
 var p = { e0: 70, e1: 0 }
 
 // p rotated by 135°
-var rotatedP = ga.geometricProduct(r, p) 
+var rotatedP = ga.geometricProduct(r, p)
 
 renderPointGA(p)
 renderPointGA(rotatedP, "red")
@@ -62,12 +58,7 @@ export const codeGeneralRotor2D = `var phi = Math.PI * 3 / 4 // 135°
 
 // e^(phi/2 e_{xy})
 // Only half the angle required with sandwich product
-var r = ga.exponential(
-    ga.geometricProduct(
-        { scalar: phi / 2 },
-        { e01: 1 }
-    )
-)
+var r = ga.exponential({ e01: phi / 2 })
 
 var p = { e0: 70, e1: 0 }
 
@@ -86,20 +77,10 @@ export const codeGeneralRotor3D = `var phi = Math.PI * 3 / 4 // 135°
 var theta = Math.PI / 2 // 90°
 
 // XZ rotation by phi
-var r1 = ga3d.exponential(
-    ga3d.geometricProduct(
-        { scalar: phi / 2 },
-        { e02: 1 }
-    )
-)
+var r1 = ga3d.exponential({ e02: phi / 2 })
 
 // XY rotation by theta
-var r2 = ga3d.exponential(
-    ga3d.geometricProduct(
-        { scalar: theta / 2 },
-        { e01: 1 }
-    )
-)
+var r2 = ga3d.exponential({ e01: theta / 2 })
 
 // Compose XY and XZ rotation
 var r = ga3d.geometricProduct(r2, r1)

@@ -155,8 +155,8 @@ export function GATutorial() {
                 e_x (x cos(\\phi) -y sin(\\phi)) + e_y (x sin(\\phi) + y cos(\\phi))
                 \\end{equation}`}
 
-                We can see that the imaginary unit $i$ is actually a rotation in the XY plane as the bivector {`$e_{xy}$`}
-                is formed by multiplying the two basis vectors together, so in some sense $i$ represents the XY plane.
+                We can see that the imaginary unit $i$ is actually a rotation in the XY plane as the bivector {`$e_{xy}$`} is
+                formed by multiplying the two basis vectors together, so in some sense $i$ represents the XY plane.
             </div>
 
             <h4>Higher dimensions</h4>
@@ -170,7 +170,7 @@ export function GATutorial() {
                 \\end{equation}
                 `}
                 
-                which is also called the sandwich product. {"$\\widetilde{R}$"} here stands for reversion which just means
+                which is also called the sandwich product. {"$\\widetilde{R}$"} here stands for <a href="https://en.wikipedia.org/wiki/Paravector#Reversion_conjugation">Reversion</a> which just means
                 reversing the order of all basis vectors. For example {"$e_{xy}$"} becomes {"$e_{yx}$"}.
                 As we already know from the second rule of the geometric product, such a change of order just produces a
                 minus sign for the bivectors, so {"$\\widetilde{e_{xy}} = -e_{xy}$"}.
@@ -214,7 +214,7 @@ export function GATutorial() {
                 `}
             </div>
 
-            <InteractiveCode sourceCode={cnt.codeGeneralRotor3D} editorStyle={{height: 500}} />
+            <InteractiveCode sourceCode={cnt.codeGeneralRotor3D} editorStyle={{height: 350}} />
 
             <div>
                 These elements that are like the 3D version of Complex Numbers are called <a href="https://en.wikipedia.org/wiki/Quaternion">Quaternions</a>.
@@ -232,7 +232,7 @@ export function GATutorial() {
                 using the same rotor and just one sandwich product. This will prove to have many advantages allow even further generalization.
             </div>
 
-            <h4><Link to="/pga">2. Projective Geometric Algebra</Link></h4>
+            <h4><Link to="/pga">Next: Projective Geometric Algebra</Link></h4>
         </div>
     )
 }

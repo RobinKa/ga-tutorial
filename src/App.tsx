@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from "react"
 import ReactDOM from "react-dom"
 import { BrowserRouter as Router, Switch, Route, useLocation, Link } from "react-router-dom"
-import { TutorialIndex, GATutorial, PGATutorial } from "./pages"
+import { TutorialIndex, GATutorial, PGATutorial, Motivation } from "./pages"
 import * as ga from "./ga/ga_pp"
 import * as ga3d from "./ga/ga_ppp"
 import * as pga from "./ga/ga_zpp"
@@ -10,8 +10,9 @@ import * as viz from "./ga/viz2d"
 // Dictionary of path elements to replace with full names
 // in the breadcrumbs.
 const breadcrumbPathToName: { [key: string]: string } = {
+    "motivation": "Motivation",
+    "ga-basics": "Geometric Algebra Basics",
     "pga": "Projective Geometric Algebra",
-    "ga-basics": "Geometric Algebra Basics"
 }
 
 export const pathToBreadcrumbs = (path: string) => {
@@ -71,6 +72,9 @@ function TutorialSite() {
                         {breadcrumbs}
                     </div>
                     <Switch>
+                        <Route path="/motivation">
+                            <Motivation />
+                        </Route>
                         <Route path="/ga-basics">
                             <GATutorial />
                         </Route>

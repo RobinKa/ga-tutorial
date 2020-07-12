@@ -13,6 +13,7 @@ export function TutorialIndex() {
             </div>
             <h4>Sections</h4>
             <ol>
+                <li><Link to="/motivation">Motivation</Link></li>
                 <li><Link to="/ga-basics">Geometric Algebra Basics</Link></li>
                 <li><Link to="/pga">Projective Geometric Algebra</Link></li>
             </ol>
