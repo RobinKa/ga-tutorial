@@ -13,39 +13,40 @@ export function GATutorial() {
     return (
         <div>
             <h3>Geometric Algebra Basics</h3>
-
-            <h5>Introduction</h5>
             <div>{cnt.textA}</div>
 
-            <h5>Vectors</h5>
+            <h4>Vectors</h4>
             <div>{cnt.textA2}</div>
 
             <InteractiveCode sourceCode={cnt.codeA2}
                 hideOutput={true} withVisualizer={true}
             />
 
-            <h5>Geometric Product - same basis vector</h5>
+            <h4>Geometric Product</h4>
+            <h5>Rule 1: basis vectors square to +1</h5>
             <div>{cnt.textA3}</div>
             <InteractiveCode sourceCode={cnt.codeA3} />
 
-            <h5>Geometric product - different basis vector</h5>
+            <h5>Rule 2: different basis vector anti-commute</h5>
             <div>{cnt.textB}</div>
             <div>{cnt.textB2}</div>
             <InteractiveCode sourceCode={cnt.codeB} />
 
-            <h5>Geometric product - practice</h5>
+            <h5>Practice</h5>
             <div>{cnt.textC}</div>
             <InteractiveCode sourceCode={cnt.codeC} />
 
-            <h5>Squaring bivectors</h5>
+            <h3>Rotors</h3>
+
+            <h4>Squaring bivectors</h4>
             <div>{cnt.textD}</div>
             <InteractiveCode sourceCode={cnt.codeD} />
 
             <div>{cnt.textE}</div>
 
-            <h3>Applications</h3>
+            <div>We shall now look at some things we can achieve with what we already know now.</div>
 
-            <h5>Rotating 2D vectors using rotors</h5>
+            <h4>Rotating 2D vectors using rotors</h4>
             <div>{cnt.textF}</div>
             <InteractiveCode sourceCode={cnt.codeF}
                 hideOutput={true} withVisualizer={true}

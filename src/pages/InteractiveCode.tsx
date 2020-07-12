@@ -62,7 +62,7 @@ export function InteractiveCode(props: InteractiveCodeProps) {
                 var renderPointPGA = (p, color) => points.push({point: p, radius: 4, fill: color});
                 var renderLinePGA = (l, color) => lines.push({line: l, width: 2, stroke: color});
                 var renderPointGA = (p, color) => renderPointPGA({e02: -p.e0, e01: p.e1, e12: 1}, color);
-                var renderInfo = info => infos.push({text: info, fontSize: 4});
+                var renderInfo = (info, color) => infos.push({text: info, fontSize: 4, color: color});
             ` + codeToRun + `
                 renderScene({ points: points, lines: lines, infos: infos }, document.getElementById("${renderTarget.id}"));
             `
@@ -97,7 +97,7 @@ export function InteractiveCode(props: InteractiveCodeProps) {
             <div style={{ display: "flex", flexDirection: "column", alignContent: "stretch" }}>
                 <div style={{ display: "flex", flexDirection: "row", alignContent: "stretch", flexWrap: "wrap" }}>
                     <AceEditor className={withVisualizer ? styles["interactive-code-editor-with-viz"] : styles["interactive-code-editor-without-viz"]}
-                        style={{ ...{ width: undefined, height: undefined, border: undefined }, ...editorStyle }}
+                        style={{ ...{ width: undefined, height: undefined }, ...editorStyle }}
                         mode="javascript" theme="monokai" value={code} onChange={e => setCode(e)}
                         showPrintMargin={false}
                     />
@@ -110,7 +110,7 @@ export function InteractiveCode(props: InteractiveCodeProps) {
                 </div>
 
                 {!hideOutput &&
-                    <AceEditor style={{ ...{ width: "100%", height: "200px" }, ...outputStyle }}
+                    <AceEditor className={styles["interactive-code-output"]} style={{ ...{ width: undefined, height: undefined }, ...outputStyle }}
                         mode="javascript" theme="monokai" value={runResult} readOnly={true}
                         showPrintMargin={false}
                     />

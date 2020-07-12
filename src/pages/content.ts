@@ -25,31 +25,46 @@ export const codeA2 = `// Render point at x=10, y=-60
 renderPointGA({ e0: 10, e1: -60 })
 
 // Render point at x=-50, y=80
-renderPointGA({ e0: -50, e1: 80}, "red")
-`
+renderPointGA({ e0: -50, e1: 80}, "red")`
 
 export const textA3 = `The product which defines Geometric Algebra and is its most important aspect is called the geometric product.
-Multiplying two same basis vectors together with the geometric product will result in $+1$ if they are the same (ie. $e_x e_x = 1, e_y e_y = 1$)
-similarly to how the dot product in standard vector algebra works.
-Let's verify these results with the code again this time just logging some text instead of visualizing.
+Multiplying two same basis vectors together with the geometric product will result in $+1$ (for now...) if they are the same.
+
+\\begin{equation}
+e_x e_x = 1, e_y e_y = 1
+\\end{equation}
+
+This is similar to how the dot product in standard vector algebra works.
+Let's verify these results with the code again, this time just logging some text instead of visualizing.
 `
 
 export const codeA3 = `log("e0^2:", ga.geometricProduct({ e0: 1 }, { e0: 1 }))
 log("e1^2:", ga.geometricProduct({ e1: 1 }, { e1: 1 }))`
 
-export const textB = `What is new is that we can also multiply two different basis vectors and the result will not be zero, but can't be simplified further $e_x e_y = e_{xy}$.
-$e_xy$ here is not something new, it just stands for the two basis vectors multiplied together as a shorthand way of writing. These elements made up of two basis vectors are called bivectors.
+export const textB = `What is new is that we can also multiply two different basis vectors and the result will not be zero, but can't be simplified further.
+
+\\begin{equation}
+e_x e_y = e_{xy}
+\\end{equation}
+
+$e_{xy}$ here is not something new, it just stands for the two basis vectors multiplied together as a shorthand way of writing.
+Such elements made up of two basis vectors are called bivectors.
 `
 
 export const textB2 = `
-Importantly the order of the product matters. A rule is that when you swap the factors of a product of basis vectors you pick up a minus sign, for example: $e_{xy} = e_x e_y = -e_y e_x = -e_{yx}$.
+Importantly the order of the product matters. A rule is that when you swap the factors of a product of basis vectors you pick up a minus sign.
+We say that the basis vectors anti-commute.
+
+\\begin{equation}
+e_{xy} = e_x e_y = -e_y e_x = -e_{yx}
+\\end{equation}
 `
 
 export const codeB = `log("e0 e1:", ga.geometricProduct({ e0: 1 }, { e1: 1 }))
 log("e1 e0:", ga.geometricProduct({ e1: 1 }, { e0: 1 }))`
 
 export const textC = `
-Let's now use these three basic rules we just learnt and see what some results are when we use them:
+Let's now use these two basic rules we just learnt and see what some results are when we use them:
 
 \\begin{aligned}
 e_x e_y e_x & = & \\text{(rewrite as shorthand)} \\\\
@@ -65,7 +80,7 @@ export const codeC = `var a = ga.geometricProduct({ e0: 1 }, { e1: 1 }) // e_x e
 var b = ga.geometricProduct(a, { e0: 1 }) // e_x e_y e_x
 log("e0 e1 e0:", b)`
 
-export const textD = `Now for something more interesting, let's see what happens if we multiply of these together, that is, squaring it:
+export const textD = `Now for something more interesting, let's see what happens if we square the bivector $e_{xy}$, that is, multiplying it by itself:
 `
 
 export const codeD = `log("e01^2", ga.geometricProduct({ e01: 1 }, { e01: 1 }))`
@@ -95,7 +110,7 @@ Unlike with complex numbers now however, we can multiply a vector by a rotor dir
 
 export const codeF = `var phi = Math.PI * 3 / 4 // 3/4 pi is 135°
 
-// e^(phi e_xy)
+// e^(phi e_{xy})
 var r = ga.exponential(
     ga.geometricProduct(
         { scalar: phi },
@@ -110,7 +125,7 @@ var rotatedP = ga.geometricProduct(r, p) // p rotated by 45°
 renderPointGA({ e0: 0, e1: 0 }, "purple") // Origin
 renderPointGA(p)
 renderPointGA(rotatedP, "red")
-renderInfo(ga.repr(rotatedP))`
+renderInfo(ga.repr(rotatedP), "red")`
 
 export const textG = `
 \\begin{equation}

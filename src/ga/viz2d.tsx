@@ -115,6 +115,7 @@ export function LineElementPGA2D(props: LineElementPGA2DProps) {
 export type InfoElementProps = {
     text: string
     fontSize?: number
+    color?: string
 }
 
 export type Scene = {
@@ -198,7 +199,7 @@ export function SceneView(props: SceneViewProps) {
 
             {scene.infos && scene.infos.map((info, i) => {
                 return (
-                    <text key={i} fontWeight="100" x={1} y={6 + i} fontSize={info.fontSize || 1} fill="white">
+                    <text key={i} fontWeight="100" x={1} y={6 + i} fontSize={info.fontSize || 1} fill={info.color || "white"}>
                         {info.text}
                     </text>
                 )

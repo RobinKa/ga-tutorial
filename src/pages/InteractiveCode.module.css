@@ -4,12 +4,12 @@
 
 .interactive-code-editor-with-viz {
     width: 50%;
-    min-height: 200px;
+    min-height: 100px;
 }
 
 .interactive-code-editor-without-viz {
     width: 100%;
-    height: 200px;
+    height: 100px;
 }
 
 .interactive-code-viz {
@@ -24,4 +24,9 @@
     .interactive-code-viz {
         width: 100%;
     }
+}
+
+.interactive-code-output {
+    width: 100%;
+    height: 100px;
 }
