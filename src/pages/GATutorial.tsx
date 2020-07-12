@@ -79,7 +79,7 @@ export function GATutorial() {
                 Let's now use these two basic rules we just learnt and see what some results are when we use them:
 
                 {`\\begin{aligned}
-                e_x e_y e_x & = & \\text{(rewrite as shorthand)} \\\\
+                e_x e_y e_x & = & \\text{(Rewrite as shorthand)} \\\\
                 e_{xyx} & = & \\text{(Swap neighbours on the right, pick up minus sign)} \\\\
                 -e_{xxy} & = & \\text{(Multiplying same basis vectors results in 1, e_xx = e_x e_x = 1)} \\\\
                 -e_y &
@@ -134,7 +134,7 @@ export function GATutorial() {
             <div>
                 As mentioned before {`$e_{xy}$`} can be identified as the imaginary unit $i$ of complex numbers hence
                 we can represent complex numbers as {`$a + b e_{xy}$`} and a rotation by an arbitrary angle $\phi$
-                can be performed just like with complex numbers using Euler's formula
+                can be performed just like with complex numbers using <a href="https://en.wikipedia.org/wiki/Euler%27s_formula">Euler's formula</a>
 
                 {`\\begin{equation}
                 R(\\phi) = e^{\\phi e_{xy}} = cos(\\phi) + e_{xy} sin(\\phi)
@@ -170,7 +170,7 @@ export function GATutorial() {
                 \\end{equation}
                 `}
                 
-                which is also called the sandwich product. {"$\\widetilde{R}$"} here stands for <a href="https://en.wikipedia.org/wiki/Paravector#Reversion_conjugation">Reversion</a> which just means
+                which is also called the sandwich product. {"$\\widetilde{R}$"} here stands for <a href="https://en.wikipedia.org/wiki/Paravector#Reversion_conjugation">reversion</a> which just means
                 reversing the order of all basis vectors. For example {"$e_{xy}$"} becomes {"$e_{yx}$"}.
                 As we already know from the second rule of the geometric product, such a change of order just produces a
                 minus sign for the bivectors, so {"$\\widetilde{e_{xy}} = -e_{xy}$"}.
@@ -217,7 +217,7 @@ export function GATutorial() {
             <InteractiveCode sourceCode={cnt.codeGeneralRotor3D} editorStyle={{height: 350}} />
 
             <div>
-                These elements that are like the 3D version of Complex Numbers are called <a href="https://en.wikipedia.org/wiki/Quaternion">Quaternions</a>.
+                These elements that are like the 3D version of complex numbers are called <a href="https://en.wikipedia.org/wiki/Quaternion">quaternions</a>.
             </div>
 
             <h3>Conclusion</h3>
