@@ -55,7 +55,7 @@ export function GATutorial() {
 
             <h4>Higher dimensions</h4>
             <div>
-                It turns out that the two dimensional rotor application formula $v' = R v$ was slightly special.
+                It turns out that the two dimensional rotor application formula $v' = v R$ was slightly special.
                 In the general case, and for example also necessary in three dimensions, it is necessary to use
                 a two sided product
                 
@@ -76,7 +76,16 @@ export function GATutorial() {
 
                 {`
                 \\begin{equation}
-                R = e^{e_{xz} \\phi}
+                R(\\phi) = e^{e_{xz} \\phi}
+                \\end{equation}
+                `}
+
+                We can then also combine rotations in different planes into a single rotor by multiplying them. A rotor that rotates by \phi in the
+                XZ plane and by $\theta$ in the XY plane looks like this
+
+                {`
+                \\begin{equation}
+                R(\\phi, \\theta) = e^{e_{xy} \\theta} e^{e_{xz} \\phi}
                 \\end{equation}
                 `}
             </div>
