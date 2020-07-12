@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from "react"
 import ReactDOM from "react-dom"
-import { BrowserRouter as Router, Switch, Route, useLocation } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route, useLocation, Link } from "react-router-dom"
 import { TutorialIndex, GATutorial, PGATutorial } from "./pages"
 import * as ga from "./ga/ga_pp"
 import * as pga from "./ga/ga_zpp"
@@ -44,7 +44,7 @@ function TutorialSite() {
         const crumbs = pathToBreadcrumbs(location.pathname)
 
         return crumbs
-            .map(c => <a href={c.url}>{c.name}</a>)
+            .map(c => <Link to={c.url}>{c.name}</Link>)
             .reduce((l, r) => <> {l} &gt; {r}  </>)
     }, [location])
 
