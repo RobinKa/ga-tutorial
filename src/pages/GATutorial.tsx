@@ -51,8 +51,45 @@ export function GATutorial() {
             <InteractiveCode sourceCode={cnt.codeF}
                 hideOutput={true} withVisualizer={true}
             />
-
             <div>{cnt.textG}</div>
+
+            <h4>Higher dimensions</h4>
+            <div>
+                It turns out that the two dimensional rotor application formula $v' = R v$ was slightly special.
+                In the general case, and for example also necessary in three dimensions, it is necessary to use
+                a two sided product
+                
+                {`
+                \\begin{equation}
+                v' = R v \\widetilde{R}
+                \\end{equation}
+                `}
+                
+                which is also called the sandwich product. {"$\\widetilde{R}$"} here stands for reversion which just means
+                reversing the order of all basis vectors. For example {"$e_{xy}$"} becomes {"$e_{yx}$"}.
+                As we already know from the second rule of the geometric product, such a change of order just produces a
+                minus sign for the bivectors, so {"$\\widetilde{e_{xy}} = -e_{xy}$"}.
+
+                Another thing that changes with the sandwich product is that we multiply by the rotor twice, so our rotor
+                will only need to contain half of the rotation angle. In the three dimensional case, if we wanted to create
+                a rotor that rotates in the XZ plane by $\phi$ our rotor would look like this:
+
+                {`
+                \\begin{equation}
+                R = e^{e_{xz} \\phi}
+                \\end{equation}
+                `}
+            </div>
+
+            <h3>Conclusion</h3>
+            <div>
+                In this section we introduced Geometric Algebra. We learnt the basic rules of the Geometric Product and how to work with them.
+                We also learnt about rotors which generalize the rotations created by complex numbers to any dimension and also puts them
+                directly in the context of vectors.
+
+                In the next section we will learn how we can introduce translation in the rotors so we can do both translation and rotation
+                using the same rotor and just one sandwich product. This will prove to have many advantages allow even further generalization.
+            </div>
 
             <h4><Link to="/pga">2. Projective Geometric Algebra</Link></h4>
         </div>

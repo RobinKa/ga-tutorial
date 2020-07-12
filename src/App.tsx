@@ -3,6 +3,7 @@ import ReactDOM from "react-dom"
 import { BrowserRouter as Router, Switch, Route, useLocation, Link } from "react-router-dom"
 import { TutorialIndex, GATutorial, PGATutorial } from "./pages"
 import * as ga from "./ga/ga_pp"
+import * as ga3d from "./ga/ga_ppp"
 import * as pga from "./ga/ga_zpp"
 import * as viz from "./ga/viz2d"
 
@@ -100,6 +101,7 @@ function App() {
         // Set variables on window so we can use it in interactive code
         const wnd = window as any
         wnd.ga = ga
+        wnd.ga3d = ga3d
         wnd.pga = pga
         wnd.viz = viz
         wnd.renderScene = (scene: viz.Scene, renderTarget: HTMLElement) => {
@@ -109,6 +111,7 @@ function App() {
         // eslint-disable-next-line no-eval
         eval(`
             var ga = wnd.ga;
+            var ga3d = wnd.ga3d;
             var pga = wnd.pga;
             var viz = wnd.viz;
             var renderScene = wnd.renderScene;
