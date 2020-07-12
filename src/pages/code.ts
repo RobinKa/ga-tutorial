@@ -75,8 +75,8 @@ var r = ga.exponential({ e01: -phi / 2 })
 
 var p = { e0: 70, e1: 0 }
 
-// R p ~R
-// p rotated by 135° counter-clockwise using sandwich product
+// R p ~R (sandwich product)
+// p rotated by 135° counter-clockwise
 var rotatedP = ga.geometricProduct(
     r,
     ga.geometricProduct(p, ga.reversion(r)) 
