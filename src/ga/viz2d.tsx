@@ -154,7 +154,7 @@ function SVGGrid() {
                     <g key={x}>
                         <line x1={x * 10} x2={x * 10} y1={-100} y2={100} stroke="#CCCCCC" strokeWidth={getThickness(x)} />
                         {x % 2 === 0 && x !== 0 && (
-                            <text x={10 * x} y={-5} fill="white" fontSize={5} textAnchor="middle">
+                            <text x={10 * x} y={-2} fill="white" fontSize={5} textAnchor="middle">
                                 {`${(10 * x).toFixed(0)}`}
                             </text>
                         )}
@@ -167,7 +167,7 @@ function SVGGrid() {
                     <g key={y}>
                         <line x1={-100} x2={100} y1={y * 10} y2={y * 10} stroke="#CCCCCC" strokeWidth={getThickness(y)} />
                         {(y % 2 === 0) && (
-                            <text x={5} y={10 * y - 5} fill="white" fontSize={5} textAnchor="middle">
+                            <text x={5} y={10 * y - 2} fill="white" fontSize={5} textAnchor="middle">
                                 {`${(10 * y).toFixed(0)}`}
                             </text>
                         )}
