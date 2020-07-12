@@ -21,7 +21,12 @@ export type InteractiveCodeProps = {
 }
 
 const formatObject = (obj: any) => {
-    return JSON.stringify(obj, null, 4)
+    return typeof obj === "string" ?
+        obj : (
+            typeof obj === "number" ?
+            obj.toString() :
+            JSON.stringify(obj, null, 4)
+        )
 }
 
 export function InteractiveCode(props: InteractiveCodeProps) {
