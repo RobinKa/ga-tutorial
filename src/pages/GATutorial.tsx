@@ -240,7 +240,7 @@ export function GATutorial() {
             <div>
                 Applying the reversion operation on a rotor reverses its effect, for example applying the reversion operation to a rotor that rotates
                 by 90° CCW will make it rotate by 90° CW (ie. -90° CCW). A result of this is that a rotor multiplied by its reversal produces the
-                identity operation {`$I = R \\widetilde{R}$`} which does nothing when applied as demonstrated in the code below. Here we also
+                identity {`$R \\widetilde{R} = 1$`} which does nothing when applied as demonstrated in the code below. Here we also
                 make use of the <code>sandwichProduct()</code> function instead of writing the sandwich product
                 using <code>geometricProduct()</code> and <code>reversion()</code>.
             </div>

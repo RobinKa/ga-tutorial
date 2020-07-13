@@ -187,6 +187,11 @@ export function PGATutorial() {
             <InteractiveCode sourceCode={cnt.motorBlending}
                 hideOutput={true} withVisualizer={true} />
 
+            <div>
+                We can see the interpolation produces a curve. If we interpolated translation and rotation separately using
+                linear interpolation we would have just gotten a straight line.
+            </div>
+
             <h5>With unknown exponents</h5>
             <div>
                 What if we don't know the exponents of the motors? This would happen for example when we keep composing motors.
