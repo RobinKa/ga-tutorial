@@ -99,7 +99,7 @@ export function PGATutorial() {
                 elements squaring to $0$ is fortunately very simple
 
                 {`\\begin{equation}
-                t = e^{\\frac{d}{2} e_{0x}} = 1 + \\frac{d}{2} e_{0x}
+                T = e^{\\frac{d}{2} e_{0x}} = 1 + \\frac{d}{2} e_{0x}
                 \\end{equation}`}
 
                 so all we picked up was the additional scalar $1$.
@@ -137,7 +137,7 @@ export function PGATutorial() {
                 hideOutput={true} withVisualizer={true} />
 
             <div>
-                Our motor here produces a rotation of {`$\\frac{\\pi}{4}$`} (twice the amount written in the code) which
+                Our motor here produces a CCW rotation of {`$\\frac{\\pi}{4}$`} (twice the amount written in the code) which
                 indeed rotated our box by 45°.
             </div>
 

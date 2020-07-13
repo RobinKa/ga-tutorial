@@ -61,7 +61,7 @@ var r = pga.exponential({
     e12: -Math.PI / 8
 })
 
-// Translate -45 in X, then rotate 45° CCW
+// Translate -80 in X, then rotate 45° CCW
 var m = pga.geometricProduct(r, t)
 
 // Identity motor to visualize the initial box
