@@ -1,17 +1,3 @@
-export const visualizerExample = `// Render a point at x: 50, y: 10
-renderPointPGA({
-    e02: -50,
-    e01: 10,
-    e12: 1
-}, "lime");
-
-// Render the line 1x + 1y = 10
-renderLinePGA({
-    e0: 10,
-    e1: 1,
-    e2: -1
-}, "orange");`
-
 export const codeRenderPoint = `// Render point at x=10, y=-60
 renderPointGA({ e0: 10, e1: -60 })
 

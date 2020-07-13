@@ -98,11 +98,11 @@ export function LineElementPGA2D(props: LineElementPGA2DProps) {
     return (
         <g>
             <title>{pga.repr(line)}</title>
-            <line x1={lineCoords[0]} y1={lineCoords[1]} x2={lineCoords[2]} y2={lineCoords[3]}
+            <line x1={lineCoords[0]} y1={-lineCoords[1]} x2={lineCoords[2]} y2={-lineCoords[3]}
                 strokeWidth={width || 1} stroke={stroke || "#F37121"} />
 
             {label &&
-                <text x={(lineCoords[0] + lineCoords[2]) / 2} y={(lineCoords[1] + lineCoords[3]) / 2}
+                <text x={(lineCoords[0] + lineCoords[2]) / 2} y={-0.5 * (lineCoords[1] + lineCoords[3])}
                     dominantBaseline="middle" fontWeight="800"
                     textAnchor="middle" fontSize={1}>
                     {label}

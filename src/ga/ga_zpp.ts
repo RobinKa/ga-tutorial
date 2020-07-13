@@ -729,10 +729,9 @@ export const commutatorProduct = <A extends OptionalMultiVector, B extends Optio
 
 export const exponential = <A extends OptionalMultiVector>(a: A) => {
     const gp = geometricProduct(a, a) as any
-    if (gp.scalar === undefined) {
-        throw new Error("Input to exponential needs to square to scalar")
-    }
-    const s = gp.scalar as number
+    const s = gp.scalar || 0
+
+    // TODO: Check if non-scalar parts are non-zero
 
     if (s < 0) {
         const rootS = Math.sign(s) * Math.sqrt(Math.abs(s))

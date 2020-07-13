@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { InteractiveCode } from "./InteractiveCode"
-import * as cnt from "./code"
+import * as cnt from "./CodeGATutorial"
 
 export function GATutorial() {
     // Need to retrigger equation typesetting as it's only done once on startup
@@ -141,7 +141,7 @@ export function GATutorial() {
             />
 
             <div>
-                We can see that {`$e_{xy}$`} produces a clockwise rotation (CW) by 90° and {`$e_{yx}$`} produces a counter-clockwise (CCW)
+                We can see that {`$e_{xy}$`} produces a clockwise (CW) rotation by 90° and {`$e_{yx}$`} produces a counter-clockwise (CCW)
                 rotation by 90°. We will stick with the CCW version using {`$e_{yx}$`}. Instead of that to make a CCW
                 rotation we could have also swapped the order of the product ({`$v' = v e_{xy}$`}) but using {`$e_{yx}$`} instead will allow us to
                 follow the usual conventions later.

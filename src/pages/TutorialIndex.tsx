@@ -16,6 +16,7 @@ export function TutorialIndex() {
                 <li><Link to="/motivation">Motivation</Link></li>
                 <li><Link to="/ga-basics">Geometric Algebra Basics</Link></li>
                 <li><Link to="/pga">Projective Geometric Algebra</Link></li>
+                <li><Link to="/pga-geometry">PGA Geometry</Link></li>
             </ol>
         </div>
     )
