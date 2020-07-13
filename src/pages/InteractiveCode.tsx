@@ -68,6 +68,35 @@ export function InteractiveCode(props: InteractiveCodeProps) {
                 var renderLinePGA = (l, color) => lines.push({line: l, width: 2, stroke: color});
                 var renderPointGA = (p, color) => renderPointPGA({e02: -p.e0, e01: p.e1, e12: 1}, color);
                 var renderInfo = (info, color) => infos.push({text: info, fontSize: 4, color: color});
+                var renderBoxPGA = (m, color, h) => {
+                    h = h || 3
+                    var corners = [
+                        {
+                            e01: -h,
+                            e02: -h,
+                            e12: 1
+                        },
+                        {
+                            e01: h,
+                            e02: -h,
+                            e12: 1
+                        },
+                        {
+                            e01: h,
+                            e02: h,
+                            e12: 1
+                        },
+                        {
+                            e01: -h,
+                            e02: h,
+                            e12: 1
+                        }
+                    ];
+
+                    for (var cornerIndex = 0; cornerIndex < corners.length; cornerIndex++) {
+                        points.push({point: pga.sandwichProduct(corners[cornerIndex], m), radius: 2, fill: color});
+                    }
+                };
             ` + codeToRun + `
                 renderScene({ points: points, lines: lines, infos: infos }, document.getElementById("${renderTarget.id}"));
             `

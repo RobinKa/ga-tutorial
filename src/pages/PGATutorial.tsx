@@ -59,7 +59,6 @@ export function PGATutorial() {
                 We will see that this strange additional basis vector allows us to encode both rotations and translations in a single rotor and
                 also many more things we couldn't easily do before.
             </div>
-            <br />
             <h5>Points</h5>
             <div>
                 Another peculiarity of PGA is that points are not encoded as vectors $x e_x + y e_y$ anymore but as
@@ -125,9 +124,26 @@ export function PGATutorial() {
             <InteractiveCode sourceCode={cnt.motors}
                 hideOutput={true} withVisualizer={true} />
 
+            <div>
+                So far we have only been visualizing single points. With points we can not observe the effect that
+                rotation has besides how it affects the position of the points. To visualize the rotation we will
+                look at how a set of points gets transformed instead, such as a box. When applying a rotor that rotates
+                we would expect the box to also rotate. We will use the provided <code>renderBoxPGA()</code> function
+                for this purpose. The way it works is that it takes four points that are offset relative to the origin
+                and transforms them with the given motor.
+            </div>
+
+            <InteractiveCode sourceCode={cnt.motorsBox}
+                hideOutput={true} withVisualizer={true} />
+
+            <div>
+                Our motor here produces a rotation of {`$\\frac{\\pi}{4}$`} (twice the amount written in the code) which
+                indeed rotated our box by 45°.
+            </div>
+
             <h3>Motor interpolation</h3>
             <div>
-                A very useful property of PGA and motors is their ability to smoothly interpolate motors. Previously when we had separate
+                A very useful property of PGA is its ability to smoothly interpolate between motors. Previously if we had separate
                 translation and rotation (eg. when using vector addition for translation and rotors for rotation) it was not clear how one would
                 interpolate between two of such transformations.
             </div>
@@ -147,6 +163,13 @@ export function PGATutorial() {
                 Interpolating rotations and rotors is a bit trickier but still relatively common, for example
                 using quaternions and <a href="https://en.wikipedia.org/wiki/Slerp">spherical linear interpolation</a>.
             </div>
+
+            <div>
+                So how do we interpolate between two motors $m_1$ and $m_2$ such as in the following example?
+            </div>
+
+            <InteractiveCode sourceCode={cnt.motorBlendingMotivation}
+                hideOutput={true} withVisualizer={true} />
 
             <br />
 

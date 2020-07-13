@@ -53,21 +53,50 @@ var q = pga.sandwichProduct(p, m)
 renderPointPGA(p, "lime")
 renderPointPGA(q, "red")`
 
-export const motorBlending = `var p = {
-    e02: -40,
-    e01: -30,
-    e12: 1
-}
+export const motorsBox = `var t = pga.exponential({
+    e01: 40
+})
 
-var a1 = {
-    e02: 20,
-    e12: -Math.PI * 3 / 4
+var r = pga.exponential({
+    e12: -Math.PI / 8
+})
+
+// Translate -45 in X, then rotate 45° CCW
+var m = pga.geometricProduct(r, t)
+
+// Identity motor to visualize the initial box
+// at the origin
+var identity = { scalar: 1 }
+
+renderBoxPGA(identity, "lime")
+renderBoxPGA(m, "red")`
+
+export const motorBlendingMotivation = `var a1 = {
+    e01: 40,
+    e02: 30
 }
 
 var a2 = {
-    e01: -20,
-    e02: 50,
-    e12: -Math.PI / 2
+    e01: -40,
+    e02: -10,
+    e12: -Math.PI / 6
+}
+
+var m1 = pga.exponential(a1)
+var m2 = pga.exponential(a2)
+
+renderBoxPGA(m1, "black")
+renderBoxPGA(m2, "red")`
+
+export const motorBlending = `var a1 = {
+    e01: 40,
+    e02: 30
+}
+
+var a2 = {
+    e01: -40,
+    e02: -10,
+    e12: -Math.PI / 6
 }
 
 for (var alpha = 0; alpha <= 1; alpha += 0.1) {
@@ -75,12 +104,9 @@ for (var alpha = 0; alpha <= 1; alpha += 0.1) {
         pga.geometricProduct(a1, { scalar: 1 - alpha }),
         pga.geometricProduct(a2, { scalar: alpha })
     ))
-    var q = pga.sandwichProduct(p, m)
     var c = "rgb(" + (255 * alpha).toString() + ", 0, 0)"
-    renderPointPGA(q, c)
-}
-
-renderPointPGA(p, "lime")`
+    renderBoxPGA(m, c)
+}`
 
 export const visualizerExample = `// Render a point at x: 50, y: 10
 renderPointPGA({
