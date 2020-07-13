@@ -79,7 +79,7 @@ export function PGATutorial() {
                 In the code we can also see that the rendered point coordinate gets divided by
                 the {`$e_{xy}$`} part of the multivector. Multiplying the multivector by a scalar thus
                 won't have any effect on which point the multivector encodes as the final position gets
-                divided by the {`$e_{xy}$`} part anyway.
+                divided by the {`$e_{xy}$`} part again which was also scaled by the same amount.
             </div>
 
             <h5>Translators</h5>
@@ -96,7 +96,7 @@ export function PGATutorial() {
             </div>
             <div>
                 This time to calculate the result of the exponential we can not make use of Euler's formula as it only applies to
-                elements that square to $-1$. The bivector {`$e_{0x}$`} however squares to $0$. The equivalent of Euler's formula for
+                elements that square to $-1$ and the bivector {`$e_{0x}$`} squares to $0$. The equivalent of Euler's formula for
                 elements squaring to $0$ is fortunately very simple
 
                 {`\\begin{equation}
@@ -145,7 +145,7 @@ export function PGATutorial() {
             </div>
             <div>
                 Interpolating rotations and rotors is a bit trickier but still relatively common, for example
-                using quaternions and <a href="https://en.wikipedia.org/wiki/Slerp">spherical interpolation</a>.
+                using quaternions and <a href="https://en.wikipedia.org/wiki/Slerp">spherical linear interpolation</a>.
             </div>
 
             <br />
