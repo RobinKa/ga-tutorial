@@ -90,7 +90,7 @@ export function PGATutorial() {
             <div>
                 Just like with the rotors we use the exponential function to generate translators from our algebra.
                 A translator that moves by $d$ in the X direction is given by {`$T = e^{\\frac{d}{2} e_{0x}}$`}.
-                If we compare this to the point encoding we will notice that $e_0x$ is the bivector related to the
+                If we compare this to the point encoding we will notice that {`$e_{0x}$`} is the bivector related to the
                 Y coordinate, so here the translators perform a translation that is orthogonal to the bivector's direction.
                 As previously we will apply the translator using the sandwich product.
             </div>
