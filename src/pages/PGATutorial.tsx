@@ -15,7 +15,7 @@ export function PGATutorial() {
             <h3>Translations</h3>
             <div>
                 So far we learnt how to do rotations using rotors. Another important operation is translation. Naively we could
-                just use vector addition to achieve translation using some offset vector $a = a_x e_x + a_y e_y$
+                just use vector addition to achieve translation using some offset vector $d = d_x e_x + d_y e_y$
 
                 {`\\begin{equation}
                 v' = v + d
@@ -153,8 +153,8 @@ export function PGATutorial() {
             <h5>With known exponents</h5>
             <div>
                 Thankfully our hard work of learning about motors will pay off here. Imagine we are given the exponents of two
-                motors $m_1$ and $m_2$ which we denote by $a_1$ and $a_2$. To get the interpolated motor $m(\alpha)$ all we have to do is linearly interpolate
-                between the exponents and then exponentiate
+                motors $m_1$ and $m_2$ which we denote by $a_1$ and $a_2$ (ie. {`$m_1 = e^{a_1}, m_2 = e^{a_2}$`}). To get the interpolated
+                motor $m(\alpha)$ all we have to do is linearly interpolate between the exponents and then exponentiate
 
                 {`\\begin{equation}
                 m(\\alpha) = e^{(1 - \\alpha) a_1 + \\alpha a_2}
