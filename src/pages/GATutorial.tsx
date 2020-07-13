@@ -143,7 +143,7 @@ export function GATutorial() {
             <div>
                 We can see that {`$e_{xy}$`} produces a clockwise (CW) rotation by 90° and {`$e_{yx}$`} produces a counter-clockwise (CCW)
                 rotation by 90°. We will stick with the CCW version using {`$e_{yx}$`}. Instead of that to make a CCW
-                rotation we could have also swapped the order of the product ({`$v' = e_{xy} v$`}) but using {`$e_{yx}$`} instead will allow us to
+                rotation we could have also swapped the order of the product ({`$v' = v e_{xy}$`}) but using {`$e_{yx}$`} instead will allow us to
                 follow the usual conventions later.
             </div>
 
@@ -170,14 +170,14 @@ export function GATutorial() {
             />
             <div>
                 {`\\begin{equation}
-                v R(\\phi) = (x e_x + y e_y) (cos(\\phi) + e_{yx} sin(\\phi)) =
+                R(\\phi) v = (cos(\\phi) + e_{yx} sin(\\phi)) (x e_x + y e_y) =
                 e_x (x cos(\\phi) - y sin(\\phi)) + e_y (x sin(\\phi) + y cos(\\phi))
                 \\end{equation}`}
             </div>
 
             <h4>Higher dimensions</h4>
             <div>
-                It turns out that the two dimensional rotor application formula $v' = v R$ was slightly special.
+                It turns out that the two dimensional rotor application formula $v' = R v$ was slightly special.
                 In the general case it is necessary to use a two sided product
                 
                 {`

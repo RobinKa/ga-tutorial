@@ -31,8 +31,8 @@ var eYx = { e01: -1 } // e_yx = -e_xy
 
 var p = { e0: 70, e1: 0 }
 
-var a = ga.geometricProduct(p, eXy)
-var b = ga.geometricProduct(p, eYx)
+var a = ga.geometricProduct(eXy, p)
+var b = ga.geometricProduct(eYx, p)
 
 renderPointGA(p)
 renderPointGA(a, "red")
