@@ -170,7 +170,7 @@ export function GATutorial() {
             />
             <div>
                 {`\\begin{equation}
-                R(\\phi) v = (cos(\\phi) + e_{yx} sin(\\phi)) (x e_x + y e_y) =
+                v R(\\phi) = (x e_x + y e_y) (cos(\\phi) + e_{yx} sin(\\phi)) =
                 e_x (x cos(\\phi) - y sin(\\phi)) + e_y (x sin(\\phi) + y cos(\\phi))
                 \\end{equation}`}
             </div>
