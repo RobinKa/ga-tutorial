@@ -61,7 +61,7 @@ export const motorBlending = `var p = {
 
 var a1 = {
     e02: 20,
-    e12: -Math.PI
+    e12: -Math.PI * 3 / 4
 }
 
 var a2 = {
