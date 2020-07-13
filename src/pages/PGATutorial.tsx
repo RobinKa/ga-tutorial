@@ -89,16 +89,18 @@ export function PGATutorial() {
             </div>
             <div>
                 Just like with the rotors we use the exponential function to generate translators from our algebra.
-                A translator that moves by $d$ in the X direction is given by {`$T = e^{\\frac{d}{2} e_{0y}}$`}. As previously we will apply
-                the translator using the sandwich product.
+                A translator that moves by $d$ in the X direction is given by {`$T = e^{\\frac{d}{2} e_{0x}}$`}.
+                If we compare this to the point encoding we will notice that $e_0x$ is the bivector related to the
+                Y coordinate, so here the translators perform a translation that is orthogonal to the bivector's direction.
+                As previously we will apply the translator using the sandwich product.
             </div>
             <div>
                 This time to calculate the result of the exponential we can not make use of Euler's formula as it only applies to
-                elements that square to $-1$. The bivector {`$e_{0y}$`} however squares to $0$. The equivalent of Euler's formula for
+                elements that square to $-1$. The bivector {`$e_{0x}$`} however squares to $0$. The equivalent of Euler's formula for
                 elements squaring to $0$ is fortunately very simple
 
                 {`\\begin{equation}
-                t = e^{\\frac{d}{2} e_{0y}} = 1 + \\frac{d}{2} e_{0y}
+                t = e^{\\frac{d}{2} e_{0x}} = 1 + \\frac{d}{2} e_{0x}
                 \\end{equation}`}
 
                 so all we picked up was the additional scalar $1$.
@@ -113,7 +115,7 @@ export function PGATutorial() {
                 by $m$. For example a motor
 
                 {`\\begin{equation}
-                m = e^{\\frac{\\phi}{2} e_{yx}} e^{\\frac{d}{2} e_{0y}}
+                m = e^{\\frac{\\phi}{2} e_{yx}} e^{\\frac{d}{2} e_{0x}}
                 \\end{equation}`}
 
                 will first perform the translation of the previous example followed by a rotation around the origin in the
