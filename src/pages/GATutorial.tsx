@@ -177,7 +177,7 @@ export function GATutorial() {
 
             <h4>Higher dimensions</h4>
             <div>
-                It turns out that the two dimensional rotor application formula $v' = R v$ was slightly special.
+                It turns out that the two dimensional rotor application formula $v' = v R$ was slightly special.
                 In the general case it is necessary to use a two sided product
                 
                 {`
