@@ -222,9 +222,9 @@ export function PGATutorial() {
             <div>
                 <ul>
                     <li><b>2D PGA basis vectors</b>: $e_0^2 = 0, e_x^2 = 1, e_y^2 = 1$</li>
-                    <li><b>Point at $(X, Y)$</b>: {`$P = x e_{y0} + y e_{0x} + e_{xy}$`}</li>
-                    <li><b>Point coordinates $(X, Y)$ from PGA point $P$</b>: {`$(X, Y) = \\frac{(P_{y0}, P_{x0})}{P_{xy}}$`}</li>
-                    <li><b>Translator by $d$ orthogonal to Y direction {`$e_{0x}$`} (ie. X axis)</b>: {`$T = e^{\\frac{d}{2} e_{0x}}$`}</li>
+                    <li><b>Point at $(x, y)$</b>: {`$P = x e_{y0} + y e_{0x} + e_{xy}$`}</li>
+                    <li><b>Point coordinates $(x, y)$ from PGA point $P$</b>: {`$(X, Y) = \\frac{(P_{y0}, P_{x0})}{P_{xy}}$`}</li>
+                    <li><b>Translator by $d$ orthogonal to Y direction {`$e_{0x}$`} (ie. along X direction)</b>: {`$T = e^{\\frac{d}{2} e_{0x}}$`}</li>
                     <li><b>Motor</b>: Rotor that both rotates and translates</li>
                     <li><b>Motor logarithm</b>: {`$log(m) = \\langle \\frac{m}{||m||} \\rangle_2$`}</li>
                     <li><b>Interpolate between motors $m_1$ and $m_2$</b>: {`$m(m_1, m_2, \\alpha) = e^{(1 - \\alpha) log(m_1) + \\alpha log(m_2)}$`}</li>
@@ -233,15 +233,15 @@ export function PGATutorial() {
 
             <h3>Conclusion</h3>
             <div>
-                In this section we learnt about Projective Geometric Algebra.
-                In PGA we have a new basis vector $e_0$ which squares to $0$ and also a different encoding for our points.
-                This enabled us to perform translations using rotors. A rotor which does rotation and translation is also
-                called a motor. This also enabled us to interpolate smoothly between motors.
+                In this section we learnt about PGA where we have a new basis vector $e_0$ which squares to $0$ and
+                also a different encoding for our points. This enabled us to perform translations using rotors.
+                A rotor which does rotation and translation is also called a motor. This also enabled
+                us to interpolate smoothly between motors.
             </div>
             <br />
             <div>
-                In the next section we will take a look at how PGA also simplifies geometric concepts, especially "flat" ones
-                like lines and planes, and how it allows us to easily do many operations that would classically look very distinct.
+                In the next section we will take a look at how PGA allows us to represent "flat" geometric objects such as
+                lines and planes, and how it allows us to easily do many operations that would classically look very distinct.
                 We will also learn about the concept of duality and how the geometric product decomposes into two separate parts.
             </div>
 
