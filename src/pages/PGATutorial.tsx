@@ -200,15 +200,23 @@ export function PGATutorial() {
             </div>
             <div>
                 Just like in usual algebra, we can take the logarithm of an exponential to get its exponent. The logarithm of a
-                motor in PGA is given by
+                motor in 2D PGA is given by
 
                 {`\\begin{equation}
                 log(m) = \\langle \\frac{m}{||m||} \\rangle_2
                 \\end{equation}`}
 
                 where $||m||$ stands for the norm of the motor and $\langle ... \rangle_2$ stands for only keeping the
-                grade $2$ parts (ie. all bivectors) of the result. $||m||$ can easily be calculated as {`$\\sqrt{m \\widetilde{m}}$`}.
+                grade $2$ parts (ie. all bivectors) of the result. $||m||$ can easily be calculated
+                as {`$\\sqrt{m \\widetilde{m}}$`} which results in a scalar.
             </div>
+            <div>
+                In the code we just take the previous example but instead of given exponents $a_1, a_2$ we will calculate
+                them from given motors using the logarithm.
+            </div>
+
+            <InteractiveCode sourceCode={cnt.motorBlendingLog}
+                hideOutput={true} withVisualizer={true} />
 
             <h3>Conclusion</h3>
             <div>

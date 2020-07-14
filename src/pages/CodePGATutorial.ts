@@ -108,6 +108,38 @@ for (var alpha = 0; alpha <= 1; alpha += 0.1) {
     renderBoxPGA(m, c)
 }`
 
+export const motorBlendingLog = `var m1 = { scalar: 1, e01: 20, e02: 40 }
+var m2 = { scalar: 1, e01: -250, e12: -Math.PI * 1.3 }
+
+function motorLog(m) {
+    var divisor = Math.sqrt(
+        pga.geometricProduct(
+            m,
+            pga.reversion(m)
+        ).scalar
+    )
+    var allGrades = pga.div(m, divisor)
+    return {
+        e01: allGrades.e01,
+        e02: allGrades.e02,
+        e12: allGrades.e12
+    }
+}
+
+var a1 = motorLog(m1)
+var a2 = motorLog(m2)
+renderInfo("a1: " + pga.repr(a1))
+renderInfo("a2: " + pga.repr(a2))
+
+for (var alpha = 0; alpha <= 1; alpha += 0.1) {
+    var m = pga.exponential(pga.add(
+        pga.geometricProduct(a1, { scalar: 1 - alpha }),
+        pga.geometricProduct(a2, { scalar: alpha })
+    ))
+    var c = "rgb(" + (255 * alpha).toString() + ", 0, 0)"
+    renderBoxPGA(m, c)
+}`
+
 export const visualizerExample = `// Render a point at x: 50, y: 10
 renderPointPGA({
     e02: -50,
