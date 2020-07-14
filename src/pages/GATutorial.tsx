@@ -247,6 +247,17 @@ export function GATutorial() {
 
             <InteractiveCode sourceCode={cnt.codeReversionIdentity} editorStyle={{height: 300}} />
 
+            <h3>Summary</h3>
+            <div>
+                <ul>
+                    <li><b>Geometric product rule 1</b>: basis vectors square to +1 ({`$e_x e_x = e_{xx} = 1, e_y e_y = e_{yy} = 1$`})</li>
+                    <li><b>Geometric product rule 2</b>: different basis vectors anti-commute ({`$e_x e_y = e_{xy} =  -e_{yx} = -e_y e_x$`})</li>
+                    <li><b>Rotor in XY plane rotating by $\phi$ counter-clockwise</b>: {`$R(\\phi) = e^{\\phi e_{yx}} = cos(\\phi) + e_{yx} sin(\\phi)$`}</li>
+                    <li><b>Reversion</b>: reverse order of basis vectors (eg. {`$e_{xyz} = e_{zyx} = -e_{xyz}$`}), inverts rotors</li>
+                    <li><b>Apply Rotor $R$ to $x$ using sandwich product</b>: {`$x' = R x \\widetilde{{R}}$`}</li>
+                </ul>
+            </div>
+
             <h3>Conclusion</h3>
             <div>
                 In this section we introduced Geometric Algebra. We learnt the basic rules of the Geometric Product and how to work with them.
