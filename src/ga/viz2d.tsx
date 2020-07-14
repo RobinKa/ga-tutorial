@@ -199,7 +199,7 @@ export function SceneView(props: SceneViewProps) {
 
             {scene.infos && scene.infos.map((info, i) => {
                 return (
-                    <text key={i} fontWeight="100" x={1} y={6 + i} fontSize={info.fontSize || 1} fill={info.color || "white"}>
+                    <text key={i} fontWeight="100" x={1} y={5 + 5 * i} fontSize={info.fontSize || 1} fill={info.color || "white"}>
                         {info.text}
                     </text>
                 )
