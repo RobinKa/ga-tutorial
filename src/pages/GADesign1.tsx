@@ -70,6 +70,7 @@ export function GADesign1() {
                 In the first part of this article we will try to figure out how to create a
                 GA that contains the objects we want. Specifically we will try to create a
                 GA containing <a href="https://en.wikipedia.org/wiki/Elliptic_curve">elliptic curves</a>.
+                In the second part we will also look at the rotors.
             </div>
 
             <h4>How are objects represented outside of GA?</h4>
@@ -189,8 +190,9 @@ export function GADesign1() {
             </div>
             <div>
                 Another interesting observation here is that we have a constant term in the polynomial 
-                which comes from the fact that we add a constant bivector {`$e_{xy}$`} 
-                in the up function. This allows PGA to represent translated objects.
+                which comes from the fact that we add a constant bivector {`$1 e_{xy}$`} 
+                in the up function. This allows PGA to represent translated objects unlike ordinary GA which 
+                can only represent objects through the origin.
             </div>
             <div>
                 Furthermore the number of basis vectors is arbitrary. For each term we want we can simply add another basis vector 
@@ -211,10 +213,10 @@ export function GADesign1() {
                 \\end{aligned}`}
 
                 Vectors will now be able to represent elliptic curves as well as other simpler curves (parabolas, cubics, lines, ...).
-                You can verify this by hand by applying the OPNS equation to a vector.
+                You can verify this by hand by applying the OPNS equation to a vector as before in the 2D PGA example.
             </div>
 
-            <h4>Join and meet</h4>
+            <h4>Join and meet (WIP)</h4>
             <div>
                 <div>
                     In PGA and any other algebra that uses an OPNS representation the meet operation is done using the wedge product $\wedge$ 
