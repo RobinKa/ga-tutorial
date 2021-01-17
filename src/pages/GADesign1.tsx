@@ -76,11 +76,9 @@ export function GADesign1() {
             <h4>How are objects represented outside of GA?</h4>
             <div>
                 <div>
-                    Let's first look at how objects are represented in the existing GAs.
-                    Before jumping into GA we should take a step back and remember how we represented
+                    Before jumping into GA we should take a step back and remember how we represented 
                     objects in algebra before.
                 </div>
-
                 <div>
                     Usually we represent a 2D line by the linear equation $y = a x + b$, a circle at the origin
                     by $x^2 + y^2 = r^2$ and so on. Rearranging this a bit to bring everything to the same
