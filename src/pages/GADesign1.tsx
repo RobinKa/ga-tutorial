@@ -55,7 +55,7 @@ export function GADesign1() {
                         <td>Rotation, Translation, Uniform scaling</td>
                     </tr>
                     <tr>
-                        <td><a href="https://arxiv.org/abs/1903.02444">Quadric Geometric Algebra</a></td>
+                        <td><a href="https://www.researchgate.net/publication/324067465_Quadric_Conformal_Geometric_Algebra_of_mathbb_R96R96">Quadric Geometric Algebra</a></td>
                         <td>9, 6, 0</td>
                         <td>Quadrics (3D)</td>
                         <td>Rotation, Translation, Uniform scaling</td>
