@@ -83,8 +83,8 @@ export function GADesign1() {
 
                 <div>
                     Usually we represent a 2D line by the linear equation $y = a x + b$, a circle at the origin
-                    by $(x - y)^2 = r^2$ and so on. Rearranging this a bit to bring everything to the same
-                    side we get equivalently $ax + b - y = 0$ and $(x - y)^2 - r^2 = 0$. The object is then
+                    by $x^2 + y^2 = r^2$ and so on. Rearranging this a bit to bring everything to the same
+                    side we get equivalently $ax + b - y = 0$ and $x^2 + y^2 - r^2 = 0$. The object is then
                     represented by all the points $(x, y)$ for which these equations are true, that is, for which
                     the left hand side evaluates to zero. We call this the null space or kernel of the function.
                 </div>
