@@ -99,84 +99,83 @@ export function GADesign1() {
                     up: \\mathbb{R}^N \\mapsto \\mathbb{Cl}(...)
                     \\end{equation}`}
 
-                    In 2D PGA, as mentioned above, this is just {`$up(x, y) = x e_{0y} + y e_{x0} + 1 e_{xy}$`}.
-                    How do we connect this representation to the usual null-space representation?
+                    Here's a table of the previously mentioned algebras and their up functions.
+
+                    <table style={{ width: "100%", padding: "2%" }}>
+                        <tr>
+                            <th style={{ textAlign: "left" }}>Name</th>
+                            <th style={{ textAlign: "left" }}>Up</th>
+                        </tr>
+                        <tr>
+                            <td>Ordinary GA</td>
+                            <td>$x e_x + y e_y + z e_z + ...$</td>
+                        </tr>
+                        <tr>
+                            <td>Projective Geometric Algebra</td>
+                            <td>$x e_x^* + y e_y^* + ... + 1 e_0^*$</td>
+                        </tr>
+                        <tr>
+                            <td>Conformal Geometric Algebra</td>
+                            <td>$1 e_o + x e_x + y e_y + ... + \frac{1}{2} (x^2 + y^2 + ...) e_\infty$</td>
+                        </tr>
+                        <tr>
+                            <td>Conic Geometric Algebra</td>
+                            <td>{`$e_{o+} + x e_x + y e_y + \\frac{1}{2} (x^2 + y^2) e_{\\infty +} + \\frac{1}{2} (x^2 - y^2) e_{\\infty +} + x y e_{\\infty \\times}$`}</td>
+                        </tr>
+                        <tr>
+                            <td>Quadric Geometric Algebra</td>
+                            <td>{`$x e_x + ... + \\frac{1}{2} (x^2 e_{\\infty 1} + ...) + x y e_{\\infty 4} + ... + 1 e_{o 1} + ... $`}</td>
+                        </tr>
+                    </table>
+
+                    How do we connect these representations to the usual null-space representation?
+                    There are two almost equivalent ways of doing this.
                 </div>
+                <h5>Inner Product Null Space Representation</h5>
+                <div>
+                    The first one is the Inner Product Null Space (IPNS) representation. Here we say that the inner product
+                    of our object, let's call it $o$, is zero with arbitrary other objects of the same grade if the other 
+                    object lies on our object. For example if our object $o$ is a vector and $X$ is an arbitrary vector then we get
 
-                There are two different ways of doing this, and an algebra typically uses only one of them.
+                    {`\\begin{equation}
+                    X \\cdot o = 0
+                    \\end{equation}`}
+                    
+                    The IPNS representation has the downside that we need to define a metric so the inner product works.
+                    This means that the representation depends on what our basis vectors square to. This also doesn't work
+                    for degenerate metrics such as the one used by PGA.
+                </div>
+                <h5>Outer Product Null Space Representation</h5>
+                <div>
+                    The second representation is the Outer Product Null Space (OPNS) representation. Instead of the inner product 
+                    we use the outer product which means we don't need to define a metric either and this will work the same regardless 
+                    of what our basis vectors square to. We wedge with an arbitrary object with the dual grade of the object 
+                    we're wedging with. For example if the object $o$ is a vector then the arbitrary $X$ will be a pseudovector.
 
-                The first one is the Inner Product Null Space (IPNS) representation. Here we say that the inner product
-                of the object in IPNS representation, let's call it $o$, is zero for all points that lie on it.
+                    {`\\begin{equation}
+                    X \\wedge o = 0
+                    \\end{equation}`}
 
-                {`\\begin{equation}
-                up(X) \\cdot o = 0
-                \\end{equation}`}
-                
-                So for all ordinary points X, this term will be zero if the point lies on the object $o$.
-                The IPNS representation has the downside that we need to define a metric so the inner product works.
-                This means that the representation depends on what our basis vectors square to.
-                With IPNS points are represented by vectors.
+                    We will continue using OPNS from now on and apply it to recover more familiar equations for the objects.
+                </div>
+                <h5>OPNS applied to PGA 2D</h5>
+                <div>
+                    Let's apply the OPNS equation to see what a vector in 2D PGA represents. For the arbitrary $X$ 
+                    we need to use a pseudovector. The $up(x, y)$ function gives us a pseudovector (bivector in 2D) 
+                    so let's use it in place of $X$
 
-                The second representation is the Outer Product Null Space (OPNS) representation. Instead of the inner product 
-                we use the outer product. Also we wedge with the dual grade of the object we're wedging with (so for an object 
-                represented by a vector, we wedge with a pseudovector).
+                    {`\\begin{aligned}
+                    up(x, y) \\wedge vector & = (x e_{0y} + y e_{x0} + 1 e_{xy}) \\wedge (a e_x + b e_y - d e_0)  & = \\\\
+                    & = a x e_{0xy} + b y e_{0xy} - d e_{0xy}  & =  \\\\
+                    & = a x + b y - d = 0 &
+                    \\end{aligned}`}
 
-                {`\\begin{equation}
-                up(X) \\wedge o = 0
-                \\end{equation}`}
-
-                With OPNS points are represented by pseudovectors (ie. the dual of a vector). Since only the metric-independent outer product is used here 
-                this will work the same regardless of what the basis vectors square to.
-
-                Here's a table of the aforementioned algebras and their up functions.
-
-                <table style={{ width: "100%", padding: "2%" }}>
-                    <tr>
-                        <th style={{ textAlign: "left" }}>Name</th>
-                        <th style={{ textAlign: "left" }}>Type</th>
-                        <th style={{ textAlign: "left" }}>Up</th>
-                    </tr>
-                    <tr>
-                        <td>Ordinary GA</td>
-                        <td>IPNS</td>
-                        <td>$x e_x + y e_y + z e_z + ...$</td>
-                    </tr>
-                    <tr>
-                        <td>Projective Geometric Algebra</td>
-                        <td>OPNS</td>
-                        <td>$x e_x^* + y e_y^* + ... + e_0*$</td>
-                    </tr>
-                    <tr>
-                        <td>Conformal Geometric Algebra</td>
-                        <td>IPNS</td>
-                        <td>$1 e_o + x e_x + y e_y + ... + \frac{1}{2} (x^2 + y^2 + ...) e_\infty$</td>
-                    </tr>
-                    <tr>
-                        <td>Conic Geometric Algebra</td>
-                        <td>IPNS</td>
-                        <td>{`$e_{o+} + x e_x + y e_y + \\frac{1}{2} (x^2 + y^2) e_{\\infty +} + \\frac{1}{2} (x^2 - y^2) e_{\\infty +} + x y e_{\\infty \\times}$`}</td>
-                    </tr>
-                    <tr>
-                        <td>Quadric Geometric Algebra</td>
-                        <td>IPNS</td>
-                        <td>{`$x e_x + ... + \\frac{1}{2} (x^2 e_{\\infty 1} + ...) + x y e_{\\infty 4} + ... + 1 e_{o 1} + ... $`}</td>
-                    </tr>
-                </table>
-                
-                PGA uses an OPNS representation. Now to see how it relates to the usual understanding of how objects are represented 
-                we apply the OPNS equation to see what a vector in 2D PGA represents.
-
-                {`\\begin{aligned}
-                up(x, y) \\wedge plane & = (x e_{0y} + y e_{x0} + 1 e_{xy}) \\wedge (a e_x + b e_y - d e_0)  & = \\\\
-                & = a x e_{0xy} + b y e_{0xy} - d e_{0xy}  & =  \\\\
-                & = a x + b y - d = 0 &
-                \\end{aligned}`}
-
-                We have recovered the usual equation for a line. Unlike the previous one, this one also has a coefficient for $y$ which makes 
-                it possible to represent vertical lines (by setting $b = 0$ we get $a x = d$). Hence the vectors in 2D PGA represent lines.
+                    We have recovered the usual equation for a line. Unlike the previous one, this one also has a coefficient for $y$ which makes 
+                    it possible to represent vertical lines (by setting $b = 0$ we get $a x = d$). Hence the vectors in 2D PGA represent lines.
+                </div>
             </div>
 
-            <h4>Representing polynomials as GA objects</h4>
+            <h4>Representing polynomials in GA</h4>
             <div>
                 Looking at how we arrived at the equation for a line from the OPNS equation we can see that the 
                 coefficients $a, b, d$ came from the object whose representation we're trying to understand, but the 
@@ -185,7 +184,7 @@ export function GADesign1() {
             </div>
             <div>
                 As an example, if we wanted to represent parabolas, we would need to have a basis vector that has $x^2$ as a 
-                coefficient in $up$. For example {`$up(x, y) = x e_{0y} + y e_{x0} + 1 e_{xy}$`} 
+                coefficient in $up$. For example {`$up(x, y) = x^2 e_{0y} + y e_{x0} + 1 e_{xy}$`} 
                 would give us $a x^2 + b y - d = 0$ after applying the OPNS equation.
             </div>
             <div>
