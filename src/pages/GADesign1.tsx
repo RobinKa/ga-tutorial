@@ -64,7 +64,7 @@ export function GADesign1() {
 
                 So if what we need is contained in one of these we can simply use them and
                 benefit from the previous exploration done within them.
-                What if we have need something that is not contained in one of these pre-made
+                What if we need something that is not contained in one of these pre-made
                 GAs though? Is there a way to create exactly what we need?
                 
                 In the first part of this article we will try to figure out how to create a
@@ -162,7 +162,7 @@ export function GADesign1() {
                 <h5>OPNS applied to PGA 2D</h5>
                 <div>
                     Let's apply the OPNS equation to see what a vector in 2D PGA represents. For the arbitrary $X$ 
-                    we need to use a pseudovector. The $up(x, y)$ function gives us a pseudovector (bivector in 2D) 
+                    we need to use a pseudovector. The $up(x, y)$ function gives us a pseudovector (bivector in this case) 
                     so let's use it in place of $X$
 
                     {`\\begin{aligned}
@@ -219,8 +219,9 @@ export function GADesign1() {
             <h4>Join and meet (WIP)</h4>
             <div>
                 <div>
-                    In PGA and any other algebra that uses an OPNS representation the meet operation is done using the wedge product $\wedge$ 
-                    and join is done using the regressive product $\vee$.
+                    If points are represented by vectors the join is $\wedge$ and meet is $\vee$.
+                    In algebras that uses a dual representation for points such as PGA this is reversed and join is $\vee$ 
+                    and meet is $\wedge$.
                 </div>
                 <div>
                     Something interesting happens when we look at the meet operation which returns the intersection object of two objects.
