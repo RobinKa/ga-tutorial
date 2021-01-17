@@ -45,6 +45,7 @@ export function PointElementPGA2D(props: PointElementPGA2DProps) {
         }
     }, [x, y, trail, trailCount])
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(updateTrail, [x, y])
 
     return (
