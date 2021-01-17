@@ -17,6 +17,7 @@ export function TutorialIndex() {
                 <li><Link to="/ga-basics">Geometric Algebra Basics</Link></li>
                 <li><Link to="/pga">Projective Geometric Algebra</Link></li>
                 <li><Link to="/pga-geometry">PGA Geometry</Link></li>
+                <li><Link to="/ga-design-1">Design of Geometric Algebras - Part 1</Link></li>
             </ol>
         </div>
     )

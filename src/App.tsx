@@ -7,6 +7,7 @@ import * as ga3d from "./ga/ga_ppp"
 import * as pga from "./ga/ga_zpp"
 import * as viz from "./ga/viz2d"
 import { PGAGeometryTutorial } from "./pages/PGAGeometryTutorial"
+import { GADesign1 } from "./pages/GADesign1"
 
 // Dictionary of path elements to replace with full names
 // in the breadcrumbs.
@@ -14,7 +15,8 @@ const breadcrumbPathToName: { [key: string]: string } = {
     "motivation": "Motivation",
     "ga-basics": "Geometric Algebra Basics",
     "pga": "Projective Geometric Algebra",
-    "pga-geometry": "PGA Geometry"
+    "pga-geometry": "PGA Geometry",
+    "ga-design-1": "Designing Geometric Algebras - Part 1",
 }
 
 export const pathToBreadcrumbs = (path: string) => {
@@ -88,6 +90,9 @@ function TutorialSite() {
                         </Route>
                         <Route exact path="/">
                             <TutorialIndex />
+                        </Route>
+                        <Route exact path="/ga-design-1">
+                            <GADesign1 />
                         </Route>
                         <Route path="*">
                             <NotFound />
