@@ -95,7 +95,7 @@ export function GADesign2() {
             </div>
             <h4>Rotor exploration</h4>
             <b style={{color: "red"}}>
-                Here are some things I tried. I might this section later or move it to a new page later once I figure out a good pattern 
+                Here are some things I tried. I might remove this section later or move it to a new page later once I figure out a good pattern 
                 for constructing our desired rotors.
             </b>
             <h5>PGA-like rotors for rotation and translation</h5>
@@ -207,6 +207,38 @@ export function GADesign2() {
                     Perhaps it is possible to construct scaling rotors for each direction this way if we could 
                     change the $x$ and $y$ in the denominator by adjusting our up function and basis vectors.
                 </div>
+            </div>
+            <h5>Non-uniform scaling rotor</h5>
+            <div>
+                We want rotors that only scale in one direction, instead of scaling all directions equally. 
+                Start with PGA, but for up instead use the logarithm on the coordinates
+
+                {`\\begin{aligned}
+                up(x, y) = log(x) e_1^* + log(y) e_2^* + 1 e_0^*
+                \\end{aligned}`}
+
+                If we try to find the inverse mapping (ie. get the $(x, y)$ coordinates a bivector represents) we have 
+
+                {`\\begin{aligned}
+                x = exp(\\frac{\\langle p \\rangle_{1^*}}{\\langle p \\rangle_{0^*}}), y = exp(\\frac{\\langle p \\rangle_{2^*}}{\\langle p \\rangle_{0^*}})
+                \\end{aligned}`}
+
+                If we now apply a translator $T_x(log(s_x))$ that translates by $log(s_x)$ in the $e_x^*$ direction (just like in the usual PGA), we get 
+
+                {`\\begin{aligned}
+                & T_x(log(s_x)) up(x, y) \\widetilde{T_x}(log(s_x)) \\\\
+                = & (log(x) + log(s_x)) e_x^* + log(y) e_y^* + 1 e_0^* \\\\
+                = & log(x s_x) e_x^* + log(y) e_y^* + 1 e_0^*
+                \\end{aligned}`}
+
+                Recovering the $(x', y')$ coordinates this result represents using the inverse up mapping we get 
+
+                {`\\begin{aligned}
+                x' = exp(\\frac{log(x s_x)}{1}) = x s_x \\\\
+                y' = exp(\\frac{log(y)}{1}) = y
+                \\end{aligned}`}
+
+                And we have non-uniform scaling, yay! Of course the same will work for scaling $y$ too.
             </div>
             <h4><Link to="/ga-design-3">Next: Design of Geometric Algebras - Part 3</Link></h4>
         </div >
