@@ -50,7 +50,7 @@ export function GADesign1() {
                     </tr>
                     <tr>
                         <td><a href="https://link.springer.com/article/10.1007/s00006-018-0879-2">Conic Geometric Algebra</a></td>
-                        <td>3, 1, 0</td>
+                        <td>5, 3, 0</td>
                         <td>Conics (2D)</td>
                         <td>Rotation, Translation, Uniform scaling</td>
                     </tr>
