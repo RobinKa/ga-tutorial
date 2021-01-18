@@ -288,13 +288,13 @@ export function GADesign1() {
 
                     {`\\begin{aligned}
                     a (-b + y) = 0 & \\implies y = b \\\\
-                    (-a x^2 + b) = 0 & \\implies x^2 = b / a \\\\
-                    b (a x^2 - y) = 0 & \\implies x^2 = y / a \\\\
+                    (-a x^2 + b) = 0 & \\implies x^2 = \\frac{b}{a} \\\\
+                    b (a x^2 - y) = 0 & \\implies x^2 = \\frac{y}{a} \\\\
                     \\end{aligned}`}
 
                     The three equations aren't independent (combining the first and third one gives the second one). This is because we didn't 
                     use the most general form for curves which would give us 3 independent equations we'd need to solve. So now we see that 
-                    the intersection object represents $x^2 = b / a$ and $y = b$. This has two solutions {`$x_{1,2} = \\pm \\sqrt{\\frac{b}{a}}$`} as expected 
+                    the intersection object represents {`$x^2 = \\frac{b}{a}$`} and $y = b$. This has two solutions {`$x_{1,2} = \\pm \\sqrt{\\frac{b}{a}}$`} as expected 
                     and the solutions are the correct ones too (eg. $y$ is just the vertical offset $b$ of the line).
                 </div>
                 <div>
