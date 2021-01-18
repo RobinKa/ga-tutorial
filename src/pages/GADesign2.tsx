@@ -234,11 +234,13 @@ export function GADesign2() {
                 Recovering the $(x', y')$ coordinates this result represents using the inverse up mapping we get 
 
                 {`\\begin{aligned}
-                x' = exp(\\frac{log(x s_x)}{1}) = x s_x \\\\
-                y' = exp(\\frac{log(y)}{1}) = y
+                x' & = exp(\\frac{log(x s_x)}{1}) = x s_x \\\\
+                y' & = exp(\\frac{log(y)}{1}) = y
                 \\end{aligned}`}
 
-                And we have non-uniform scaling, yay! Of course the same will work for scaling $y$ too.
+                And we have non-uniform scaling, yay! Of course the same will work for scaling $y$ too. 
+                There is still a big issue though: $x$ and $y$ have to be greater than zero since the logarithm 
+                is not defined otherwise.
             </div>
             <h4><Link to="/ga-design-3">Next: Design of Geometric Algebras - Part 3</Link></h4>
         </div >
