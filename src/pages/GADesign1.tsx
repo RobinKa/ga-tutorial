@@ -134,10 +134,10 @@ export function GADesign1() {
                 <h5>Inner Product Null Space Representation</h5>
                 <div>
                     The first one is the Inner Product Null Space (IPNS) representation. Here we say that the inner product
-                    of our object, let's call it $o$, is zero for arbitrary points produced by our up function.
+                    of our object, let's call it $o$, is zero for an arbitrary point produced by our up function.
 
                     {`\\begin{equation}
-                    X \\cdot o = 0
+                    up(...) \\cdot o = 0
                     \\end{equation}`}
                     
                     The IPNS representation has the downside that we need to define a metric so the inner product works.
@@ -151,7 +151,7 @@ export function GADesign1() {
                     of what our basis vectors square to. We wedge our object $o$ with an arbitrary point produced by our up function.
 
                     {`\\begin{equation}
-                    X \\wedge o = 0
+                    up(...) \\wedge o = 0
                     \\end{equation}`}
 
                     The intuition here is that if points are represented by vectors then $\wedge$ represents the join operation. If 
