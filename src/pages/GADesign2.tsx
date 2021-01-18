@@ -72,7 +72,7 @@ export function GADesign2() {
                 vectors and corresponding terms in the up function $x^2, y, 1$.
 
                 <div style={{ padding: "2%" }}>
-                    <CoffeeShop id="_NodUfCGt" title="Parabola and line rotor example" />
+                    <CoffeeShop id="j6gKZCgwS" title="Parabola and line rotor example" />
                 </div>
 
                 Here's another example where we rotate an elliptic curve into vertical lines (the algebra can represent vertical line tuples).
@@ -242,6 +242,8 @@ export function GADesign2() {
                 There is still a big issue though: $x$ and $y$ have to be greater than zero since the logarithm 
                 is not defined otherwise (or we could just use the complex logarithm? although maybe there's a nicer GA way 
                 of avoiding arbitrary complex numbers here).
+
+                <CoffeeShop id="dg4qW2Vqs" title="Non-uniform scaling with rotors" />
             </div>
             <h4><Link to="/ga-design-3">Next: Design of Geometric Algebras - Part 3</Link></h4>
         </div >
