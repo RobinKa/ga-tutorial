@@ -10,7 +10,7 @@ export function GADesign1() {
 
     return (
         <div>
-            <h3>Designing Geometric Algebras</h3>
+            <h3>Designing Geometric Algebras - Part 1</h3>
             <div>
                 Typically we choose a Geometric Algebra that will work well with our problem.
                 First there are the object types the different GAs can represent.
@@ -26,7 +26,7 @@ export function GADesign1() {
                 <table style={{ width: "100%", padding: "2%" }}>
                     <tr>
                         <th style={{ textAlign: "left" }}>Name</th>
-                        <th style={{ textAlign: "left" }}>{`$\\mathbb{Cl}(p, q, r)$`}</th>
+                        <th style={{ textAlign: "left" }}>Signature</th>
                         <th style={{ textAlign: "left" }}>Objects</th>
                         <th style={{ textAlign: "left" }}>Rotors</th>
                     </tr>
@@ -162,7 +162,7 @@ export function GADesign1() {
                 <div>
                     We will continue using OPNS from now on and apply it to recover more familiar equations for the objects.
                 </div>
-                <h5>OPNS applied to PGA 2D</h5>
+                <h5>Example: OPNS applied to PGA 2D</h5>
                 <div>
                     Let's apply the OPNS equation to see what a vector in 2D PGA represents. For the arbitrary $X$ 
                     we need to use a pseudovector. The $up(x, y)$ function gives us a pseudovector (bivector in this case) 
@@ -204,7 +204,7 @@ export function GADesign1() {
                 regardless of what the basis vectors square to.
             </div>
 
-            <h4>Example: Elliptic curves in GA</h4>
+            <h5>Example: Elliptic curves in GA</h5>
             <div>
                 Looking at the <a href="https://en.wikipedia.org/wiki/Elliptic_curve">Wikipedia article for elliptic curves</a> 
                 we can find that the equation for an elliptic curve is $y^2 = x^3 + a x + b 1$. So to represent them we need 
@@ -301,7 +301,7 @@ export function GADesign1() {
                     Great, we have shown that what we learnt makes sense and can be applied without much thought required. We could even plot the solutions 
                     using a library that can plot the null space of the algebraic equations implicitly.
                 </div>
-                <h5>Intersecting Elliptic Curves</h5>
+                <h5>Example: Intersecting Elliptic Curves</h5>
                 <div>
                     To be continued.
                 </div>
