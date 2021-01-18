@@ -240,7 +240,8 @@ export function GADesign2() {
 
                 And we have non-uniform scaling, yay! Of course the same will work for scaling $y$ too. 
                 There is still a big issue though: $x$ and $y$ have to be greater than zero since the logarithm 
-                is not defined otherwise.
+                is not defined otherwise (or we could just use the complex logarithm? although maybe there's a nicer GA way 
+                of avoiding arbitrary complex numbers here).
             </div>
             <h4><Link to="/ga-design-3">Next: Design of Geometric Algebras - Part 3</Link></h4>
         </div >
