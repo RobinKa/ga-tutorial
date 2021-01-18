@@ -108,7 +108,7 @@ export function GADesign2() {
                 However we can introduce a new basis vector $e_3$ that squares to zero and add it to our up function with a constant coefficient. 
                 Assuming our two basis vectors $e_1, e_2$ we started with both square to one, we get rotors for rotation between $e_1, e_2$ as 
                 well as translations in either direction if we sandwich with the exponential of the dual of a vector. That is, 
-                the exponential of a point, for example exponential of the dual of e_x is {`$e^{\frac{d}{2} e_1^*} $`} will give a translator (a rotor 
+                the exponential of a point, for example exponential of the dual of e_x is {`$e^{\\frac{d}{2} e_1^*} $`} will give a translator (a rotor 
                 doing translation) in the 1-direction by d when applied with the sandwich product.
             </div>
             <h5>Shear rotors</h5>
