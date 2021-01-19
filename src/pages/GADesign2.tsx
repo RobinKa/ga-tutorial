@@ -195,7 +195,7 @@ export function GADesign2() {
                     change the $x$ and $y$ in the denominator by adjusting our up function and basis vectors.
                 </div>
             </div>
-            <h5>Non-uniform scaling rotor</h5>
+            <h5>Non-isotropic scaling rotor</h5>
             <div>
                 We want rotors that only scale in one direction, instead of scaling all directions equally. 
                 Start with PGA, but for up instead use the logarithm on the coordinates
@@ -225,12 +225,12 @@ export function GADesign2() {
                 y' & = exp(\\frac{log(y)}{1}) = y
                 \\end{aligned}`}
 
-                And we have non-uniform scaling, yay! Of course the same will work for scaling $y$ too. 
+                And we have non-isotropic scaling, yay! Of course the same will work for scaling $y$ too. 
                 There is still a big issue though: $x$ and $y$ have to be greater than zero since the logarithm 
                 is not defined otherwise (or we could just use the complex logarithm? although maybe there's a nicer GA way 
                 of avoiding arbitrary complex numbers here).
 
-                <CoffeeShop id="dg4qW2Vqs" title="Non-uniform scaling with rotors" />
+                <CoffeeShop id="dg4qW2Vqs" title="Non-isotropic scaling with rotors" />
             </div>
             <h4><Link to="/ga-design-3">Next: Design of Geometric Algebras - Part 3</Link></h4>
         </div >
