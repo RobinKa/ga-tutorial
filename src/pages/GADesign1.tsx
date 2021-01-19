@@ -182,8 +182,8 @@ export function GADesign1() {
 
                     {`\\begin{aligned}
                     up(x, y) \\vee vector & = (x e_{0y} + y e_{x0} + 1 e_{xy}) \\vee (a e_{0y} + b e_{x0} + c e_{xy}) \\\\
-                    & = b x e_{xy} + c x e_{x0} + a y e_{xy} + c y e_{0y} - a e_{x0} - b e_{y0}  \\\\
-                    & = e_{x0} (c x - a) + e_{0y} (c y - b) + e_{xy} (b x + a y)
+                    & = b x e_{xy} + c x e_{x0} - a y e_{xy} + c y e_{0y} - a e_{x0} - b e_{y0}  \\\\
+                    & = e_{x0} (c x - a) + e_{0y} (c y - b) + e_{xy} (b x - a y)
                     \\end{aligned}`}
 
                     We get three equations that have to vanish, only two of which are independent.
@@ -191,7 +191,7 @@ export function GADesign1() {
                     {`\\begin{aligned}
                     & c x - a = 0 & \\implies x = \\frac{a}{c} \\\\
                     & c y - b = 0 & \\implies y = \\frac{b}{c} \\\\
-                    & b x + a y = b \\frac{a}{c} + a y = 0 & \\implies y = \\frac{b}{c}
+                    & b x - a y = b \\frac{a}{c} - a y = 0 & \\implies y = \\frac{b}{c}
                     \\end{aligned}`}
 
                     The coordinates we extract get divided by the {`$e_{xy}$`} part of the point. We automatically get homogeneous space and
