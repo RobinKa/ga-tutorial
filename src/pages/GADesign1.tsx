@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
+import { CoffeeShop } from "./CoffeeShop"
 
 export function GADesign1() {
     // Need to retrigger equation typesetting as it's only done once on startup
@@ -243,6 +244,8 @@ export function GADesign1() {
                 Vectors will now be able to represent elliptic curves as well as other simpler curves (parabolas, cubics, lines, ...).
                 You can verify this by hand (or ideally using symbolic math software) by applying the OPNS equation to a vector as 
                 before in the 2D PGA example.
+
+                <CoffeeShop id="aEncZBjgb" title="Elliptic curves in GA" />
             </div>
 
             <h4>Join and meet</h4>
@@ -322,8 +325,10 @@ export function GADesign1() {
                     and the solutions are the correct ones too (eg. $y$ is just the vertical offset $b$ of the line).
                 </div>
                 <div>
-                    Great, we have shown that what we learnt makes sense and can be applied without much thought required. We could even plot the solutions 
+                    Great, we have shown that what we learnt makes sense and can be applied without much thought required. We can even plot the solutions 
                     using a library that can plot the null space of the algebraic equations implicitly.
+                    
+                    <CoffeeShop id="CHBV5IJ4J" title="Parabola intersects line in GA" />
                 </div>
                 <h5>Example: Intersecting Elliptic Curves</h5>
                 <div>

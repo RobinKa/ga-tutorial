@@ -1,19 +1,6 @@
 import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
-
-function CoffeeShop(props: { id: string, title?: string }) {
-    const { id, title } = props
-
-    const url = `https://enkimute.github.io/ganja.js/examples/coffeeshop.html#${id}`
-
-    return (
-        <div>
-            <iframe src={`${url}&amp;fullscreen`} title={title} width="100%" height="600px" frameBorder={0}>
-            </iframe>
-            <sub><a href={url}>Link to CoffeeShop with code</a></sub>
-        </div>
-    )
-}
+import { CoffeeShop } from "./CoffeeShop"
 
 export function GADesign2() {
     // Need to retrigger equation typesetting as it's only done once on startup
