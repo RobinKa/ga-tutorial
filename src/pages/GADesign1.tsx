@@ -182,9 +182,9 @@ export function GADesign1() {
                     What happens when we apply the OPNS to PGA points (pseudovectors, bivectors in 2D)?
 
                     {`\\begin{aligned}
-                    up(x, y) \\vee vector & = (x e_{0y} + y e_{x0} + 1 e_{xy}) \\vee (a e_{0y} + b e_{x0} + c e_{xy}) \\\\
-                    & = b x e_{xy} + c x e_{x0} - a y e_{xy} + c y e_{0y} - a e_{x0} - b e_{y0}  \\\\
-                    & = e_{x0} (c x - a) + e_{0y} (c y - b) + e_{xy} (b x - a y)
+                    up(x, y) \\vee point & = (x e_{0y} + y e_{x0} + 1 e_{xy}) \\vee (a e_{0y} + b e_{x0} + c e_{xy}) \\\\
+                    & = b x e_0 + c x e_y - a y e_0 + c y e_x - a e_y - b e_x  \\\\
+                    & = e_y (c x - a) + e_x (c y - b) + e_0 (b x - a y)
                     \\end{aligned}`}
 
                     We get three equations that have to vanish, only two of which are independent.
