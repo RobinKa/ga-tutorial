@@ -177,6 +177,31 @@ export function GADesign1() {
                     We have recovered the usual equation for a line. Unlike the previous one, this one also has a coefficient for $y$ which makes 
                     it possible to represent vertical lines (by setting $b = 0$ we get $a x = -d$). Hence the vectors in 2D PGA represent lines.
                 </div>
+                <div>
+                    What happens when we apply the OPNS to PGA points (pseudovectors, bivectors in 2D)?
+
+                    {`\\begin{aligned}
+                    up(x, y) \\vee vector & = (x e_{0y} + y e_{x0} + 1 e_{xy}) \\vee (a e_{0y} + b e_{x0} + c e_{xy}) \\\\
+                    & = b x e_{xy} + c x e_{x0} + a y e_{xy} + c y e_{0y} - a e_{x0} - b e_{y0}  \\\\
+                    & = e_{x0} (c x - a) + e_{0y} (c y - b) + e_{xy} (b x + a y)
+                    \\end{aligned}`}
+
+                    We get three equations that have to vanish, only two of which are independent.
+
+                    {`\\begin{aligned}
+                    & c x - a = 0 & \\implies x = \\frac{a}{c} \\\\
+                    & c y - b = 0 & \\implies y = \\frac{b}{c} \\\\
+                    & b x + a y = b \\frac{a}{c} + a y = 0 & \\implies y = \\frac{b}{c}
+                    \\end{aligned}`}
+
+                    The coordinates we extract get divided by the {`$e_{xy}$`} part of the point. We automatically get homogeneous space and
+                    projective points just by defining the up function the way we did with the constant coefficient term {`$1 e_{xy}$`}.
+                </div>
+                <div>
+                    As a final note, applying OPNS is like finding an inverse for the up function. For points it indeed gives 
+                    the inverse mapping (ie. as if we just inverted the function directly) but the OPNS also generalizes it to 
+                    apply to elements other than points in a consistent manner.
+                </div>
             </div>
 
             <h4>Representing polynomials in GA</h4>
