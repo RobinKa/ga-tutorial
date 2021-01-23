@@ -74,32 +74,34 @@ function TutorialSite() {
                     <div className="demo-crumbs mdl-color-text--grey-500">
                         {breadcrumbs}
                     </div>
-                    <Switch>
-                        <Route path="/motivation">
-                            <Motivation />
-                        </Route>
-                        <Route path="/ga-basics">
-                            <GATutorial />
-                        </Route>
-                        <Route path="/pga">
-                            <PGATutorial />
-                        </Route>
-                        <Route path="/pga-geometry">
-                            <PGAGeometryTutorial />
-                        </Route>
-                        <Route exact path="/">
-                            <TutorialIndex />
-                        </Route>
-                        <Route exact path="/ga-design-1">
-                            <GADesign1 />
-                        </Route>
-                        <Route exact path="/ga-design-2">
-                            <GADesign2 />
-                        </Route>
-                        <Route path="*">
-                            <NotFound />
-                        </Route>
-                    </Switch>
+                    <div id="section-to-print">
+                        <Switch>
+                            <Route path="/motivation">
+                                <Motivation />
+                            </Route>
+                            <Route path="/ga-basics">
+                                <GATutorial />
+                            </Route>
+                            <Route path="/pga">
+                                <PGATutorial />
+                            </Route>
+                            <Route path="/pga-geometry">
+                                <PGAGeometryTutorial />
+                            </Route>
+                            <Route exact path="/">
+                                <TutorialIndex />
+                            </Route>
+                            <Route exact path="/ga-design-1">
+                                <GADesign1 />
+                            </Route>
+                            <Route exact path="/ga-design-2">
+                                <GADesign2 />
+                            </Route>
+                            <Route path="*">
+                                <NotFound />
+                            </Route>
+                        </Switch>
+                    </div>
                 </div>
             </div>
             <footer className="demo-footer mdl-mini-footer">

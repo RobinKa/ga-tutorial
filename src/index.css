@@ -20,3 +20,21 @@ mjx-container {
   overflow-y: hidden;
   max-width: 100%;
 }
+
+/* https://stackoverflow.com/a/2618980/4332314 */
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #section-to-print, #section-to-print * {
+    visibility: visible;
+  }
+  #section-to-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
