@@ -82,8 +82,8 @@ export function GADesign2() {
             </div>
             <h4>Rotor exploration</h4>
             <b style={{color: "red"}}>
-                Here are some things I tried. I might remove this section later or move it to a new page later once I figure out a good pattern 
-                for constructing our desired rotors.
+                Here are some things I tried. I might remove this section later or move it to a new page once I figure out a good pattern 
+                for constructing our desired rotors. Beware of mistakes.
             </b>
             <h5>PGA-like rotors for rotation and translation</h5>
             <div>
@@ -233,6 +233,7 @@ export function GADesign2() {
                 <CoffeeShop id="dg4qW2Vqs" title="Non-isotropic scaling with rotors" />
             </div>
             <h5>Translators in any variable for polynomial up functions</h5>
+            <b style={{color: "red"}}>This part is flawed / wrong, but I left it up since it still contains some useful ideas.</b>
             <div>
                 Assume we have an up function $up(x, ...) = x e_1^* + x^2 e_2^* + 1 e_0^* + ...$ which can represent parabolas, lines, points and so on.
                 If we want to have translation as rotors (translators), it's not that easy. In PGA we only have one basis vector with an $x$ coefficient 
@@ -278,6 +279,7 @@ export function GADesign2() {
                 the bivector {`$e_{30}$`} will result in zero when multiplied with {`$e_0^* = e_{123}$`} which is the part that usually enables us to do translation for non-zero squaring basis vectors.
             </div>
             <div>
+                <b style={{color: "red"}}>The idea in this step is wrong which makes the entire thing not work out. The bivector will give a shearor not a translator, and will also affect the wrong dual basis vector.</b>
                 We introduce a new basis vector $e_4^2 = 1$ with coefficient $1$ in the up function. This will allow us to do translations in $e_3^*$ with the bivector {`$e_{34}$`} 
                 because it squares to zero (ie. does translation) and {`$e_{34} e_4^* = e_{34} e_{0123} = -e_{0124}$`} instead of zero.
             </div>
