@@ -332,7 +332,13 @@ export function GADesign1() {
                 </div>
                 <h5>Example: Intersecting Elliptic Curves</h5>
                 <div>
-                    To be continued.
+                    Here's another fun example to demonstrate join and meet on elliptic curves.
+
+                    <CoffeeShop id="jDEasJlYu" />
+                    
+                    We have a dynamic black curve that interpolates between the blue and the red one using rotors which will be explained in the next part. 
+                    The black curve intersected with the red curve gives the green points. 
+                    The teal points oscillate around the center. Teal joined with green gives the pink curve.
                 </div>
             </div>
             <h4>Conclusion</h4>
