@@ -296,6 +296,10 @@ export function GADesign2() {
                     <li>Tears, lots of new basis vectors, complicated rotors, but it works out</li>
                 </ol>
 
+                Finally here's an example of this in action, however the renderer doesn't seem to like this very much as the points don't get rendered correctly (or I made a mistake somewhere?) but you get the idea hopefully.
+
+                <CoffeeShop id="OoWAStmiP" />
+
                 Perhaps there's a better way. I don't know whether this works for functions other than polynomials either, it might for some, but it certainly doesn't for many because the correction terms 
                 can not be done with translators, although if we had more rotors in our toolbox than just translators this might be fixable.
             </div>
