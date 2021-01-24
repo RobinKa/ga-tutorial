@@ -188,7 +188,7 @@ export function GADesign2() {
                     In different notation, the composed map is
 
                     {`\\begin{aligned}
-                    (x, y) \\rightarrow (\\frac{x}{1 + d_x x + d_y y}, \\frac{y}{1 + d_x x + d_y y})
+                    (x, y) \\to (\\frac{x}{1 + d_x x + d_y y}, \\frac{y}{1 + d_x x + d_y y})
                     \\end{aligned}`}
 
                     Perhaps it is possible to construct scaling rotors for each direction this way if we could 
@@ -231,6 +231,73 @@ export function GADesign2() {
                 of avoiding arbitrary complex numbers here).
 
                 <CoffeeShop id="dg4qW2Vqs" title="Non-isotropic scaling with rotors" />
+            </div>
+            <h5>Translators in any variable for polynomial up functions</h5>
+            <div>
+                Assume we have an up function $up(x, ...) = x e_1^* + x^2 e_2^* + 1 e_0^* + ...$ which can represent parabolas, lines, points and so on.
+                If we want to have translation as rotors (translators), it's not that easy. In PGA we only have one basis vector with an $x$ coefficient 
+                so we can do the translation using a single rotor {`$e^{\\frac{d}{2} e_{x0}}$`}, but if we did with the above up function we would change 
+                the $x$ coefficient while leaving the $x^2$ coefficient untouched. If we look at the OPNS / VPNS of a point that was only translated in $e_1^*$ 
+
+                {`\\begin{aligned}
+                & (x e_1^* + x^2 e_2^* + 1 e_0^*) \\vee ((a + d) e_1^* + b e_2* + c e_0*) \\\\
+                = & x b e_{12}^* + x c e_{10}^* + x^2 (a + d) e_{21}^* + x^2 c e_{20}* + (a + d) e_{01}* + b e_{02}* \\\\
+                = & (x c - a - d) e_{10}^* + (x b - a - d) e_{12}^* + (x^2 c - b) e_{20}^* = 0
+                \\end{aligned}`}
+
+                we get three equations that have to vanish
+
+                {`\\begin{aligned}
+                x c - a - d & = 0 \\\\
+                x b - a - d & = 0 \\\\
+                x^2 c - b & = 0 \\\\
+                \\end{aligned}`}
+
+                Notice the first and second equation together give $x b = x c$. But the third equation gives $b = x^2 c$. 
+                Both of these together give $x^3 c = x c$ which can only be true for $x = 0$. and our wrongly translated point does indeed not 
+                represent anything useful.
+            </div>
+            <div>
+                To get something useful again we need to translate all coefficients where $x$ appears in the up function. For instance $x^2$ should get translated as
+                
+                {`\\begin{equation}
+                x^2 \to (x + d)^2 = x^2 + d^2 + 2 d x
+                \\end{equation}`}
+                
+                First we need to translate the $e_2^*$ coefficient by $d^2$ which is easy using the rotor {`$e^{\\frac{d^2}{2} e_{20}}$`}. 
+                Next we need to translate the $e_2^*$ part by $2 d x$ which is a shear. 
+                This is not possible with the current set of basis vectors we have available as we can only translate by constants and not in proportion to $x$ as required here.
+            </div>
+            <div>
+                We introduce a new basis vector $e_3^2 = 0$ with coefficient $x$ in the up function. Then we get the rotors we need as {`$e^{d e_{13}}$`} (note, no division by 2 as we need twice 
+                the amount). This solves the issue of translating the $x^2$ part. However this introduces a new problem. The new basis vector we introduced has coefficient $x$ so in order 
+                to keep it consistent (non-empty OPNS / VPNS) we need to translate it too. 
+            </div>
+            <div>
+                Again this is not that easy because usually we use the bivectors containing $e_0$ to do translations. We can't do that here to translate $e_3$ because it squares to zero and thus 
+                the bivector {`$e_{30}$`} will result in zero when multiplied with {`$e_0^* = e_{123}$`} which is the part that usually enables us to do translation for non-zero squaring basis vectors.
+            </div>
+            <div>
+                We introduce a new basis vector $e_4^2 = 1$ with coefficient $1$ in the up function. This will allow us to do translations in $e_3^*$ with the bivector {`$e_{34}$`} 
+                because it squares to zero (ie. does translation) and {`$e_{34} e_4^* = e_{34} e_{0123} = -e_{0124}$`} instead of zero.
+            </div>
+            <div>
+                Now we can compose all the rotors we just came up with to get a single rotor that does translation in $x$ by $d$. In conclusion, we introduced two new basis vectors, one for 
+                allowing us to do translation in proportional to $x$ and another to allow us to translate the new basis vector by a constant. The composed rotor is a lot more complicated too. 
+                However this will work for any polynomial if we apply this idea recursively. For example for $x^3$ we want $(x + d)^3 = x^3 + d^3 + 3 d^2 x + 3 d x^2$. Here we could do the same thing:
+                
+                <ol>
+                    <li>Translate $x^3$ part by $d^3$</li>
+                    <li>Introduce new basis vector with coeff. $x$ for translation by $d x$</li>
+                    <li>Introduce new basis vector for translating the new basis vector by $d$</li>
+                    <li>Introduce new basis vector for translation relative to $x^2$</li>
+                    <li>New basis vector needs to be translated as $(x + d)^2$ so we can apply the same idea</li>
+                    <li>...</li>
+                    <li>Tears, lots of new basis vectors, complicated rotors, but it works out</li>
+                </ol>
+
+                Perhaps there's a better way. I don't know whether this works for functions other than polynomials either, it might for some, but it certainly doesn't for many because the correction terms 
+                can not be done with translators, although if we had more rotors in our toolbox than just translators this might be fixable.
             </div>
             <h4><Link to="/ga-design-3">Next: Design of Geometric Algebras - Part 3</Link></h4>
         </div >
