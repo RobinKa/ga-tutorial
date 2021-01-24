@@ -261,7 +261,7 @@ export function GADesign2() {
                 To get something useful again we need to translate all coefficients where $x$ appears in the up function. For instance $x^2$ should get translated as
                 
                 {`\\begin{equation}
-                x^2 \to (x + d)^2 = x^2 + d^2 + 2 d x
+                x^2 \\to (x + d)^2 = x^2 + d^2 + 2 d x
                 \\end{equation}`}
                 
                 First we need to translate the $e_2^*$ coefficient by $d^2$ which is easy using the rotor {`$e^{\\frac{d^2}{2} e_{20}}$`}. 
