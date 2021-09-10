@@ -208,10 +208,10 @@ export function SRSpacetimeAlgebra() {
                 a minus sign instead of a plus sign in front of the spatial offsets.
             </div>
             <div>
-                Note: Alice's part only appears to be missing because the spatial offset because her's is zero (the light started and ended at the same horizontal coordinate).
+                Note: Alice's part only appears to be missing because her spatial offset is zero (the light started and ended at the same horizontal coordinate).
             </div>
             <div>
-                What we have discovered is the distance of spacetime, also called hyperbolic distance. In 3 space dimensions we thus have
+                What we have discovered is the distance of spacetime that we can use to measure distance between spacetime events. In 3 space dimensions we thus have
             </div>
             <div style={{ padding: 20 }}>
                 {`
