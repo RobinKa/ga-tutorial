@@ -18,6 +18,7 @@ jobs:
       - run: npm install
       - run: npm test
       - run: npm run build
+        continue-on-error: true
 
       - name: Push to gh-pages
         if: contains(github.ref, 'master')
