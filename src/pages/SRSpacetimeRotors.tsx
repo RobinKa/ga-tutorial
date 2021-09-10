@@ -70,7 +70,7 @@ export function SRSpacetimeRotors() {
             <h4>Rotors in the Spacetime Algebra</h4>
             <div>
                 To continue, we need to look at what the rotors in the Spacetime Algebra actually do. We will only need the rotors for bivectors squaring to $+1$, ie. {`$e_{tx}, e_{ty}, e_{tz}$`}.
-                Let's stick with {`$e_{tx}$`} for now. How do we get rotors from bivectors? We stick them in the exponential function with an angle $\phi$, usually negated and halved because we need to apply a
+                Let's stick with {`$e_{tx}$`} for now. How do we get rotors from bivectors? We stick them in the exponential function with an angle $\varphi$, usually negated and halved because we need to apply a
                 two-sided product.
             </div>
             <div style={{ padding: 20 }}>
@@ -143,23 +143,23 @@ export function SRSpacetimeRotors() {
                 Now we know what the rotor angle $\varphi$ tells us about how the vector we draw will look like.
             </div>
             <div>
-                We note that if $\phi = 0$, then the slope is $\infty$ (vertical) and the length is one.
+                We note that if $\varphi = 0$, then the slope is $\infty$ (vertical) and the length is one.
                 This makes sense as rotating by 0 should leave the input unchanged.
-                Furthermore, for $\phi \to \infty$, we can see that $slope \to 1$. As we increase the angle of the rotor, the slope tends towards $1$. A slope of $1$ means a 45° angle. Recall that
+                Furthermore, for $\varphi \to \infty$, we can see that $slope \to 1$. As we increase the angle of the rotor, the slope tends towards $1$. A slope of $1$ means a 45° angle. Recall that
                 light travels at 45° angles, so this is good! Using these rotors we can never exceed (or even reach) 45°. Finally, the length also tends towards infinity, meaning if we rotate the rest
                 velocity vector, its length will always increase.
             </div>
             <h5>Relation between velocity and angle</h5>
             <div>
-                Let's solve one remaining riddle. What's the exact relation between the angle $\phi$ and velocity $v$?
-                We know that for light the slope is $1$, so {`$tanh(\\phi_{light}) = 1$`}. We also know that the rest velocity
+                Let's solve one remaining riddle. What's the exact relation between the angle $\varphi$ and velocity $v$?
+                We know that for light the slope is $1$, so {`$tanh(\\varphi_{light}) = 1$`}. We also know that the rest velocity
                 has slope infinity (vertical), ie. {`$tanh(0) = 0$`}. Based on these two datapoints, what do you think the relation is?
                 The correct answer that also fits both datapoints is
             </div>
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    tanh(\\phi) = \\frac{v}{c}
+                    tanh(\\varphi) = \\frac{v}{c}
                     \\label{eq:anglevelocity}
                 \\end{equation}
                 `}
@@ -192,7 +192,7 @@ export function SRSpacetimeRotors() {
             </div>
             {`
             \\begin{equation}
-                v_{ball} = c \\cdot tanh(\\phi_1 + \\phi_2) = c \\cdot tanh(tanh^{-1}(0.8) + tanh^{-1}(0.4)) \\approx 0.9c
+                v_{ball} = c \\cdot tanh(\\varphi_1 + \\varphi_2) = c \\cdot tanh(tanh^{-1}(0.8) + tanh^{-1}(0.4)) \\approx 0.9c
             \\end{equation}
             `}
             <div>
