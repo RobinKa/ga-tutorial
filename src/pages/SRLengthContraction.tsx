@@ -22,7 +22,7 @@ export function SRLengthContraction() {
             <div>
                 There is another perspective to the velocity addition problem we solved in the previous section. Another way to view this is that we rotated Alice's
                 basis vector (her spacetime velocity) {`$e_t^{(a)}$`} into Bob's basis vector {`$e_t^{(b)}$`} (his spacetime velocity).
-                This is done with the rotor in $R_1$ in the opposite direction, ie. {`\\widetilde{R_1}`}. We do this to all basis vectors and we get
+                This is done with the rotor in $R_1$ in the opposite direction, ie. {`$\\widetilde{R_1}$`}. We do this to all basis vectors and we get
                 <div style={{ padding: 20 }}>
                     {`
                     \\begin{aligned}
@@ -40,27 +40,34 @@ export function SRLengthContraction() {
             </div>
             <h4>Length Contraction</h4>
             <div>
-                Imagine Alice is standing still and is looking at a fixed-length object that is not moving in her view either, for example a stick on a table.
+                Imagine <u style={{ textDecorationColor: "lightblue", textDecorationThickness: 3 }}>Alice</u> is standing still and is looking at a fixed-length object that is not moving in her view either,
+                for example a <u style={{ textDecorationColor: "red", textDecorationThickness: 3 }}>stick</u> on a table.
                 How does Alice measure the stick? She looks at the endpoints which are only separated on her space axis and takes the difference.
                 What is very important here: the endpoints are not separated in her time axis! She is only measuring a spatial distance and the time for
-                both endpoints is the same. Let's add Bob who is moving relative to Alice. We get the transformation between Alice's and Bob's basis vectors using a rotor $R$.
-                We can now draw a diagram like this
+                both endpoints is the same. Let's add <u style={{ textDecorationColor: "purple", textDecorationThickness: 3 }}>Bob</u> who is moving relative to Alice.
+                We get the transformation between Alice's and Bob's basis vectors using a <u style={{ textDecorationColor: "pink", textDecorationThickness: 3 }}>rotor $R$</u>. We can now draw a diagram like this
             </div>
             <ImageWithSub src="/images/sr-lengthcontraction-1.png" text="Figure 2 - Blue: Alice's frame / basis vectors. Red: Stationary stick with length l. Purple: Bob's frame / basis vectors. Pink: Rotor from Alice's to Bob's frame." width="50%" />
             <div>
-                So both of Bob's basis vectors are a bit tilted compared to Alice's. How does Bob see the measuring stick?
-                The red length vector expressed using Bob's basis vector has both a time and space component. So using it
-                for measuring length would not make sense as we would be measuring both a distance in space as well as
+                So both of <u style={{ textDecorationColor: "purple", textDecorationThickness: 3 }}>Bob's basis vectors</u> are a bit tilted compared to <u style={{ textDecorationColor: "lightblue", textDecorationThickness: 3 }}>Alice's</u>.
+                How does Bob see the measuring stick?
+                The <u style={{ textDecorationColor: "red", textDecorationThickness: 3 }}>stick's vector</u> expressed using Bob's basis vector has both a time and space component, as it is not parallel to either of his Basis vectors.
+                So using it for measuring length would not make sense as we would be measuring both a distance in space as well as
                 a distance in time.
             </div>
             <div>
-                To remedy this we need to draw a line in Bob's frame that occurs at the same moment in time.
-                These lines are parallel to Bob's spatial basis vector {`$e_x^{(b)}$`} (because {`$e_x^{(b)} \\cdot e_t^{(b)} = 0$`}).
-                They are  called lines of simultaneity as events on the line occur at the same time at different places in space.
+                To remedy this we need to draw a line in Bob's frame along which events occur at the same moment in time.
+                These lines are parallel to Bob's spatial basis vector {`$e_x^{(b)}$`} because {`$e_x^{(b)} \\cdot e_t^{(b)} = 0$`},
+                meaning moving along it does not change the time components.
+                These kinds of lines are called lines of simultaneity as events on the line occur at the same time and only at different places in space.
             </div>
             <ImageWithSub src="/images/sr-lengthcontraction-2.png" text="Figure 3 - Orange: Stick along Bob's lines of simultaneity. The yellow and brown lines can be expressed in Alice's frame and relate to the orange line." width="50%" />
             <div>
-                From the drawing we can tell that the yellow vector with known $l$ and brown vector with and unknown $d$ must equal the orange vector we're looking for.
+                From the drawing we can tell that the <u style={{ textDecorationColor: "gold", textDecorationThickness: 3 }}>yellow vector with known $l$</u> plus
+                the <u style={{ textDecorationColor: "#C4A484", textDecorationThickness: 3 }}>brown vector with unknown $d$</u> can be expressed
+                with <u style={{ textDecorationColor: "lightblue", textDecorationThickness: 3 }}>Alice's basis vectors</u> and
+                must equal the <u style={{ textDecorationColor: "orange", textDecorationThickness: 3 }}>orange vector</u> we're looking for which is expressed
+                with <u style={{ textDecorationColor: "purple", textDecorationThickness: 3 }}>Bob's basis vectors</u>.
                 So we can write
             </div>
             <div style={{ padding: 20 }}>
@@ -121,6 +128,7 @@ export function SRLengthContraction() {
                 or less than (if Bob is moving from Alice's view, meaning moving relative to the stick) the length of the stick as seen from Alice's view.
             </div>
             <div>
+                A observer sees lengths moving relative to it shorter than lengths at rest! This is called length contraction.
                 Let's substitute $\varphi$ with the velocity to get the relation between the velocity and the fraction of the length seen by a moving observer
             </div>
             <div style={{ padding: 20 }}>
@@ -161,7 +169,7 @@ export function SRLengthContraction() {
             <h4>Formulas</h4>
             <div>
                 <ul>
-                    <li>Rotate coordinate frames if $R$ rotates from a's to b' velocity: {`$e_t^{(b)} = \\widetilde{R}(\\phi_b) e_t^{(a)} R(\\phi_b)$`}, {`$e_x^{(b)} = \\widetilde{R}(\\phi_b) e_x^{(a)} R(\\phi_b)$`} </li>
+                    <li>Rotate coordinate frames if $R$ rotates from b's to a' velocity: {`$e_t^{(b)} = \\widetilde{R}(\\phi_b) e_t^{(a)} R(\\phi_b)$`}, {`$e_x^{(b)} = \\widetilde{R}(\\phi_b) e_x^{(a)} R(\\phi_b)$`} </li>
                     <li>Gamma factor for observer moving with velocity $v$: {`$\\gamma(v) = \\frac{1}{cosh(tanh^{-1}(\\frac{v}{c}))} = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}}$`}</li>
                     <li>Length contraction for observer b moving with relative velocity $v$: {`$\\frac{l^{(b)}}{l} = \\gamma(v)$`}</li>
                 </ul>
