@@ -1,14 +1,11 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { InteractiveCode } from "./InteractiveCode"
 import * as cnt from "./CodePGATutorial"
 import { Link } from "react-router-dom"
+import { useMathJax } from "../util"
 
 export function PGATutorial() {
-    // Need to retrigger equation typesetting as it's only done once on startup
-    useEffect(() => {
-        // eslint-disable-next-line no-eval
-        eval("if (MathJax && MathJax.typeset) MathJax.typeset();")
-    }, [])
+    useMathJax()
 
     return (
         <div>

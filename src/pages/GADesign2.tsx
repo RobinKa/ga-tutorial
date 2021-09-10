@@ -1,13 +1,10 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Link } from "react-router-dom"
+import { useMathJax } from "../util"
 import { CoffeeShop } from "./CoffeeShop"
 
 export function GADesign2() {
-    // Need to retrigger equation typesetting as it's only done once on startup
-    useEffect(() => {
-        // eslint-disable-next-line no-eval
-        eval("if (MathJax && MathJax.typeset) MathJax.typeset();")
-    }, [])
+    useMathJax()
 
     return (
         <div>

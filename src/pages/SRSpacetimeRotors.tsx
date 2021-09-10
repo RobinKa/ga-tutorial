@@ -1,24 +1,9 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Link } from "react-router-dom"
-
-function ImageWithSub(props: { src: string, text: string, width?: string }) {
-    const { src, text, width } = props
-    return (
-        <div style={{ padding: 20, textAlign: "center" }}>
-            <div>
-                <img src={src} alt={text} style={{ width: width ?? "100%" }} />
-            </div>
-            <sub>{text}</sub>
-        </div>
-    )
-}
+import { ImageWithSub, useMathJax } from "../util"
 
 export function SRSpacetimeRotors() {
-    // Need to retrigger equation typesetting as it's only done once on startup
-    useEffect(() => {
-        // eslint-disable-next-line no-eval
-        eval("if (MathJax && MathJax.typeset) MathJax.typeset();")
-    }, [])
+    useMathJax()
 
     return (
         <div>
@@ -27,7 +12,7 @@ export function SRSpacetimeRotors() {
             <div>
                 To motivate spacetime rotors, we need more trains (these are very popular in relativity apparently). 
             </div>
-            <ImageWithSub src="/images/sr-addvel.png" text="Figure 5 - Left: Alice is on a train throwing a ball and sees Bob outside the train, Right: Bob looks at Alice throwing a ball in her moving train" width="90%" />
+            <ImageWithSub src="/images/sr-addvel.png" text="Figure 1 - Left: Alice is on a train throwing a ball and sees Bob outside the train, Right: Bob looks at Alice throwing a ball in her moving train" width="90%" />
             <div>
                 Consider Alice is now on a train. On the train, she is throwing a ball with speed $0.4c$ (yes, yes... very contrived).
                 Outside of the train is Bob who can see the train moving at $0.8c$. Alice, on the train, sees herself standing still but sees Bob
@@ -47,7 +32,7 @@ export function SRSpacetimeRotors() {
             <div>
                 Okay this might sound far-fetched first. Rotate between spacetime velocities? Let's look at this sketch.
             </div>
-            <ImageWithSub src="/images/sr-rotors.png" text="Figure 6 - Diagonal yellow: Light. Left: Alice's view, Alice (blue) is at rest, Bob (purple) moves left, Ball (green) moves right. Right: Bob's view, Alice (blue) moves right, Bob (purple) is at rest, Ball (green) is moves right." />
+            <ImageWithSub src="/images/sr-rotors.png" text="Figure 2 - Diagonal yellow: Light. Left: Alice's view, Alice (blue) is at rest, Bob (purple) moves left, Ball (green) moves right. Right: Bob's view, Alice (blue) moves right, Bob (purple) is at rest, Ball (green) is moves right." />
             <h5>Alice's view (left)</h5>
             <div>
                 Alice (blue) is at rest so her path velocity vector points in her $e_t$ direction.
@@ -110,7 +95,7 @@ export function SRSpacetimeRotors() {
             <div>
                 We can see the result is some mix of $e_t$ and $e_x$.
             </div>
-            <ImageWithSub src="/images/sr-rotors2.png" text="Figure 7 - Yellow: Light. Dark blue: Velocity of object at rest. Light blue: Velocity of moving object. Orange: Rotor between object at rest and moving object." width="50%" />
+            <ImageWithSub src="/images/sr-rotors2.png" text="Figure 3 - Yellow: Light. Dark blue: Velocity of object at rest. Light blue: Velocity of moving object. Orange: Rotor between object at rest and moving object." width="50%" />
             <div>
                 To get some more intuition let's look at the slope of the result. The $e_t$ part is on the y-axis and the $e_x$ part is on the x-axis
                 so we have
@@ -126,7 +111,7 @@ export function SRSpacetimeRotors() {
                 So the slope is equal to one over the hyperbolic tangent $tanh$. If you're familiar with neural networks you probably already know how the $tanh$ function looks (and perhaps other fields I'm not familiar with).
                 Here's a sketch
             </div>
-            <ImageWithSub src="/images/sr-tanh.png" text="Figure 8 - Hyperbolic tangent function, zero at phi equal to 0, one towards positive and negative infinity." width="50%" />
+            <ImageWithSub src="/images/sr-tanh.png" text="Figure 4 - Hyperbolic tangent function, zero at phi equal to 0, one towards positive and negative infinity." width="50%" />
             <div>
                 The second part we need for plotting what the result looks like is the length of the resulting vector. The length in our graph is the euclidean length. This is of course not the length / distance
                 we use in the algebra, but in our drawings, if the $e_x$ and $e_t$ components get bigger, then the vector we draw always gets bigger too. So we also have
@@ -135,7 +120,7 @@ export function SRSpacetimeRotors() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    graphlength(\\varphi) = \\sqrt{cosh^2(\\varphi) + cosh^2(\\varphi)}
+                    graphlength(\\varphi) = \\sqrt{cosh^2(\\varphi) + sinh^2(\\varphi)}
                 \\end{equation}
                 `}
             </div>
@@ -169,7 +154,7 @@ export function SRSpacetimeRotors() {
             </div>
 
             <h4>Velocity addition close to the speed of light: revisited</h4>
-            <ImageWithSub src="/images/sr-rotors.png" text="Figure 9 - Diagonal yellow: Light. Left: Alice's view, Alice (blue) is at rest, Bob (purple) moves left, Ball (green) moves right. Right: Bob's view, Alice (blue) moves right, Bob (purple) is at rest, Ball (green) is moves right." />
+            <ImageWithSub src="/images/sr-rotors.png" text="Figure 5 - Diagonal yellow: Light. Left: Alice's view, Alice (blue) is at rest, Bob (purple) moves left, Ball (green) moves right. Right: Bob's view, Alice (blue) moves right, Bob (purple) is at rest, Ball (green) is moves right." />
             <div>
                 And we're back. This time equipped with the power of rotors that can rotate velocities and the relation between angles and velocities!
                 We want to figure out the velocity of the ball from Bob's perspective (which we don't know yet). For that we look at Bob's frame where he is at rest and apply the two rotors (which we do know).

@@ -1,24 +1,10 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Link } from "react-router-dom"
+import { ImageWithSub, useMathJax } from "../util"
 
-function ImageWithSub(props: { src: string, text: string, width?: string }) {
-    const { src, text, width } = props
-    return (
-        <div style={{ padding: 20, textAlign: "center" }}>
-            <div>
-                <img src={src} alt={text} style={{ width: width ?? "100%" }} />
-            </div>
-            <sub>{text}</sub>
-        </div>
-    )
-}
 
 export function SRSpacetimeAlgebra() {
-    // Need to retrigger equation typesetting as it's only done once on startup
-    useEffect(() => {
-        // eslint-disable-next-line no-eval
-        eval("if (MathJax && MathJax.typeset) MathJax.typeset();")
-    }, [])
+    useMathJax()
 
     return (
         <div>
@@ -97,7 +83,7 @@ export function SRSpacetimeAlgebra() {
                 We parameterize a curve in spacetime with the parameter $\lambda$. Besides that we can also calculate the path velocity that is tangent to the path by differentiating with respect to $\lambda$.
             </div>
             <ImageWithSub src="/images/sr-paths.png" text="Figure 3 - Paths in spacetime, Left: Object at rest in blue and object in motion in green, Right: Light in yellow and impossible motion in red" />
-            <h5>Object at rest (Figure 1 Left: Blue / b)</h5>
+            <h5>Object at rest (Figure 3 Left: Blue / b)</h5>
             <div>
                 How does an object at rest look like if we were to plot it in a spacetime diagram with one time and one space axis? An object at rest does
                 not move in space, but it does move forward in time. So the "world line" of an object should be a straight line in the time direction only.
@@ -108,13 +94,13 @@ export function SRSpacetimeAlgebra() {
                 proportional to $e_t$. Also if we choose the correct parameterization we can always find one where the path velocity will be exactly $e_t$.
                 This property will become very important later as objects at rest play an important role in Special Relativity.
             </div>
-            <h5>Light (Figure 1 Right: Yellow)</h5>
+            <h5>Light (Figure 3 Right: Yellow)</h5>
             <div>
                 For each unit in time $\Delta t$, light will travel $c \Delta t$ in space. We choose the scales of our diagram axes so that light will always trace out 45° lines.
                 Nothing can exceed the speed of light. In our diagrams this means all objects must have an angle between -45° and +45° as otherwise this would mean that the object
                 travels faster than light, such as the red one which is not possible.
             </div>
-            <h5>Object in motion (Figure 1 Left: Green / a)</h5>
+            <h5>Object in motion (Figure 3 Left: Green / a)</h5>
             <div>
                 An object that is moving in spacetime will also have $e_x$ components along the path. We already learnt before that the path can not have angles less steep than 45°
                 or the object would travel faster than light. The same also applies for the path velocity, although its magnitude is not restricted by this (in fact it is arbitrary
@@ -127,14 +113,14 @@ export function SRSpacetimeAlgebra() {
             </div>
 
             <h4>Light clocks and trains</h4>
-            <ImageWithSub src="/images/sr-trains.png" text="Figure 3 - Left: Alice 'a' has a device that sends light from bottom and receives it at the top. Middle: Bob is on a moving train and looks at the device. Right: Charlie is on another moving train and looks at the device." />
+            <ImageWithSub src="/images/sr-trains.png" text="Figure 4 - Left: Alice 'a' has a device that sends light from bottom and receives it at the top. Middle: Bob is on a moving train and looks at the device. Right: Charlie is on another moving train and looks at the device." />
             <div>
                 First of all there are great videos demonstrating what we're about to investigate. You might want to watch them first or watch them if you get confused about the writing, the videos do a much better job.
                 For example <a href="https://youtu.be/AInCqm5nCzw">this one</a> (although they put the device on the train instead of outside of it). We won't be using mirrors here as we can get the same result without two trips which also simplifies the math a bit.
             </div>
             <h5>Setup and Alice</h5>
             <div>
-                Consider Alice standing still on the ground with an apparatus as pictures in figure 2. The height of the apparatus is $h$.
+                Consider Alice standing still on the ground with an apparatus as pictures in figure 4. The height of the apparatus is $h$.
                 Light is sent from the bottom with horizontal coordinate $0$ of to the top in a straight line.
                 In this case, the light is received at the top at the same horizontal coordinate it was sent from, ie. $0$. Let's call
                 the time it took for the light to be sent and received $\Delta t_a$.
@@ -255,7 +241,7 @@ export function SRSpacetimeAlgebra() {
             <div>
                 The algebra has the following basis blades
             </div>
-            <ImageWithSub src="/images/sr-basisblades.png" text="Figure 4 - Basis blades of the Spacetime Algebra" />
+            <ImageWithSub src="/images/sr-basisblades.png" text="Figure 5 - Basis blades of the Spacetime Algebra" />
             <div>
                 In Geometric Algebra we are usually very interested in the bivectors as we can use them for building rotors that
                 do interesting transformations which also easily compose. For example in ordinary Geometric Algebra the bivectors square to $-1$
