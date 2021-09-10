@@ -19,6 +19,9 @@ export function TutorialIndex() {
                 <li><Link to="/pga-geometry">PGA Geometry</Link></li>
                 <li><Link to="/ga-design-1">Design of Geometric Algebras - Part 1</Link></li>
                 <li><Link to="/ga-design-2">Design of Geometric Algebras - Part 2</Link></li>
+                <li><Link to="/sr-intro">Special Relativity with Geometric Algebra - Introduction</Link></li>
+                <li><Link to="/sr-spacetime-algebra">Special Relativity with Geometric Algebra - Spacetime Algebra</Link></li>
+                <li><Link to="/sr-spacetime-rotors">Special Relativity with Geometric Algebra - Spacetime Rotors</Link></li>
             </ol>
         </div>
     )

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from "react"
 import ReactDOM from "react-dom"
 import { BrowserRouter as Router, Switch, Route, useLocation, Link } from "react-router-dom"
-import { TutorialIndex, GATutorial, PGATutorial, Motivation, PGAGeometryTutorial, GADesign1, GADesign2 } from "./pages"
+import { TutorialIndex, GATutorial, PGATutorial, Motivation, PGAGeometryTutorial, GADesign1, GADesign2, SRIntro, SRSpacetimeAlgebra, SRSpacetimeRotors } from "./pages"
 import * as ga from "./ga/ga_pp"
 import * as ga3d from "./ga/ga_ppp"
 import * as pga from "./ga/ga_zpp"
@@ -16,6 +16,10 @@ const breadcrumbPathToName: { [key: string]: string } = {
     "pga-geometry": "PGA Geometry",
     "ga-design-1": "Designing Geometric Algebras - Part 1",
     "ga-design-2": "Designing Geometric Algebras - Part 2",
+    "sr-intro": "Special Relativity with Geometric Algebra - Introduction",
+    "sr-spacetime-algebra": "Special Relativity with Geometric Algebra - Spacetime Algebra",
+    "sr-spacetime-rotors": "Special Relativity with Geometric Algebra - Spacetime Rotors",
+    "sr-length-contraction": "Special Relativity with Geometric Algebra - Length Contraction",
 }
 
 export const pathToBreadcrumbs = (path: string) => {
@@ -96,6 +100,15 @@ function TutorialSite() {
                             </Route>
                             <Route exact path="/ga-design-2">
                                 <GADesign2 />
+                            </Route>
+                            <Route exact path="/sr-intro">
+                                <SRIntro />
+                            </Route>
+                            <Route exact path="/sr-spacetime-algebra">
+                                <SRSpacetimeAlgebra />
+                            </Route>
+                            <Route exact path="/sr-spacetime-rotors">
+                                <SRSpacetimeRotors />
                             </Route>
                             <Route path="*">
                                 <NotFound />

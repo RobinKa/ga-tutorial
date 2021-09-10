@@ -108,7 +108,7 @@ export function InteractiveCode(props: InteractiveCodeProps) {
         try {
             eval(codeToRun)
             setRunResult(newRunResults.join("\n"))
-        } catch (e) {
+        } catch (e: any) {
             setRunResult(e.toString())
         }
 
