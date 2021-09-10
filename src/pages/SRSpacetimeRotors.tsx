@@ -125,21 +125,22 @@ export function SRSpacetimeRotors() {
                 `}
             </div>
             <div>
-                Now we know what the rotor angle $\varphi$ tells us about how the vector we draw will look like.
+                Now we take a deeper look at the slope result we got earlier for different rotor angles $\varphi$.
             </div>
             <div>
-                We note that if $\varphi = 0$, then the slope is $\infty$ (vertical) and the length is one.
-                This makes sense as rotating by 0 should leave the input unchanged.
-                Furthermore, for $\varphi \to \infty$, we can see that $slope \to 1$. As we increase the angle of the rotor, the slope tends towards $1$. A slope of $1$ means a 45° angle. Recall that
-                light travels at 45° angles, so this is good! Using these rotors we can never exceed (or even reach) 45°. Finally, the length also tends towards infinity, meaning if we rotate the rest
+                If $\varphi = 0$, then the slope is $\infty$ (vertical) and the graph length is $1$.
+                This makes sense as rotating by $0$ should leave the input unchanged.
+                Furthermore, for $\varphi \to \infty$, we can see that $slope \to 1$. As we increase the angle of the rotor, the slope tends towards $1$. A slope of $1$ is a 45° angle. Recall that
+                light travels at 45° angles, so this is good! If we increase the angle, our velocity vector rotates towards the speed of light.
+                Using these rotors we can never exceed (or even reach) 45°. Finally, the length also tends towards infinity, meaning if we rotate the rest
                 velocity vector, its length will always increase.
             </div>
             <h5>Relation between velocity and angle</h5>
             <div>
-                Let's solve one remaining riddle. What's the exact relation between the angle $\varphi$ and velocity $v$?
-                We know that for light the slope is $1$, so {`$tanh(\\varphi_{light}) = 1$`}. We also know that the rest velocity
-                has slope infinity (vertical), ie. {`$tanh(0) = 0$`}. Based on these two datapoints, what do you think the relation is?
-                The correct answer that also fits both datapoints is
+                Given what we learnt, we can try to figure out the relationship between the angle $\varphi$ and the velocity $v$.
+                We know that the slope for light is $1$, so {`$tanh(\\varphi_{light}) = 1$`}. We also know that the rest velocity
+                has slope infinity (vertical), ie. {`$tanh(0) = 0$`}. Based on these two data points, what do you think the relation is?
+                The correct answer that also fits both data points is
             </div>
             <div style={{ padding: 20 }}>
                 {`
@@ -161,7 +162,7 @@ export function SRSpacetimeRotors() {
                 Let me show you one more thing (that you probably already knew!) about rotors before we tackle the problem.
             </div>
             <div>
-                When we compose two rotors we get, regardless of what our bivectors square to
+                When we compose two rotors in the same plane we get (no matter what the bivector squares to)
             </div>
             <div style={{ padding: 20 }}>
                 {`
