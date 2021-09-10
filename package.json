@@ -4,6 +4,9 @@
   "homepage": "https://gatut.warlock.ai",
   "private": true,
   "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
     "@types/node": "^16.9.0",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
