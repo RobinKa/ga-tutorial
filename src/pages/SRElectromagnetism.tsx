@@ -1,5 +1,4 @@
 import React, { useEffect } from "react"
-import { Link } from "react-router-dom"
 import { ImageWithSub } from "../util"
 
 export function SRElectromagnetism() {
@@ -78,7 +77,12 @@ export function SRElectromagnetism() {
                 `}
             </div>
             <div>
-                Now we could expand both exponentials into $cosh$ and $sinh$ and simplify. This is a decent amount of effort.
+                Before continuing with the algebra, let's take another look at the diagram. What would we expect to happen if we applied the rotor to the field?
+                The field has a bivector lies in the TX plane, so its component is parallel to the T axis. The rotor (hyperbolically) rotates between the T and the Y axis.
+                So we would expect that the resulting bivector field would also get a TY component.
+            </div>
+            <div>
+                Okay now for the algebra: we could expand both exponentials in {`\\eqref{eq:transformfaraday}`} into $cosh$ and $sinh$ and simplify. This is a decent amount of effort.
                 Alternatively, we notice that the rotor consists of a scalar and {`$e_{ty}$`} part. The scalar part commutes with {`$e_{tx}$`} and the bivector
                 part anti-commutes with it (picks up a minus sign). When expanding the exponential, the scalar part can also be written with negated argument to $cosh$ because $cosh(x) = cosh(-x)$.
                 So commuting and applying this idea will result in:

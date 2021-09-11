@@ -51,7 +51,7 @@ export function SRIntro() {
                 There are also various books that cater to different audiences, to name a few:
                 <ul>
                     <li><a href="https://geometricalgebra.org/">Geometric Algebra for Computer Science</a> by Leo Dorst</li>
-                    <li><a href="https://www.cambridge.org/core/books/geometric-algebra-for-physicists/FB8D3ACB76AB3AB10BA7F27505925091">Geometric Algebra for Physicists</a> by Anthony Lasenby and Chris Doran: Mostly assumes knowledge of physics in the ordinary formalism and introduces them with GA, covers a lot of topics and even General Relativity. I used this book a lot to learn about Special Relatiivty (and other topics).</li>
+                    <li><a href="https://www.cambridge.org/core/books/geometric-algebra-for-physicists/FB8D3ACB76AB3AB10BA7F27505925091">Geometric Algebra for Physicists</a> by Anthony Lasenby and Chris Doran: Mostly assumes knowledge of physics in the ordinary formalism and introduces them with GA, covers a lot of topics and even General Relativity. I used this book a lot to learn about Special Relativity (and other topics).</li>
                     <li><a href="http://peeterjoot.com/writing/geometric-algebra-for-electrical-engineers/">Geometric Algebra for Electrical Engineers</a> by Peeter Joot: What I like about this one is that it does not contain much "noise", just straight usefulness</li>
                     <li><a href="http://www.faculty.luther.edu/~macdonal/laga/index.html">Linear and Geometric Algebra</a> by Alan Macdonald</li>
                 </ul>
