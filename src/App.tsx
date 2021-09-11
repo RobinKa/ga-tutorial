@@ -6,6 +6,7 @@ import * as ga from "./ga/ga_pp"
 import * as ga3d from "./ga/ga_ppp"
 import * as pga from "./ga/ga_zpp"
 import * as viz from "./ga/viz2d"
+import { SRElectromagnetism } from "./pages/SRElectromagnetism"
 
 // Dictionary of path elements to replace with full names
 // in the breadcrumbs.
@@ -20,6 +21,7 @@ const breadcrumbPathToName: { [key: string]: string } = {
     "sr-spacetime-algebra": "Special Relativity with Geometric Algebra - Spacetime Algebra",
     "sr-spacetime-rotors": "Special Relativity with Geometric Algebra - Spacetime Rotors",
     "sr-length-contraction": "Special Relativity with Geometric Algebra - Length Contraction",
+    "sr-electromagnetism": "Special Relativity with Geometric Algebra - Electromagnetism",
 }
 
 export const pathToBreadcrumbs = (path: string) => {
@@ -112,6 +114,9 @@ function TutorialSite() {
                             </Route>
                             <Route exact path="/sr-length-contraction">
                                 <SRLengthContraction />
+                            </Route>
+                            <Route exact path="/sr-electromagnetism">
+                                <SRElectromagnetism />
                             </Route>
                             <Route path="*">
                                 <NotFound />

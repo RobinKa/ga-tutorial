@@ -178,7 +178,7 @@ export function SRLengthContraction() {
             <div>
                 Next we will look at how a moving observer sees an electric field in electromagnetics.
             </div>
-            <h4><Link to="/sr-electromagnetics">Special Relativity with Geometric Algebra - Electromagnetics</Link></h4>
+            <h4><Link to="/sr-electromagnetism">Special Relativity with Geometric Algebra - Electromagnetism</Link></h4>
         </div>
     )
 }

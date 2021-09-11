@@ -39,6 +39,7 @@ export function TutorialIndex() {
                 <li><Link to="/sr-spacetime-algebra">Special Relativity with Geometric Algebra - Spacetime Algebra</Link></li>
                 <li><Link to="/sr-spacetime-rotors">Special Relativity with Geometric Algebra - Spacetime Rotors</Link></li>
                 <li><Link to="/sr-length-contraction">Special Relativity with Geometric Algebra - Length Contraction</Link></li>
+                <li><Link to="/sr-electromagnetism">Special Relativity with Geometric Algebra - Electromagnetism</Link></li>
             </ol>
         </div>
     )
