@@ -79,7 +79,7 @@ export function SRElectromagnetism() {
             <div>
                 Before continuing with the algebra, let's take another look at the diagram. What would we expect to happen if we applied the rotor to the field?
                 The bivector field lies in the TX plane. The rotor (hyperbolically) rotates between the T and the Y axis.
-                So we would expect that the resulting bivector field would not only have a TX component but also a TY component.
+                So we would expect the resulting bivector field to have not only have a TX component but also an XY component.
             </div>
             <div>
                 Okay now for the algebra: we could expand both exponentials in {`\\eqref{eq:transformfaraday}`} into $cosh$ and $sinh$ and simplify. This is a decent amount of effort.
