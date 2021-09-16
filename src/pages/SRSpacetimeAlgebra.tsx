@@ -113,11 +113,20 @@ export function SRSpacetimeAlgebra() {
             </div>
 
             <h4>Light clocks and trains</h4>
-            <ImageWithSub src="/images/sr-trains.png" text="Figure 4 - Left: Alice 'a' has a device that sends light from bottom and receives it at the top. Middle: Bob is on a moving train and looks at the device. Right: Charlie is on another moving train and looks at the device." />
             <div>
                 First of all there are great videos demonstrating what we're about to investigate. You might want to watch them first or watch them if you get confused about the writing, the videos do a much better job.
                 For example <a href="https://youtu.be/AInCqm5nCzw">this one</a> (although they put the device on the train instead of outside of it). We won't be using mirrors here as we can get the same result without two trips which also simplifies the math a bit.
             </div>
+            <div>
+                <video width="50%" loop autoPlay>
+                    <source src="/videos/sr-trainclock-stationary.webm" />
+                </video>
+                <video width="50%" loop autoPlay>
+                    <source src="/videos/sr-trainclock-moving.webm" />
+                </video>
+            </div>
+            <sub style={{ textAlign: "center", margin: "20px" }}>Video 1 - Left: Apparatus as seen from Alice who is at rest with it. Right: Apparatus as seen from Bob who is moving relative to it.</sub>
+            <ImageWithSub src="/images/sr-trains.png" text="Figure 4 - Left: Alice 'a' has a device that sends light from bottom and receives it at the top. Middle: Bob is on a moving train and looks at the device. Right: Charlie is on another moving train and looks at the device." />
             <h5>Setup and Alice</h5>
             <div>
                 Consider Alice standing still on the ground with an apparatus as pictures in figure 4. The height of the apparatus is $h$.
