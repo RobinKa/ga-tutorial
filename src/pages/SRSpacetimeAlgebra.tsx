@@ -118,10 +118,10 @@ export function SRSpacetimeAlgebra() {
                 For example <a href="https://youtu.be/AInCqm5nCzw">this one</a> (although they put the device on the train instead of outside of it). We won't be using mirrors here as we can get the same result without two trips which also simplifies the math a bit.
             </div>
             <div>
-                <video width="50%" loop autoPlay>
+                <video width="50%" loop autoPlay playsInline muted>
                     <source src="/videos/sr-trainclock-stationary.webm" />
                 </video>
-                <video width="50%" loop autoPlay>
+                <video width="50%" loop autoPlay playsInline muted>
                     <source src="/videos/sr-trainclock-moving.webm" />
                 </video>
             </div>
