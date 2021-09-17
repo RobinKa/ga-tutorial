@@ -30,7 +30,7 @@ export function SRSpacetimeAlgebra() {
                 $l^2 = ||v||^2 = v v = v \cdot v = \Delta x^2 + \Delta y^2$
             </div>
             <div>
-                Using rotors we can perform a change of basis. The difference vector $v$ will then transform in the opposite way.
+                Using rotors we can perform a change of basis. The difference vector $v$ will appear to rotate in the opposite way when looking at it in the new basis.
                 For instance if the basis vector $e_x$ gets rotated upwards, $v$ will look closer to the rotated axis {`$e_x' = R e_x \\widetilde{R}$`} than before.
                 A similar thing applies to {`$e_y' = R e_y \\widetilde{R}$`}.
             </div>
