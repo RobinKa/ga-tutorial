@@ -61,7 +61,7 @@ export function SRSpacetimeAlgebra() {
                 An event $a$ as shown in the digram could be "I left home at 8am" with the position being <b>home</b> and the time being <b>8am</b>.
                 Another event $b$ could then be "I arrived at work at 9am" with position <b>work</b> and time <b>9am</b>. We can now form difference vectors again.
                 For this example let's assume home and work are <b>10km</b> apart in the x direction. Then we have a difference vector $v = 3600s e_t + 10km e_x$.
-                What if we calculate it's length? Doing it like before, and assuming that all basis vectors square to $+1$ we get the expression
+                What if we calculate its length? Doing it like before, and assuming that all basis vectors square to $+1$ we get the expression
             </div>
             <div style={{ padding: 20 }}>
                 $l^2 = v \cdot v = (\Delta x)^2 + (\Delta t)^2 = (10km)^2 + (3600s)^2$
