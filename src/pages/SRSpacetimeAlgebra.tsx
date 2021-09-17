@@ -211,7 +211,7 @@ export function SRSpacetimeAlgebra() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    d = \\Delta t^2 - \\Delta x^2 - \\Delta y^2 - \\Delta z^2
+                    d = c^2 \\Delta t^2 - \\Delta x^2 - \\Delta y^2 - \\Delta z^2
                     \\label{eq:invariantinterval}
                 \\end{equation}
                 `}
@@ -243,7 +243,7 @@ export function SRSpacetimeAlgebra() {
                 \\begin{aligned}
                     & ||c \\Delta t e_t + \\Delta x e_x + \\Delta y e_y + \\Delta z e_z||^2 = \\\\
                     = & (c \\Delta t e_t + \\Delta x e_x + \\Delta y e_y + \\Delta z e_z) \\cdot (c \\Delta t e_t + \\Delta x e_x + \\Delta y e_y + \\Delta z e_z) = \\\\
-                    = & \\Delta t^2 - \\Delta x^2 - \\Delta y^2 - \\Delta z^2
+                    = & c^2 \\Delta t^2 - \\Delta x^2 - \\Delta y^2 - \\Delta z^2
                 \\end{aligned}
                 `}
             </div>
