@@ -86,7 +86,7 @@ export function SRSpacetimeAlgebra() {
             <h5>Object at rest (Figure 3 Left: Blue / b)</h5>
             <div>
                 How does an object at rest look like if we were to plot it in a spacetime diagram with one time and one space axis? An object at rest does
-                not move in space, but it does move forward in time. So the "world line" of an object should be a straight line in the time direction only.
+                not move in space, but it does move forward in time. So the "world line" of an object at rest should be a straight line in the time direction only.
                 It can still be arbitrarily offset on the space dimension, it just does not move in it.
             </div>
             <div>
@@ -129,8 +129,8 @@ export function SRSpacetimeAlgebra() {
             <ImageWithSub src="/images/sr-trains.png" text="Figure 4 - Left: Alice 'a' has a device that sends light from bottom and receives it at the top. Middle: Bob is on a moving train and looks at the device. Right: Charlie is on another moving train and looks at the device." />
             <h5>Setup and Alice</h5>
             <div>
-                Consider Alice standing still on the ground with an apparatus as pictures in figure 4. The height of the apparatus is $h$.
-                Light is sent from the bottom with horizontal coordinate $0$ of to the top in a straight line.
+                Consider Alice standing still on the ground with an apparatus as pictured in figure 4. The height of the apparatus is $h$.
+                Light is sent from the bottom with horizontal coordinate $0$ to the top in a straight line.
                 In this case, the light is received at the top at the same horizontal coordinate it was sent from, ie. $0$. Let's call
                 the time it took for the light to be sent and received $\Delta t_a$.
             </div>
