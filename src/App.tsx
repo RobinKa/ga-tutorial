@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from "react"
 import ReactDOM from "react-dom"
 import { BrowserRouter as Router, Switch, Route, useLocation, Link } from "react-router-dom"
-import { TutorialIndex, GATutorial, PGATutorial, Motivation, PGAGeometryTutorial, GADesign1, GADesign2, SRIntro, SRSpacetimeAlgebra, SRSpacetimeRotors, SRLengthContraction } from "./pages"
+import { TutorialIndex, GATutorial, PGATutorial, Motivation, PGAGeometryTutorial, GADesign1, GADesign2, SRIntro, SRSpacetimeAlgebra, SRSpacetimeRotors, SRLengthContraction, SRGAReview } from "./pages"
 import * as ga from "./ga/ga_pp"
 import * as ga3d from "./ga/ga_ppp"
 import * as pga from "./ga/ga_zpp"
@@ -105,6 +105,9 @@ function TutorialSite() {
                             </Route>
                             <Route exact path="/sr-intro">
                                 <SRIntro />
+                            </Route>
+                            <Route exact path="/sr-ga-review">
+                                <SRGAReview />
                             </Route>
                             <Route exact path="/sr-spacetime-algebra">
                                 <SRSpacetimeAlgebra />

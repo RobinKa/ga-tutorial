@@ -20,9 +20,10 @@ export function SRLengthContraction() {
             <h4>Changing Bases</h4>
             <ImageWithSub src="/images/sr-rotors.png" text="Figure 1 - Diagonal yellow: Light. Left: Alice's view, Alice (blue) is at rest, Bob (purple) moves left, Ball (green) moves right. Right: Bob's view, Alice (blue) moves right, Bob (purple) is at rest, Ball (green) is moves right." />
             <div>
-                There is another perspective to the velocity addition problem we solved in the previous section. Another way to view this is that we rotated Alice's
-                basis vector (her spacetime velocity) {`$e_t^{(a)}$`} into Bob's basis vector {`$e_t^{(b)}$`} (his spacetime velocity).
-                This is done with the rotor in $R_1$ in the opposite direction, ie. {`$\\widetilde{R_1}$`}. We do this to all basis vectors and we get
+                There is another perspective to the velocity addition problem we solved in the previous section. Another way to view this as a passive transformation.
+                We rotate Alice's basis vector (her spacetime velocity) {`$e_t^{(a)}$`} into Bob's basis vector {`$e_t^{(b)}$`} (his spacetime velocity).
+                This is done with the rotor in $R_1$ in the opposite direction, ie. {`$\\widetilde{R_1}$`}.
+                We do this to all basis vectors and we get
                 <div style={{ padding: 20 }}>
                     {`
                     \\begin{aligned}

@@ -6,7 +6,7 @@ export function TutorialIndex() {
         <div>
             <h3>Index</h3>
             <div>
-                
+
             </div>
             <h4>Geometric Algebra and Projective Geometric Algebra Introduction</h4>
             <div>
@@ -20,7 +20,6 @@ export function TutorialIndex() {
                 <li><Link to="/motivation">Motivation</Link></li>
                 <li><Link to="/ga-basics">Geometric Algebra Basics</Link></li>
                 <li><Link to="/pga">Projective Geometric Algebra</Link></li>
-                <li><Link to="/pga-geometry">PGA Geometry</Link></li>
             </ol>
             <h4>Design of Geometric Algebras</h4>
             <div>
@@ -28,14 +27,15 @@ export function TutorialIndex() {
             </div>
             <ol>
                 <li><Link to="/ga-design-1">Design of Geometric Algebras - Part 1</Link></li>
-                <li><Link to="/ga-design-2">Design of Geometric Algebras - Part 2</Link></li>
+                <li><Link to="/ga-design-2">Design of Geometric Algebras - Part 2</Link> <b style={{ color: "red" }}>(WIP, flawed)</b></li>
             </ol>
             <h4>Special Relativity with Geometric Algebra</h4>
             <div>
-                Introduction to Special Relativity using Geometric Algebra.
+                Introduction to Special Relativity using Geometric Algebra. Work in progress.
             </div>
             <ol>
                 <li><Link to="/sr-intro">Special Relativity with Geometric Algebra - Introduction</Link></li>
+                <li><Link to="/sr-ga-review">Special Relativity with Geometric Algebra - Geometric Algebra Review</Link></li>
                 <li><Link to="/sr-spacetime-algebra">Special Relativity with Geometric Algebra - Spacetime Algebra</Link></li>
                 <li><Link to="/sr-spacetime-rotors">Special Relativity with Geometric Algebra - Spacetime Rotors</Link></li>
                 <li><Link to="/sr-length-contraction">Special Relativity with Geometric Algebra - Length Contraction</Link></li>

@@ -18,9 +18,9 @@ export function SRIntro() {
                 The laws of physics are the same in all inertial reference frames.
             </code>
             <div>
-                What this means is that for observers moving we can write down laws of physics that are true for all of them
-                regardless of their speed. The restriction to only inertial reference frames means that the acceleration for the
-                observers needs to be zero. The more general case with accelerated reference frames is treated in Einstein's General Relativity.
+                An inertial reference frame is the frame of an unaccelerated observer, ie. one moving with constant velocity.
+                The postulate says that for such frames, we can write down formulas which will be true for all observers
+                even if their velocity is different. The more general case with accelerated reference frames is treated in Einstein's General Relativity.
             </div>
             <h5>Postulate 2</h5>
             <code>
@@ -35,8 +35,15 @@ export function SRIntro() {
                 with Geometric Algebra simplifies a lot of things.
             </div>
             <ImageWithSub src="/images/sr-einstein.png" text="Albert Einstein and some formulas derived from the postulates of Special Relativity" width="70%" />
-            <h5>References</h5>
-            <b>Geometric Algebra</b>
+            <h4>Why Special Relativity?</h4>
+            <div>
+                Without Special Relativity, we will see that addition of velocities breaks down at speeds close to the speed of light.
+                We will also notice many interesting phenomena such as electric fields being seen as magnetic fields by observers moving at high speeds
+                relative to them, shedding light on the duality between the two. Furthermore it provides a pathway for
+                understanding <a href="https://en.wikipedia.org/wiki/General_relativity">General Relativity</a> which is the basis for our best models of gravity.
+            </div>
+            <h4>References</h4>
+            <h5>Geometric Algebra</h5>
             <div>
                 This series assumes you already know the basics of Geometric Algebra and rotors. There are a couple of articles about that on this website but there are also fantastic
                 introductions on YouTube:
@@ -59,13 +66,13 @@ export function SRIntro() {
             <div>
                 The website <a href="https://bivector.net/">bivector.net</a> also contains links to more resources as well as our community discord. Feel free to join and ask questions!
             </div>
-            <b>Special Relativity</b>
+            <h5>Special Relativity</h5>
             <div>
                 There are many excellent videos on YouTube about Special Relativity, for example <a href="https://www.youtube.com/watch?v=FdWMM6aXpYE">The Science Asylum's video</a> great.
                 Leonard Susskind has a recorded lecture series about Special Relativity <a href="https://www.youtube.com/watch?v=toGH5BdgRZ4&amp;list=PLD9DDFBDC338226CA">here</a>. His lectures are always amazing.
                 For books I can only recommend "Geometric Algebra for Physicists" mentioned above. I haven't looked into any specific non-GA books about Special Relativity.
             </div>
-            <h4><Link to="/sr-spacetime-algebra">Special Relativity with Geometric Algebra - Spacetime Algebra</Link></h4>
+            <h4><Link to="/sr-ga-review">Special Relativity with Geometric Algebra - Geometric Algebra Review</Link></h4>
         </div >
     )
 }

@@ -9,43 +9,6 @@ export function SRSpacetimeAlgebra() {
     return (
         <div>
             <h3>Special Relativity with Geometric Algebra - Spacetime Algebra</h3>
-            <h4>Review of ordinary Geometric Algebra</h4>
-            <div>
-                Let's review a couple of properties of ordinary Geometric Algebra. If you are not yet familiar with it there are a few excellent
-                videos on YouTube as well as a couple of books going into GA in more detail.
-            </div>
-            <ImageWithSub src="/images/sr-ordinary-distance.png" text="Figure 1 - Left: Difference vector v in coordinate system, Right: Difference vector v in rotated coordinate system" />
-            <div>
-                In ordinary GA we have basis vectors squaring to 1. Let's say we have two basis vectors $e_x^2 = 1, e_y^2 = 1$.
-                We can form vectors with them as shown in the left side of figure 1. If we have position vectors $a, b$ we can form the difference vector $v$
-                pointing from $a$ to $b$
-            </div>
-            <div style={{ padding: 20 }}>
-                $v = b - a = \Delta x e_x + \Delta y e_y$
-            </div>
-            <div>
-                We can calculate the length of the difference vector by squaring it or using Pythogoras' theorem
-            </div>
-            <div style={{ padding: 20 }}>
-                $l^2 = ||v||^2 = v v = v \cdot v = \Delta x^2 + \Delta y^2$
-            </div>
-            <div>
-                Using rotors we can perform a change of basis. The difference vector $v$ will appear to rotate in the opposite way when looking at it in the new basis.
-                For instance if the basis vector $e_x$ gets rotated upwards, $v$ will look closer to the rotated axis {`$e_x' = R e_x \\widetilde{R}$`} than before.
-                A similar thing applies to {`$e_y' = R e_y \\widetilde{R}$`}.
-            </div>
-            <div>
-                The difference vector expressed in the new coordinate system is $v = \Delta x' e_x' + \Delta y' e_y'$.
-                We can see that the coordinate coefficients $\Delta x', \Delta y'$ in the new basis are different than the ones in the old basis $\Delta x, \Delta y$. Fundamentally the vector is still the
-                same though even though we rotated the coordinate axes. Also when we calculate the length of the vector in the new coordinate system
-            </div>
-            <div style={{ padding: 20 }}>
-                $l^2 = \Delta x'^2 + \Delta y'^2$
-            </div>
-            <div>
-                we still get exactly the same result. We can say that a change of bases preserves distances.
-            </div>
-
             <h4>Time as another dimension</h4>
             <div>
                 As Special Relativity tries to unify time and space, it is natural to make time just another dimension like the three spatial ones.
@@ -67,14 +30,15 @@ export function SRSpacetimeAlgebra() {
                 $l^2 = v \cdot v = (\Delta x)^2 + (\Delta t)^2 = (10km)^2 + (3600s)^2$
             </div>
             <div>
-                Does this expression make sense? The first problem we can notice is that the units don't match up. How do we add kilometers (spatial distance) and seconds (time)?
+                Does this expression make sense? The first problem we can notice is that the units don't match up. How do we add kilometers (spatial distance) and seconds (time difference)?
                 To remedy this, we could multiply the time by a constant speed as that would result in a distance. Why not choose the speed of light $c$? We now get
             </div>
             <div style={{ padding: 20 }}>
                 {`$l^2 = v \\cdot v = (\\Delta x)^2 + (c \\Delta t)^2 = (10km)^2 + (300000 \\frac{km}{s} 3600s)^2 = \\text{<big number>} km^2$`}
             </div>
             <div>
-                Well we got around the unit issue. But is this equation useful? We are yet to find.
+                Well we got around the unit issue, although we did not justify the multiplication by $c$ very well yet. The true justification for it will come soon.
+                Another big question is whether this kind of distance is useful at all.
             </div>
             <h4>Paths in Spacetime</h4>
             <div>
