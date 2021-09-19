@@ -93,7 +93,7 @@ export function SRSpacetimeAlgebra() {
                 Another thing we want to look at is what the points in our spacetime, such as the points on our paths, represent. A point contains a time coordinate and three space coordinates.
                 Points in spacetime are also called events because of this.
             </div>
-            <ImageWithSub src="/images/sr-time-coordinate.png" text="Figure 2 - Time as another dimension and spacetime events" width="50%" />
+            <ImageWithSub src="/images/sr-time-coordinate.png" text="Figure 4 - Time as another dimension and spacetime events" width="50%" />
             <div>
                 An event $a$ as shown in the diagram could be "I left home at 8am" with the position being <b>home</b> and the time being <b>8am</b>.
                 Another event $b$ could then be "I arrived at work at 9am" with position <b>work</b> and time <b>9am</b>. We can now form difference vectors again.
@@ -118,7 +118,7 @@ export function SRSpacetimeAlgebra() {
             <div>
                 Let's take a look at some more types of paths in spacetime.
             </div>
-            <ImageWithSub src="/images/sr-paths.png" text="Figure 4 - Paths in spacetime. Blue (a): Object at rest. Green (b): Object with constant velocity. Purple (c): Accelerated object. Yellow (d): Light. Red (e): Path faster than light." />
+            <ImageWithSub src="/images/sr-paths.png" text="Figure 5 - Paths in spacetime. Blue (a): Object at rest. Green (b): Object with constant velocity. Purple (c): Accelerated object. Yellow (d): Light. Red (e): Path faster than light." />
             <h5><u style={{ textDecorationColor: "blue", textDecorationThickness: 3 }}>Object at rest (a)</u></h5>
             <div>
                 An object at rest does not move in space over time. Its path points purely in the time direction.
@@ -154,8 +154,9 @@ export function SRSpacetimeAlgebra() {
 
             <h4>Spacetime distance</h4>
             <div>
-                A thing we have not looked at yet is what a good notion of distance in spacetime is, and thus what our basis vectors should square to as squaring vectors gives their length, and hence distance.
-                To motivate this we will perform a thought experiment involving light clocks and trains.
+                Something we have not looked at yet is what a good notion of distance in spacetime is. Squaring vectors gives us vector lengths.
+                When we do this, we make use of the squares of basis vectors. What should our spacetime basis vectors square to?
+                To figure this out will perform a thought experiment involving light clocks and trains.
             </div>
             <h5>Light clocks and trains</h5>
             <div>
@@ -171,10 +172,10 @@ export function SRSpacetimeAlgebra() {
                 </video>
             </div>
             <sub style={{ textAlign: "center", margin: "20px" }}>Video 1 - Left: Apparatus as seen from Alice who is at rest with it. Right: Apparatus as seen from Bob who is moving relative to it.</sub>
-            <ImageWithSub src="/images/sr-trains.png" text="Figure 4 - Left: Alice 'a' has a device that sends light from bottom and receives it at the top. Middle: Bob is on a moving train and looks at the device. Right: Charlie is on another moving train and looks at the device." />
+            <ImageWithSub src="/images/sr-trains.png" text="Figure 6 - Left: Alice 'a' has a device that sends light from bottom and receives it at the top. Middle: Bob is on a moving train and looks at the device. Right: Charlie is on another moving train and looks at the device." />
             <h5>Setup and Alice</h5>
             <div>
-                Consider Alice standing still on the ground with an apparatus as pictured in figure 4. The height of the apparatus is $h$.
+                Consider Alice standing still on the ground with an apparatus as pictured in figure 6. The height of the apparatus is $h$.
                 Light is sent from the bottom with horizontal coordinate $0$ to the top in a straight line.
                 In this case, the light is received at the top at the same horizontal coordinate it was sent from, ie. $0$. Let's call
                 the time it took for the light to be sent and received $\Delta t_a$.
@@ -295,7 +296,7 @@ export function SRSpacetimeAlgebra() {
             <div>
                 The algebra has the following basis blades
             </div>
-            <ImageWithSub src="/images/sr-basisblades.png" text="Figure 5 - Basis blades of the Spacetime Algebra" />
+            <ImageWithSub src="/images/sr-basisblades.png" text="Figure 7 - Basis blades of the Spacetime Algebra" />
             <div>
                 In Geometric Algebra we are usually very interested in the bivectors as we can use them for building rotors that
                 do interesting transformations which also easily compose. For example in ordinary Geometric Algebra the bivectors square to $-1$
