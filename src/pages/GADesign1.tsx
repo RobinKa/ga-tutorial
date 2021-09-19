@@ -155,7 +155,7 @@ export function GADesign1() {
                     The intuition here is that if points are represented by vectors then $\wedge$ represents the join operation. If 
                     we try to join a point that already lies on the object we get zero. Note that if we're using a dual representation 
                     (points as pseudovectors) then we need to use $\vee$ instead as that is then the join operation (maybe a better name 
-                    would then be the Vee Product Null Space (VPNS)?). 
+                    would then be the Vee Product Null Space (VPNS)? Or Join Null Space (JNS) for the general case). 
                 </div>
                 <div>
                     We will continue using OPNS from now on and apply it to recover more familiar equations for the objects.
@@ -168,7 +168,6 @@ export function GADesign1() {
 
                     {`\\begin{aligned}
                     up(x, y) \\vee vector & = (x e_{0y} + y e_{x0} + 1 e_{xy}) \\vee (a e_x + b e_y + d e_0) \\\\
-                    & = a x + b y + d  \\\\
                     & = a x + b y + d = 0
                     \\end{aligned}`}
 
