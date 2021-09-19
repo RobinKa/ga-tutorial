@@ -260,7 +260,7 @@ export function SRSpacetimeAlgebra() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    d = c^2 \\Delta t^2 - \\Delta x^2 - \\Delta y^2 - \\Delta z^2
+                    d^2 = c^2 \\Delta t^2 - \\Delta x^2 - \\Delta y^2 - \\Delta z^2
                     \\label{eq:invariantinterval}
                 \\end{equation}
                 `}
@@ -297,7 +297,7 @@ export function SRSpacetimeAlgebra() {
                 `}
             </div>
             <div>
-                The algebra has the following basis blades
+                Now we also have a justification for the factor of $c$ in front of the time component. Furthermore the algebra has the following basis blades
             </div>
             <ImageWithSub src="/images/sr-basisblades.png" text="Figure 7 - Basis blades of the Spacetime Algebra" />
             <div>
@@ -306,6 +306,36 @@ export function SRSpacetimeAlgebra() {
                 and the resulting rotors perform ordinary rotation.
                 In the next section we will take a look at a problem that appears when dealing with speeds close to the speed of light, and
                 we will try to solve the problem in the next section using our new algebra and make use of those bivectors squaring to $+1$.
+            </div>
+
+            <h4>Conclusion</h4>
+            <div>
+                We started the section by looking at how we can express the paths objects take. We ended up with paths in spacetime parameterized by a parameter $\lambda$.
+                Differentiating the path yields the path velocity tangent to the path. The path parameter is called $\tau$ when the path velocity squares to $c^2$.
+            </div>
+            <div>
+                We then saw that the points in spacetime are events containing both a space and time coordinate, and that we had to multiply our
+                time component by the speed of light for the units to make sense.
+            </div>
+            <div>
+                After this we turned our attention to paths again and looked at different kinds of paths of objects in spacetime. Paths of objects at rest
+                are straight lines in the $e_t$ direction. Paths with constant velocity are straight lines in both time and space directions. Light paths
+                are at 45° angles in our diagrams and nothing can have an angle less steep than this.
+            </div>
+            <div>
+                Finally we performed a thought experiment involving a light clock and different observers going at different velocities relative to it to uncover a distance metric for our spacetime.
+                This led to the introduction of the Spacetime Algebra with $e_t$ squaring to $1$ and $e_x, e_y, e_z$ squaring to $-1$.
+            </div>
+            <h4>Formulas</h4>
+            <div>
+                <ul>
+                    <li>Path in spacetime: {`$s(\\lambda)$`}</li>
+                    <li>Path velocity: {`$\\frac{\\partial}{\\partial \\lambda} s(\\lambda)$`}</li>
+                    <li>Path velocity of object at rest: {`$\\frac{\\partial}{\\partial \\lambda} s(\\lambda) \\propto e_t$`}</li>
+                    <li>Path parameterized by proper time: {`$s(\\tau), \\dot{s}(\\tau) = \\frac{\\partial}{\\partial \\tau} s(\\tau), \\dot{s}(\\tau)^2 = c^2$`}</li>
+                    <li>Spacetime distance / invariant interval: {`$d^2 = c^2 \\Delta t^2 - \\Delta x^2 - \\Delta y^2 - \\Delta z^2$`}</li>
+                    <li>Spacetime Algebra: {`$e_t^2 = 1, e_x^2 = e_y^2 = e_z^2 = -1$`}</li>
+                </ul>
             </div>
             <h4><Link to="/sr-spacetime-rotors">Special Relativity with Geometric Algebra - Spacetime Rotors</Link></h4>
         </div>

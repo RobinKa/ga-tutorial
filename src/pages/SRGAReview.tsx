@@ -128,7 +128,7 @@ export function SRGAReview() {
                 `}
             </div>
             <div>
-                As the vector did not actually change, it's length when expressed in the new basis is still be the same as before too
+                As the vector did not actually change, its length when expressed in the new basis is still be the same as before too.
             </div>
             <div style={{ padding: 20 }}>
                 {`
