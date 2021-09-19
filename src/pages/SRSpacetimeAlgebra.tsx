@@ -248,8 +248,9 @@ export function SRSpacetimeAlgebra() {
             </div>
             <div>
                 All three right-hand sides must be equal. Does this look familiar? Think back to passive transformations. The coefficients of a vector expressed in a different coordinate basis
-                might change, but the vectors's length does not change under passive transformations. This is exactly what happened here!
-                There is a small but important difference in that they have a minus sign instead of a plus sign in front of the spatial offsets, so it is not just the ordinary euclidean distance.
+                might change, but the vector itself and its length does not change under passive transformations. This is exactly what happened here!
+                There is a small but important difference in that they have a minus sign instead of a plus sign in front of the spatial offsets, so it is not just the ordinary euclidean distance
+                we are dealing with here.
             </div>
             <div>
                 Note: Alice's part only appears to be missing because her spatial offset is zero (the light started and ended at the same horizontal coordinate).
