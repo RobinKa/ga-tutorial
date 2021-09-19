@@ -247,12 +247,16 @@ export function SRSpacetimeAlgebra() {
                 `}
             </div>
             <div>
-                All three right-hand sides must be equal. Does this look familiar? Think back to passive transformations. The coefficients of vectors expressed in different coordinate bases
-                might change, but the length vectors does not change under passive transformations. This is exactly what happened here!
+                All three right-hand sides must be equal. Does this look familiar? Think back to passive transformations. The coefficients of a vector expressed in a different coordinate basis
+                might change, but the vectors's length does not change under passive transformations. This is exactly what happened here!
                 There is a small but important difference in that they have a minus sign instead of a plus sign in front of the spatial offsets, so it is not just the ordinary euclidean distance.
             </div>
             <div>
                 Note: Alice's part only appears to be missing because her spatial offset is zero (the light started and ended at the same horizontal coordinate).
+            </div>
+            <div>
+                In summary, all that happened was that the observers Alice, Bob and Charlie were using different coordinate systems, so the values they measured as expressed in their own coordinate systems
+                did not match up, even though the thing they were measuring was fundamentally the same.
             </div>
             <div>
                 What we have discovered is the distance of spacetime that we can use to measure distance between spacetime events. With all three space dimensions it is
