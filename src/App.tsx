@@ -18,6 +18,7 @@ const breadcrumbPathToName: { [key: string]: string } = {
     "ga-design-1": "Designing Geometric Algebras - Part 1",
     "ga-design-2": "Designing Geometric Algebras - Part 2",
     "sr-intro": "Special Relativity with Geometric Algebra - Introduction",
+    "sr-ga-review": "Special Relativity with Geometric Algebra - Geometric Algebra Review",
     "sr-spacetime-algebra": "Special Relativity with Geometric Algebra - Spacetime Algebra",
     "sr-spacetime-rotors": "Special Relativity with Geometric Algebra - Spacetime Rotors",
     "sr-length-contraction": "Special Relativity with Geometric Algebra - Length Contraction",
