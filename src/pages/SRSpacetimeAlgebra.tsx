@@ -9,7 +9,8 @@ export function SRSpacetimeAlgebra() {
     return (
         <div>
             <h3>Special Relativity with Geometric Algebra - Spacetime Algebra</h3>
-            <h4>Path of an object over time</h4>
+            <h4>Paths of objects</h4>
+            <h5>Position over time</h5>
             <ImageWithSub src="/images/sr-path-basic.png" text="Figure 1 - Path of an object with constant velocity. X-axis: time. Y-axis: space." width="50%" />
             <div>
                 In physics we often draw the path an object takes over time in a diagram where time is on the x-axis and space is on the y-axis.
@@ -25,6 +26,7 @@ export function SRSpacetimeAlgebra() {
                 \\end{equation}
                 `}
             </div>
+            <h5>Position over time - flipped space and time axes</h5>
             <div>
                 In relativity, the space and time axes are usually flipped, so we space is on the x-axis and time is on the y-axis.
                 We will also follow this standard practice. Doing this our diagram will look like this
@@ -35,6 +37,7 @@ export function SRSpacetimeAlgebra() {
                 not introduce a basis vector $e_t$ for time too? After all, in our diagram these don't really look any different. If we do this we have four basis vectors in total
                 and instead of just space we now have spacetime.
             </div>
+            <h5>Parameterized paths with vectors</h5>
             <ImageWithSub src="/images/sr-path-vector.png" text="Figure 3 - Light-blue: Orthonormal basis vectors for time and space. Blue: Vector path of an object parameterized by $\lambda$. Green: Path velocity of the blue path." width="60%" />
             <div>
                 For our previous example, for every step in the space direction we take two steps in the time direction. So an unnormalized direction vector for the <u style={{ textDecorationColor: "blue", textDecorationThickness: 3 }}>path</u> is given by $2 e_t + 1 e_x$.
