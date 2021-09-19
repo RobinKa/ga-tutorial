@@ -10,6 +10,9 @@ export function SRSpacetimeAlgebra() {
         <div>
             <h3>Special Relativity with Geometric Algebra - Spacetime Algebra</h3>
             <h4>Paths of objects</h4>
+            <div>
+                There are different ways to understand and formalize the paths objects take and how they move over time.
+            </div>
             <h5>Position over time</h5>
             <ImageWithSub src="/images/sr-path-basic.png" text="Figure 1 - Path of an object with constant velocity. X-axis: time. Y-axis: space." width="50%" />
             <div>
@@ -33,7 +36,7 @@ export function SRSpacetimeAlgebra() {
             </div>
             <ImageWithSub src="/images/sr-path-flipped.png" text="Figure 2 - Path of an object with constant velocity,  X-axis: space. Y-axis: time." width="50%" />
             <div>
-                Since we are using geometric algebra, let's try to use vectors to formulate paths of objects instead. We will have the usual spatial basis vectors $e_x, e_y, e_z$, but why
+                Since we are using geometric algebra, we will use vectors to formulate paths of objects instead. We will have the usual spatial basis vectors $e_x, e_y, e_z$, but why
                 not introduce a basis vector $e_t$ for time too? After all, in our diagram these don't really look any different. If we do this we have four basis vectors in total
                 and instead of just space we now have spacetime.
             </div>
@@ -65,7 +68,7 @@ export function SRSpacetimeAlgebra() {
             </div>
             <div>
                 Note that the parameterization for our path is somewhat arbitrary. We could just as well have multiplied by path by a constant and have gotten the same path.
-                What happens to the path velocity when we multiply our path by a constant factor $k$? Let's see:
+                What happens to the path velocity when we multiply our path by a constant factor $k$?
             </div>
             <div style={{ padding: 20 }}>
                 {`
@@ -97,7 +100,7 @@ export function SRSpacetimeAlgebra() {
             <div>
                 An event $a$ as shown in the diagram could be "I left home at 8am" with the position being <b>home</b> and the time being <b>8am</b>.
                 Another event $b$ could then be "I arrived at work at 9am" with position <b>work</b> and time <b>9am</b>. We can now form difference vectors again.
-                For this example let's assume home and work are <b>10km</b> apart in the x direction. Then we have a difference vector
+                For this example assume home and work are <b>10km</b> apart in the x direction. Then we have a difference vector
             </div>
             <div style={{ padding: 20 }}>
                 {`$v = 3600 \\mathrm{s} e_t + 10 \\mathrm{km} e_x$`}
@@ -118,7 +121,7 @@ export function SRSpacetimeAlgebra() {
             <div>
                 Let's take a look at some more types of paths in spacetime.
             </div>
-            <ImageWithSub src="/images/sr-paths.png" text="Figure 5 - Paths in spacetime. Blue (a): Object at rest. Green (b): Object with constant velocity. Purple (c): Accelerated object. Yellow (d): Light. Red (e): Path faster than light." />
+            <ImageWithSub src="/images/sr-paths.png" text="Figure 5 - Paths in spacetime. Blue (a): Object at rest. Green (b): Object with constant velocity. Purple (c): Accelerated object. Yellow (l): Light. Red (e): Path faster than light." />
             <h5><u style={{ textDecorationColor: "blue", textDecorationThickness: 3 }}>Object at rest (a)</u></h5>
             <div>
                 An object at rest does not move in space over time. Its path points purely in the time direction.
@@ -140,10 +143,10 @@ export function SRSpacetimeAlgebra() {
             <div>
                 An object with acceleration could trace out a curved path like $c$ in the diagram. Objects with non-zero acceleration won't be covered for now.
             </div>
-            <h5><u style={{ textDecorationColor: "gold", textDecorationThickness: 3 }}>Light (d)</u></h5>
+            <h5><u style={{ textDecorationColor: "gold", textDecorationThickness: 3 }}>Light (l)</u></h5>
             <div>
                 Light always moves at the speed of light. This is the second postulate of Special Relativity. Its path can be parameterized by $l(\lambda) = c \lambda e_t + c \lambda e_x$
-                (the factor of $c$ for the time dimension, as mentioned earlier, will be fully justified later).
+                (the factor of $c$ for the time dimension, as mentioned earlier, will be fully justified soon).
                 This will trace out a 45° angle in our diagrams. 
             </div>
             <h5><u style={{ textDecorationColor: "red", textDecorationThickness: 3 }}>Faster than light (e)</u></h5>
@@ -177,8 +180,8 @@ export function SRSpacetimeAlgebra() {
             <div>
                 Consider Alice standing still on the ground with an apparatus as pictured in figure 6. The height of the apparatus is $h$.
                 Light is sent from the bottom with horizontal coordinate $0$ to the top in a straight line.
-                In this case, the light is received at the top at the same horizontal coordinate it was sent from, ie. $0$. Let's call
-                the time it took for the light to be sent and received $\Delta t_a$.
+                In this case, the light is received at the top at the same horizontal coordinate it was sent from, ie. $0$.
+                The time it took for the light to be sent and received is called $\Delta t_a$.
             </div>
             <div>
                 Given the elapsed time we know that the distance the light moved must be equal to $c \Delta t_a$ where $c$ is the speed of light.
@@ -203,12 +206,12 @@ export function SRSpacetimeAlgebra() {
                 How does the light in the aparatus look like from Bob's view? On sending, the light starts at horizontal coordinate $0$ and is moving upwards in the aparatus.
                 The second postulate of Special Relativity was that the speed of light is constant, so adding the speed of the train to the speed of light would not make sense.
                 What happens in reality is that the aparatus keeps on moving so it slides away from the light, while the light just keeps moving straight up from Bob's point of view.
-                When the light is received it is not received at the same horizontal coordinate anymore. If we look at the path the light traced out it is a diagonal. Let's denote
+                When the light is received it is not received at the same horizontal coordinate anymore. If we look at the path the light traced out it is a diagonal. We denote
                 the horizontal coordinate the light was received at $x_b$ and the time it took $t_b$.
             </div>
             <div>
                 Let's look at the picture. Alice saw the light start and end at the coordinate $0$, yet Bob saw it start at $0$ and end at $x_b$. How is this possible?
-                It seems unintuitive to everyday life but this is what actually happens. To better understand this let's continue and try to shed more light on the mystery.
+                It seems unintuitive to everyday life but this is what actually happens.
                 Using Pythagoras' theorem we can see that there is a relation between the total distance the light covered, the height of the apparatus and the horizontal distance
             </div>
             <div style={{ padding: 20 }}>
@@ -232,7 +235,7 @@ export function SRSpacetimeAlgebra() {
                 `}
             </div>
             <div>
-                Let's solve Alice's, Bob's and Charlie's equations {`\\eqref{eq:alice}, \\eqref{eq:bob}, \\eqref{eq:charlie}`} for $h^2$ (which requires squaring Alice's equation). We get
+                Solving Alice's, Bob's and Charlie's equations {`\\eqref{eq:alice}, \\eqref{eq:bob}, \\eqref{eq:charlie}`} for $h^2$ (which requires squaring Alice's equation) we get
             </div>
             <div style={{ padding: 20 }}>
                 {`
@@ -244,15 +247,15 @@ export function SRSpacetimeAlgebra() {
                 `}
             </div>
             <div>
-                Does this look familiar? All three right-hand sides must be equal. Think back to the example of changing coordinate systems and how a vector changes. The coordinates
-                of a vector might change, but the length of the vector does not change. The terms we have here do not look exactly like ordinary euclidean distance. They have
-                a minus sign instead of a plus sign in front of the spatial offsets.
+                All three right-hand sides must be equal. Does this look familiar? Think back to passive transformations. The coefficients of vectors expressed in different coordinate bases
+                might change, but the length vectors does not change under passive transformations. This is exactly what happened here!
+                There is a small but important difference in that they have a minus sign instead of a plus sign in front of the spatial offsets, so it is not just the ordinary euclidean distance.
             </div>
             <div>
                 Note: Alice's part only appears to be missing because her spatial offset is zero (the light started and ended at the same horizontal coordinate).
             </div>
             <div>
-                What we have discovered is the distance of spacetime that we can use to measure distance between spacetime events. In 3 space dimensions we thus have
+                What we have discovered is the distance of spacetime that we can use to measure distance between spacetime events. With all three space dimensions it is
             </div>
             <div style={{ padding: 20 }}>
                 {`
@@ -279,7 +282,7 @@ export function SRSpacetimeAlgebra() {
             </div>
             <div>
                 This is usually refered to as the <a href="https://en.wikipedia.org/wiki/Spacetime_algebra">Spacetime Algebra</a>. It has wide applications in physics
-                and can be used to describe for example classical electromagnetics, most parts of the standard model of quantum physics and, of course, relativity.
+                and can be used to describe for example classical electromagnetics, most parts of the standard model of particle physics and, of course, relativity.
             </div>
             <div>
                 We can now verify that squaring a difference vector gives us the correct distance {`\\eqref{eq:invariantinterval}`}:
