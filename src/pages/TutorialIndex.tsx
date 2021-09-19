@@ -33,6 +33,14 @@ export function TutorialIndex() {
             <div>
                 Introduction to Special Relativity using Geometric Algebra. Work in progress.
             </div>
+            <div>
+                <h5>Known issues / todo list</h5>
+                <ul>
+                    <li>Introduce reciprocal frames (required because minkowski metric means there is no orthonormal basis. Some sections make wrong assumptions because of this and have incorrect signs.</li>
+                    <li>Add time dilation section before length contraction section</li>
+                    <li>Add more applications</li>
+                </ul>
+            </div>
             <ol>
                 <li><Link to="/sr-intro">Special Relativity with Geometric Algebra - Introduction</Link></li>
                 <li><Link to="/sr-ga-review">Special Relativity with Geometric Algebra - Geometric Algebra Review</Link></li>
