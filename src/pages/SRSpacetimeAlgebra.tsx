@@ -9,74 +9,152 @@ export function SRSpacetimeAlgebra() {
     return (
         <div>
             <h3>Special Relativity with Geometric Algebra - Spacetime Algebra</h3>
-            <h4>Time as another dimension</h4>
+            <h4>Path of an object over time</h4>
+            <ImageWithSub src="/images/sr-path-basic.png" text="Figure 1 - Path of an object with constant velocity. X-axis: time. Y-axis: space." width="50%" />
             <div>
-                As Special Relativity tries to unify time and space, it is natural to make time just another dimension like the three spatial ones.
-                We now have four basis vectors $e_t, e_x, e_y, e_z$ and call this unification Spacetime. Let's see what we can do with this.
+                In physics we often draw the path an object takes over time in a diagram where time is on the x-axis and space is on the y-axis.
+                Figure 1 shows such a diagram. For an object with a constant velocity of one half meters per second we have the following equations
+            </div>
+            <div style={{ padding: 20 }}>
+                {`
+                \\begin{equation}
+                \\begin{aligned}
+                    s(t) & = \\frac{1}{2} \\mathrm{\\frac{m}{s}} t \\\\
+                    v(t) & = \\frac{\\partial}{\\partial t} s(t) = \\frac{1}{2} \\mathrm{\\frac{m}{s}}
+                \\end{aligned}
+                \\end{equation}
+                `}
+            </div>
+            <div>
+                In relativity, the space and time axes are usually flipped, so we space is on the x-axis and time is on the y-axis.
+                We will also follow this standard practice. Doing this our diagram will look like this
+            </div>
+            <ImageWithSub src="/images/sr-path-flipped.png" text="Figure 2 - Path of an object with constant velocity,  X-axis: space. Y-axis: time." width="50%" />
+            <div>
+                Since we are using geometric algebra, let's try to use vectors to formulate paths of objects instead. We will have the usual spatial basis vectors $e_x, e_y, e_z$, but why
+                not introduce a basis vector $e_t$ for time too? After all, in our diagram these don't really look any different. If we do this we have four basis vectors in total
+                and instead of just space we now have spacetime.
+            </div>
+            <ImageWithSub src="/images/sr-path-vector.png" text="Figure 3 - Light-blue: Orthonormal basis vectors for time and space. Blue: Vector path of an object parameterized by $\lambda$. Green: Path velocity of the blue path." width="60%" />
+            <div>
+                For our previous example, for every step in the space direction we take two steps in the time direction. So an unnormalized direction vector for the <u style={{ textDecorationColor: "blue", textDecorationThickness: 3 }}>path</u> is given by $2 e_t + 1 e_x$.
+                We can now introduce a parameter $\lambda$ that sweeps out our path
+            </div>
+            <div style={{ padding: 20 }}>
+                {`
+                \\begin{equation}
+                    s(\\lambda) = \\lambda (2 e_t + 1 e_x) \\\\
+                \\end{equation}
+                `}
+            </div>
+            <div>
+                We can also calculate a <u style={{ textDecorationColor: "#00FF91", textDecorationThickness: 3 }}>path velocity</u> by taking the derivative with respect to our path parameter $\lambda$
+            </div>
+            <div style={{ padding: 20 }}>
+                {`
+                \\begin{equation}
+                    v = \\frac{\\partial}{\\partial \\lambda} s(\\lambda) = 2 e_t + 1 e_x
+                \\end{equation}
+                `}
+            </div>
+            <div>
+                The path velocity is always tangent to the path.
+            </div>
+            <div>
+                Note that the parameterization for our path is somewhat arbitrary. We could just as well have multiplied by path by a constant and have gotten the same path.
+                What happens to the path velocity when we multiply our path by a constant factor $k$? Let's see:
+            </div>
+            <div style={{ padding: 20 }}>
+                {`
+                \\begin{equation}
+                \\begin{aligned}
+                    s_k(\\lambda) & = \\lambda k (2 e_t + 1 e_x) \\\\
+                    v_k & = \\frac{\\partial}{\\partial \\lambda} s_k(\\lambda) = k (2 e_t + 1 e_x)
+                \\end{aligned}
+                \\end{equation}
+                `}
+            </div>
+            <div>
+                The path velocity also receives the constant factor $k$. In order to fix this arbitrary path parameter, we choose the
+                length of the path velocity to be the speed of light, ie. $||v||^2 = v^2 = c^2$. The path parameter which we generally called $\lambda$
+                is then called the proper time $\tau$.
+            </div>
+            <div>
+                Our path parameterized by proper time is then $s(\tau)$ and we introduce a short-hand notation for the derivative with respect to proper time {`$\\dot{s}(\\tau) = \\frac{\\partial}{\\partial \\tau} s(\\tau)$`}.
+                Because of our definition for proper time we now have {`$\\dot{s}^2 = c^2$`}. In many places the same equation but with $1$ on the right-hand side is seen.
+                This is because often the choice $c = 1$ is made.
+            </div>
+
+            <h4>Spacetime events</h4>
+            <div>
+                Another thing we want to look at is what the points in our spacetime, such as the points on our paths, represent. A point contains a time coordinate and three space coordinates.
+                Points in spacetime are also called events because of this.
             </div>
             <ImageWithSub src="/images/sr-time-coordinate.png" text="Figure 2 - Time as another dimension and spacetime events" width="50%" />
             <div>
-                Let's look at figure 2. We choose the space axis to be horizontal and the time axis to be vertical. This might be different than what you are
-                used to from your ordinary physics, but in Relativity this is standard practice so we will follow it here too.
-            </div>
-            <div>
-                What does a point in this 4D space represent? Each point carries a time and the space coordinates, so you can think of them as an event.
-                An event $a$ as shown in the digram could be "I left home at 8am" with the position being <b>home</b> and the time being <b>8am</b>.
+                An event $a$ as shown in the diagram could be "I left home at 8am" with the position being <b>home</b> and the time being <b>8am</b>.
                 Another event $b$ could then be "I arrived at work at 9am" with position <b>work</b> and time <b>9am</b>. We can now form difference vectors again.
-                For this example let's assume home and work are <b>10km</b> apart in the x direction. Then we have a difference vector $v = 3600s e_t + 10km e_x$.
-                What if we calculate its length? Doing it like before, and assuming that all basis vectors square to $+1$ we get the expression
+                For this example let's assume home and work are <b>10km</b> apart in the x direction. Then we have a difference vector
             </div>
             <div style={{ padding: 20 }}>
-                $l^2 = v \cdot v = (\Delta x)^2 + (\Delta t)^2 = (10km)^2 + (3600s)^2$
+                {`$v = 3600 \\mathrm{s} e_t + 10 \\mathrm{km} e_x$`}
             </div>
             <div>
                 Does this expression make sense? The first problem we can notice is that the units don't match up. How do we add kilometers (spatial distance) and seconds (time difference)?
-                To remedy this, we could multiply the time by a constant speed as that would result in a distance. Why not choose the speed of light $c$? We now get
+                To remedy this, we could multiply the time component by a constant speed as that would result in a distance. Why not choose the speed of light $c$? We now the following
+                expression with the correct units
             </div>
             <div style={{ padding: 20 }}>
-                {`$l^2 = v \\cdot v = (\\Delta x)^2 + (c \\Delta t)^2 = (10km)^2 + (300000 \\frac{km}{s} 3600s)^2 = \\text{<big number>} km^2$`}
+                {`$v = c 3600 \\mathrm{s} e_t + 10 \\mathrm{km} e_x$`}
             </div>
             <div>
                 Well we got around the unit issue, although we did not justify the multiplication by $c$ very well yet. The true justification for it will come soon.
-                Another big question is whether this kind of distance is useful at all.
-            </div>
-            <h4>Paths in Spacetime</h4>
-            <div>
-                Let's look at what paths different objects trace out in spacetime. This section assumes you are already somewhat familiar with the concept of parametric curves in mathematics.
-                If you are not, there are many great resources such as <a href="https://www.youtube.com/watch?v=bb4bSCjlFAw">this Khan Academy video</a>.
-                We parameterize a curve in spacetime with the parameter $\lambda$. Besides that we can also calculate the path velocity that is tangent to the path by differentiating with respect to $\lambda$.
-            </div>
-            <ImageWithSub src="/images/sr-paths.png" text="Figure 3 - Paths in spacetime, Left: Object at rest in blue and object in motion in green, Right: Light in yellow and impossible motion in red" />
-            <h5>Object at rest (Figure 3 Left: Blue / b)</h5>
-            <div>
-                How does an object at rest look like if we were to plot it in a spacetime diagram with one time and one space axis? An object at rest does
-                not move in space, but it does move forward in time. So the "world line" of an object at rest should be a straight line in the time direction only.
-                It can still be arbitrarily offset on the space dimension, it just does not move in it.
-            </div>
-            <div>
-                Looking at the path velocity, we can notice that it always points in the $e_t$ direction, so objects at rest will always have path velocity
-                proportional to $e_t$. Also if we choose the correct parameterization we can always find one where the path velocity will be exactly $e_t$.
-                This property will become very important later as objects at rest play an important role in Special Relativity.
-            </div>
-            <h5>Light (Figure 3 Right: Yellow)</h5>
-            <div>
-                For each unit in time $\Delta t$, light will travel $c \Delta t$ in space. We choose the scales of our diagram axes so that light will always trace out 45° lines.
-                Nothing can exceed the speed of light. In our diagrams this means all objects must have an angle between -45° and +45° as otherwise this would mean that the object
-                travels faster than light, such as the red one which is not possible.
-            </div>
-            <h5>Object in motion (Figure 3 Left: Green / a)</h5>
-            <div>
-                An object that is moving in spacetime will also have $e_x$ components along the path. We already learnt before that the path can not have angles less steep than 45°
-                or the object would travel faster than light. The same also applies for the path velocity, although its magnitude is not restricted by this (in fact it is arbitrary
-                as we can always reparameterize to change the magnitude)
-            </div>
-            <h5>Choice of parameterization</h5>
-            <div>
-                A common choice of parameterization is so that the path velocities square to $c^2$, ie. {`$(\\frac{\\partial}{\\partial_t} a(\\tau))^2 = c^2$`}.
-                The parameter $\tau$ is then called proper time. Note that often $c = 1$ is chosen so then the path velocities just square to $1$.
             </div>
 
-            <h4>Light clocks and trains</h4>
+            <h4>More spacetime paths</h4>
+            <div>
+                Let's take a look at some more types of paths in spacetime.
+            </div>
+            <ImageWithSub src="/images/sr-paths.png" text="Figure 4 - Paths in spacetime. Blue (a): Object at rest. Green (b): Object with constant velocity. Purple (c): Accelerated object. Yellow (d): Light. Red (e): Path faster than light." />
+            <h5><u style={{ textDecorationColor: "blue", textDecorationThickness: 3 }}>Object at rest (a)</u></h5>
+            <div>
+                An object at rest does not move in space over time. Its path points purely in the time direction.
+                The path can of course still be arbitrarily offset on the space axes.
+            </div>
+            <div>
+                The path velocity always points in the $e_t$ direction, so objects at rest will always have path velocity proportional to $e_t$.
+                Paths parameterized by proper time $\tau$ will have path velocity $c e_t$ because by definition, the path velocity for paths parameterized by proper time squares to $c^2$.
+                This will become very important later as objects at rest play an important role in Special Relativity.
+            </div>
+            <h5><u style={{ textDecorationColor: "lime", textDecorationThickness: 3 }}>Object with constant velocity (b)</u></h5>
+            <div>
+                Objects with constant velocity can move in space. Their path will be a rotated straight line. The more rotated the line is towards the space dimension, the faster the object goes.
+            </div>
+            <div>
+                The path velocity for an object moving along the x-direction will be some mix of $e_x$ and $e_t$, although there are some restrictions to this.
+            </div>
+            <h5><u style={{ textDecorationColor: "purple", textDecorationThickness: 3 }}>Object with acceleration (c)</u></h5>
+            <div>
+                An object with acceleration could trace out a curved path like $c$ in the diagram. Objects with non-zero acceleration won't be covered for now.
+            </div>
+            <h5><u style={{ textDecorationColor: "gold", textDecorationThickness: 3 }}>Light (d)</u></h5>
+            <div>
+                Light always moves at the speed of light. This is the second postulate of Special Relativity. Its path can be parameterized by $l(\lambda) = c \lambda e_t + c \lambda e_x$
+                (the factor of $c$ for the time dimension, as mentioned earlier, will be fully justified later).
+                This will trace out a 45° angle in our diagrams. 
+            </div>
+            <h5><u style={{ textDecorationColor: "red", textDecorationThickness: 3 }}>Faster than light (e)</u></h5>
+            <div>
+                Because nothing can move faster than light, this means all of our paths need to be steeper than 45°.
+                Otherwise the object would be going faster than light.
+            </div>
+
+            <h4>Spacetime distance</h4>
+            <div>
+                A thing we have not looked at yet is what a good notion of distance in spacetime is, and thus what our basis vectors should square to as squaring vectors gives their length, and hence distance.
+                To motivate this we will perform a thought experiment involving light clocks and trains.
+            </div>
+            <h5>Light clocks and trains</h5>
             <div>
                 First of all there are great videos demonstrating what we're about to investigate. You might want to watch them first or watch them if you get confused about the writing, the videos do a much better job.
                 For example <a href="https://youtu.be/AInCqm5nCzw">this one</a> (although they put the device on the train instead of outside of it). We won't be using mirrors here as we can get the same result without two trips which also simplifies the math a bit.
