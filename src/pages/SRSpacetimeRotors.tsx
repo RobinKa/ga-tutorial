@@ -207,7 +207,7 @@ export function SRSpacetimeRotors() {
             </div>
             <h4>Up next</h4>
             <div>
-                Next we will look at how a moving observer sees lengths change.
+                Next we will look at how we can take measurements in Spacetime.
             </div>
             
             <h4><Link to="/sr-measuring">Special Relativity with Geometric Algebra - Measuring in Spacetime</Link></h4>

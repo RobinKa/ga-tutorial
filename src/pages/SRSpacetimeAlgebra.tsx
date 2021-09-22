@@ -344,6 +344,11 @@ export function SRSpacetimeAlgebra() {
                     <li>Spacetime Algebra: {`$e_t^2 = 1, e_x^2 = e_y^2 = e_z^2 = -1$`}</li>
                 </ul>
             </div>
+            <h4>Up next</h4>
+            <div>
+                Next we will look at a problem that arises when adding velocities close to the speed of light with ordinary addition, and we will see
+                how the bivectors squaring to $+1$ can be used to solve the problem.
+            </div>
 
             <h4><Link to="/sr-spacetime-rotors">Special Relativity with Geometric Algebra - Spacetime Rotors</Link></h4>
         </div>

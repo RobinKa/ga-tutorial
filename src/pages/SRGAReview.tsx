@@ -162,6 +162,10 @@ export function SRGAReview() {
                     <li>Passive transformation with rotor: {`$e_i' = R e_i \\widetilde{R}, e_i \\cdot e_j = \\delta^i_j \\iff e_i' \\cdot e_j' = \\delta^i_j$`} </li>
                 </ul>
             </div>
+            <h4>Up next</h4>
+            <div>
+                Next we will look at how we can describe Spacetime with Geometric Algebra motivated by a thought experiment.
+            </div>
             <h4><Link to="/sr-spacetime-algebra">Special Relativity with Geometric Algebra - Spacetime Algebra</Link></h4>
         </div>
     )
