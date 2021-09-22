@@ -68,7 +68,7 @@ export function SRMeasuring() {
                 the Spacetime Algebra. How do we fix this?
             </div>
             <h4>Reciprocal frames</h4>
-            <ImageWithSub src="/images/sr-reciprocal-frames.png" width="60%" text="Light blue: Basis vectors. Blue: Reciprocal basis vectors. Orange: Vector we want to measure. Yellow: Desired measurement results." />
+            <ImageWithSub src="/images/sr-reciprocal-frame.png" width="60%" text="Light blue: Basis vectors. Blue: Reciprocal basis vectors. Orange: Vector we want to measure. Yellow: Desired measurement results." />
             <div>
                 What we really wanted for measuring the component along one basis vector is a vector whose inner product with it is $1$, and $0$ with all other basis vectors.
                 We call these vectors reciprocal. For ordinary space with an orthonormal basis, each basis vector is already its own reciprocal basis vector.
