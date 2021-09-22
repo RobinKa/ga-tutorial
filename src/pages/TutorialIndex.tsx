@@ -31,14 +31,13 @@ export function TutorialIndex() {
             </ol>
             <h4>Special Relativity with Geometric Algebra</h4>
             <div>
-                Introduction to Special Relativity using Geometric Algebra. Work in progress.
+                Introduction to Special Relativity using Geometric Algebra. Work in progress. Likely contains errors.
             </div>
             <div>
                 <h5>Known issues / todo list</h5>
                 <ul>
-                    <li>Introduce reciprocal frames (required because minkowski metric means there is no orthonormal basis. Some sections make wrong assumptions because of this and have incorrect signs.</li>
-                    <li>Add time dilation section before length contraction section</li>
                     <li>Add more applications</li>
+                    <li>Update all graphics and add more (they are all just sketches currently)</li>
                 </ul>
             </div>
             <ol>
@@ -46,6 +45,8 @@ export function TutorialIndex() {
                 <li><Link to="/sr-ga-review">Special Relativity with Geometric Algebra - Geometric Algebra Review</Link></li>
                 <li><Link to="/sr-spacetime-algebra">Special Relativity with Geometric Algebra - Spacetime Algebra</Link></li>
                 <li><Link to="/sr-spacetime-rotors">Special Relativity with Geometric Algebra - Spacetime Rotors</Link></li>
+                <li><Link to="/sr-measuring">Special Relativity with Geometric Algebra - Measuring in Spacetime</Link></li>
+                <li><Link to="/sr-time-dilation">Special Relativity with Geometric Algebra - Time Dilation</Link></li>
                 <li><Link to="/sr-length-contraction">Special Relativity with Geometric Algebra - Length Contraction</Link></li>
                 <li><Link to="/sr-electromagnetism">Special Relativity with Geometric Algebra - Electromagnetism</Link></li>
             </ol>

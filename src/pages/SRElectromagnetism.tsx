@@ -53,28 +53,20 @@ export function SRElectromagnetism() {
                 `}
             </div>
             <div>
-                An observer moving relative to it with rapidity $\varphi_y$ in the $y$ direction can be described using a rotor
+                The basis vectors for an observer moving relative to the field with rapidity $\varphi_y$ in the $y$ direction can be obtained with a passive transformation
+                by applying a rotor to the basis vectors at rest.
             </div>
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                R(\\varphi_y) = e^{-\\frac{\\varphi_y}{2} e_{ty}}
+                R_y(\\varphi_y) = e^{-\\frac{\\varphi_y}{2} e_{ty}}
                 \\end{equation}
                 `}
             </div>
             <div>
-                The <u style={{textDecorationColor: "pink", textDecorationThickness: 3}}>rotor $R$</u> transforms from the <u style={{textDecorationColor: "blue", textDecorationThickness: 3}}>rest frame</u> to
-                the <u style={{textDecorationColor: "purple", textDecorationThickness: 3}}>moving observer's frame</u>.
-                From the observer's view, the field is moving in the opposite direction, so
-                to get how they see the field we need to apply the reverse rotor to the field.
-            </div>
-            <div style={{ padding: 20 }}>
-                {`
-                \\begin{equation}
-                    \\widetilde{R} F R = E_x e^{\\frac{\\varphi_y}{2} e_{ty}} e_{tx} e^{-\\frac{\\varphi_y}{2} e_{ty}}
-                    \\label{eq:transformfaraday}
-                \\end{equation}
-                `}
+                The <u style={{textDecorationColor: "pink", textDecorationThickness: 3}}>rotor $R_y$</u> transforms from the <u style={{textDecorationColor: "blue", textDecorationThickness: 3}}>rest frame</u> to
+                the <u style={{textDecorationColor: "purple", textDecorationThickness: 3}}>moving observer's frame</u>. We can now measure the field with the reciprocal basis vectors of the moving frame
+                to figure out how a moving observer sees the field.
             </div>
             <div>
                 Before continuing with the algebra, let's take another look at the diagram. What would we expect to happen if we applied the rotor to the field?
@@ -82,39 +74,46 @@ export function SRElectromagnetism() {
                 So we would expect the resulting bivector field to have not only have a TX component but also an XY component.
             </div>
             <div>
-                Okay now for the algebra: we could expand both exponentials in {`\\eqref{eq:transformfaraday}`} into $cosh$ and $sinh$ and simplify. This is a decent amount of effort.
-                Alternatively, we notice that the rotor consists of a scalar and {`$e_{ty}$`} part. The scalar part commutes with {`$e_{tx}$`} and the bivector
-                part anti-commutes with it (picks up a minus sign). When expanding the exponential, the scalar part can also be written with negated argument to $cosh$ because $cosh(x) = cosh(-x)$.
-                So commuting and applying this idea will result in:
+                We can also see this visually: the original XY plane was orthogonal to $E$'s plane, but the XY' plane is not orthogonal anymore.
+            </div>
+            <h5>Reciprocal basis bivectors</h5>
+            <div>
+                Okay now for the algebra: because we are measuring bivectors and not vectors, we want to build reciprocal bivectors.
+                For example to measure the XY component, we have a basis bivector {`$e_{xy}$`} and its corresponding reciprocal basis bivector is
+                {`$e^{xy} = -e_{xy}$`} because {`$-e_{xy} \\cdot e_{xy} = 1$`}.
+            </div>
+            <div>
+                We already established that the moving observer should see a field in the TX and the XY plane, so let's build the reciprocal
+                basis bivectors for those.
             </div>
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
                 \\begin{aligned}
-                e_{tx} R & = e_{tx} (cosh(-\\frac{\\varphi_y}{2}) + sinh(-\\frac{\\varphi_y}{2}) e_{ty}) = \\\\
-                & = (cosh(-\\frac{\\varphi_y}{2}) + sinh(\\frac{\\varphi_y}{2}) e_{ty}) e_{tx} = \\\\
-                & = (cosh(\\frac{\\varphi_y}{2}) + sinh(\\frac{\\varphi_y}{2}) e_{ty}) e_{tx} = \\widetilde{R} e_{tx}
+                {e^{tx}}' & = R_y {e^{tx}} \\widetilde{R}_y = R_y e_{tx} \\widetilde{R}_y = cosh(\\varphi_y) e_{tx} + sinh(\\varphi) e_{xy} \\\\
+                {e^{xy}}' & = R_y {e^{xy}} \\widetilde{R}_y = -R_y e_{xy} \\widetilde{R}_y = -(cosh(\\varphi_y) e_{xy} + sinh(\\varphi) e_{tx})
                 \\end{aligned}
                 \\end{equation}
                 `}
             </div>
+            <h5>Field measured by orthogonally moving observer</h5>
             <div>
-                So {`\\eqref{eq:transformfaraday}`} simplifies to
+                Taking the inner product of the field with the reciprocal basis bivectors yields
             </div>
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
                     \\begin{aligned}
-                        \\widetilde{R} F R & = E_x \\widetilde{R}^2 e_{tx} = E_x (cosh(\\varphi_y) + sinh(\\varphi_y) e_{ty}) e_{tx}) = \\\\
-                        & = E_x (cosh(\\varphi_y) e_{tx} + sinh(\\varphi_y) e_{xy})
+                    F'_{tx} & = {e^{tx}}' \\cdot F = E_x cosh(\\varphi_y) \\\\
+                    F'_{xy} & = {e^{xy}}' \\cdot F = -E_x sinh(\\varphi_y) \\\\
                     \\end{aligned}
                     \\label{eq:transform-faraday}
                 \\end{equation}
                 `}
             </div>
             <div>
-                The result has an {`$e_{tx}$`} part, which is just the original electric field's direction. The faster the observer moves the stronger it gets.
-                But it also has an {`$e_{xy}$`} part. If we look back to how $F$ was defined we can see that this part comes from $I B$,
+                We can see the the TX component of the field gets stronger the faster the observer moves in the Y direction (both positive and negative).
+                We also have an XY component. If we look back to how $F$ was defined we can see that this part comes from $I B$,
                 specifically the Z component of the magnetic field because {`$e_{xy} = I e_{tz}$`}. So a moving observer will also see a magnetic field
                 perpendicular to both their movement direction and the electric field's direction.
             </div>
@@ -123,13 +122,19 @@ export function SRElectromagnetism() {
                 \\begin{equation}
                     \\begin{aligned}
                         E_x' & = E_x cosh(\\varphi_y) \\\\
-                        B_z' & = E_x sinh(\\varphi_y)
+                        B_z' & = -E_x sinh(\\varphi_y)
                     \\end{aligned}
                 \\end{equation}
                 `}
             </div>
+
+            <h4>Conclusion</h4>
+            <div>
+                We saw that the electromagnetic field is described by the faraday bivector field $F = E + I B$.
+                Then we looked at how an observer moving orthogonal to an electric field sees the field.
+                We observed that the original electric field gets stronger, but we also saw that the observer measures
+                a magnetic field in the direction orthogonal to both the movement direction and the original electric field.
+            </div>
         </div>
     )
 }
-
-// 

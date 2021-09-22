@@ -39,6 +39,10 @@ export function SRSpacetimeRotors() {
                 From Alice's view Bob (purple) is moving left so his velocity vector points left. The rotation from Bob's to Alice's velocity vector is done by applying the rotor $R_1$ to Bob's velocity vector.
                 The ball moves to the right, so its velocity vector is rotated to the right. The rotation between Alice and the ball is done with the rotor $R_2$.
             </div>
+            <div>
+                The rotations between these vectors are all active transformations because the three velocity vectors are actually different from each other
+                and it is not just Alice changing her perspective on a single unchanging vector.
+            </div>
             <h5>Bob's view (right)</h5>
             <div>
                 Bob's velocity vector (purple) is at rest, ie. points in his $e_t$ direction. Alice's velocity vector is rotated right with $R_1$ and the ball is rotated relative to Alice's velocity vector with $R_2$.
@@ -185,7 +189,28 @@ export function SRSpacetimeRotors() {
                 The ball moves at around $0.9c$ from Bob's perspective.
             </div>
 
-            <h4><Link to="/sr-length-contraction">Special Relativity with Geometric Algebra - Length Contraction</Link></h4>
+            <h4>Conclusion</h4>
+            <div>
+                We started by noticing that adding velocities close to the speed of light fails with ordinary addition because the speed of light can be exceeded.
+                We then saw how we can relate velocity vectors using rotors with bivectors that square to $+1$. We noticed that these rotors rotate velocity vectors
+                towards the speed of light but never exceed it. We also saw that the rotors don't change with passive transformations so we could compose them
+                to solve our velocity addition problem. The result was that we can add the rotor angles for rotors in the same plane and relate them to velocities
+                using the formula {`$tanh(\\varphi) = \\frac{v}{c}$`}.
+            </div>
+            <h4>Formulas</h4>
+            <div>
+                <ul>
+                    <li>Relation between angle and velocity: {`$tanh(\\varphi) = \\frac{v}{c}$`}</li>
+                    <li>Addition of angles: {`$\\varphi_{a+b} = \\varphi_a + \\varphi_b$`}</li>
+                    <li>Addition of velocities: {`$v_{a+b} = c \\cdot tanh(\\varphi_{a+b}) = c \\cdot tanh(tanh^{-1}(\\frac{v_a}{c}) + tanh^{-1}(\\frac{v_b}{c}))$`}</li>
+                </ul>
+            </div>
+            <h4>Up next</h4>
+            <div>
+                Next we will look at how a moving observer sees lengths change.
+            </div>
+            
+            <h4><Link to="/sr-measuring">Special Relativity with Geometric Algebra - Measuring in Spacetime</Link></h4>
         </div>
     )
 }

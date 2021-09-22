@@ -1,12 +1,11 @@
 import React, { useEffect, useMemo } from "react"
 import ReactDOM from "react-dom"
 import { BrowserRouter as Router, Switch, Route, useLocation, Link } from "react-router-dom"
-import { TutorialIndex, GATutorial, PGATutorial, Motivation, PGAGeometryTutorial, GADesign1, GADesign2, SRIntro, SRSpacetimeAlgebra, SRSpacetimeRotors, SRLengthContraction, SRGAReview } from "./pages"
+import { TutorialIndex, GATutorial, PGATutorial, Motivation, PGAGeometryTutorial, GADesign1, GADesign2, SRIntro, SRSpacetimeAlgebra, SRSpacetimeRotors, SRLengthContraction, SRGAReview, SRMeasuring, SRElectromagnetism, SRTimeDilation } from "./pages"
 import * as ga from "./ga/ga_pp"
 import * as ga3d from "./ga/ga_ppp"
 import * as pga from "./ga/ga_zpp"
 import * as viz from "./ga/viz2d"
-import { SRElectromagnetism } from "./pages/SRElectromagnetism"
 
 // Dictionary of path elements to replace with full names
 // in the breadcrumbs.
@@ -20,6 +19,7 @@ const breadcrumbPathToName: { [key: string]: string } = {
     "sr-intro": "Special Relativity with Geometric Algebra - Introduction",
     "sr-ga-review": "Special Relativity with Geometric Algebra - Geometric Algebra Review",
     "sr-spacetime-algebra": "Special Relativity with Geometric Algebra - Spacetime Algebra",
+    "sr-measuring": "Special Relativity with Geometric Algebra - Measuring in Spacetime",
     "sr-spacetime-rotors": "Special Relativity with Geometric Algebra - Spacetime Rotors",
     "sr-length-contraction": "Special Relativity with Geometric Algebra - Length Contraction",
     "sr-electromagnetism": "Special Relativity with Geometric Algebra - Electromagnetism",
@@ -113,8 +113,14 @@ function TutorialSite() {
                             <Route exact path="/sr-spacetime-algebra">
                                 <SRSpacetimeAlgebra />
                             </Route>
+                            <Route exact path="/sr-measuring">
+                                <SRMeasuring />
+                            </Route>
                             <Route exact path="/sr-spacetime-rotors">
                                 <SRSpacetimeRotors />
+                            </Route>
+                            <Route exact path="/sr-time-dilation">
+                                <SRTimeDilation />
                             </Route>
                             <Route exact path="/sr-length-contraction">
                                 <SRLengthContraction />

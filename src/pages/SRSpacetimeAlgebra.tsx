@@ -147,7 +147,7 @@ export function SRSpacetimeAlgebra() {
             <div>
                 Light always moves at the speed of light. This is the second postulate of Special Relativity. Its path can be parameterized by $l(\lambda) = c \lambda e_t + c \lambda e_x$
                 (the factor of $c$ for the time dimension, as mentioned earlier, will be fully justified soon).
-                This will trace out a 45° angle in our diagrams. 
+                This will trace out a 45° angle in our diagrams.
             </div>
             <h5><u style={{ textDecorationColor: "red", textDecorationThickness: 3 }}>Faster than light (e)</u></h5>
             <div>
@@ -309,8 +309,10 @@ export function SRSpacetimeAlgebra() {
                 In Geometric Algebra we are usually very interested in the bivectors as we can use them for building rotors that
                 do interesting transformations which also easily compose. For example in ordinary Geometric Algebra the bivectors square to $-1$
                 and the resulting rotors perform ordinary rotation.
-                In the next section we will take a look at a problem that appears when dealing with speeds close to the speed of light, and
-                we will try to solve the problem in the next section using our new algebra and make use of those bivectors squaring to $+1$.
+            </div>
+            <div>
+                Next we will take a look at a fundamental problem that relativity solves: the addition of velocities at speeds close to the speed of light.
+                For this we will need to take a look at our bivectors squaring to $+1$ and their rotors.
             </div>
 
             <h4>Conclusion</h4>
@@ -342,6 +344,7 @@ export function SRSpacetimeAlgebra() {
                     <li>Spacetime Algebra: {`$e_t^2 = 1, e_x^2 = e_y^2 = e_z^2 = -1$`}</li>
                 </ul>
             </div>
+
             <h4><Link to="/sr-spacetime-rotors">Special Relativity with Geometric Algebra - Spacetime Rotors</Link></h4>
         </div>
     )
