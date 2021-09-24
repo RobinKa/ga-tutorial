@@ -127,7 +127,7 @@ export function GADesignInterpolatingPoints() {
                 <li>We want to interpolate with a polynomial of degree $N-1$ with coefficients $c_n$: {`$y = \\sum_{n=0}^{N - 1} c_n x^n$`}</li>
                 <li>Use GA with N basis vectors and up function: {`$up(x, y) = y e_{N-1} + \\sum_{n=0}^{N - 2} x^n e_n$`}</li>
                 <li>Build polynomial object $p$ by wedging together N up projected points: {`$p = \\bigwedge_{n=1}^{N} up(x_n, y_n)$`}</li>
-                <li>Extract interpolating polynomial coefficients $c_n$ from $p$: {`$c_n = \\frac{p_n}{p_N}$`}</li>
+                <li>Extract interpolating polynomial coefficients $c_n$ from $p$: {`$c_n = -\\frac{p_n}{p_N}$`}</li>
             </ol>
             <h4>Conclusion</h4>
             <div>
