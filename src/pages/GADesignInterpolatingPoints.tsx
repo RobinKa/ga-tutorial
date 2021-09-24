@@ -67,7 +67,7 @@ export function GADesignInterpolatingPoints() {
                 \\begin{equation}
                 \\begin{aligned}
                     p \\wedge up(x, y) & = (p_0 e_0^* + p_1 e_1^* + p_2 e_2^* + p_3 e_3^*) \\wedge (1 e_0 + x e_1 + x^2 e_2 + y e_3) = \\\\
-                    & = e_{1234} (p_0 + p_1 x + p_2 x^2 + p_3 y) = 0
+                    & = e_{0123} (p_0 + p_1 x + p_2 x^2 + p_3 y) = 0
                 \\end{aligned}
                 \\end{equation}
                 `}
