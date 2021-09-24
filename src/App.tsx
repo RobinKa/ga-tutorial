@@ -105,7 +105,7 @@ function TutorialSite() {
                             <Route exact path="/ga-design-2">
                                 <GADesign2 />
                             </Route>
-                            <Route exact path="/ga-design-polynomial-interpolation">
+                            <Route exact path="/ga-design-curve-interpolation">
                                 <GADesignPolynomialInterpolation />
                             </Route>
                             <Route exact path="/sr-intro">
