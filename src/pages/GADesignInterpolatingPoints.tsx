@@ -1,5 +1,6 @@
 import React from "react"
 import { ImageWithSub, useMathJax } from "../util"
+import { CoffeeShop } from "./CoffeeShop"
 
 export function GADesignInterpolatingPoints() {
     useMathJax()
@@ -129,6 +130,38 @@ export function GADesignInterpolatingPoints() {
                 <li>Build polynomial object $p$ by wedging together N up projected points: {`$p = \\bigwedge_{n=1}^{N} up(x_n, y_n)$`}</li>
                 <li>Extract interpolating polynomial coefficients $c_n$ from $p$: {`$c_n = -\\frac{p_n}{p_N}$`}</li>
             </ol>
+            <h4>Bonus: Different basis functions</h4>
+            <div>
+                While we were focusing on polynomials here, this process works identically with other functions too, as no assumptions about the basis functions were made.
+                The only change is to use a different up function in step 1. Below I tried some different basis functions for three points.
+            </div>
+
+            <h5>Three points</h5>
+            <h5>$up(x, y) = e_0 + x e_1 + x^2 e_2 + y e_3$</h5>
+            <CoffeeShop id="VQQexSqJn" />
+
+            <h5>$up(x, y) = e_0 + sin(x) e_1 + cos(x) e_2 + y e_3$</h5>
+            <CoffeeShop id="sE0Jz4iEG" />
+
+            <h5>$up(x, y) = e_0 + sin(x) e_1 + sin(2x) e_2 + y e_3$</h5>
+            <CoffeeShop id="qsxCQ1Ker" />
+
+            <h5>$up(x, y) = e_0 + 2^x e_1 + 3^x e_2 + + 4^x e_3 + 5^x e_4 + y e_5$</h5>
+            <CoffeeShop id="y8rGJl9mO" />
+
+            <h5>Five points</h5>
+            <h5>$up(x, y) = e_0 + x e_1 + x^2 e_2 + + x^3 e_3 + x^4 e_4 + y e_5$</h5>
+            <CoffeeShop id="9j6q1TBbk" />
+
+            <h5>$up(x, y) = e_0 + sin(x) e_1 + cos(x) e_2 + + sin(2x) e_3 + cos(2x) e_4 + y e_5$</h5>
+            <CoffeeShop id="tGzSdmU6L" />
+
+            <h5>$up(x, y) = e_0 + sin(x) e_1 + sin(2x) e_2 + + sin(3x) e_3 + sin(4x) e_4 + y e_5$</h5>
+            <CoffeeShop id="gGQJmaHTe" />
+
+            <h5>$up(x, y) = e_0 + 2^x e_1 + 3^x e_2 + + 4^x e_3 + 5^x e_4 + y e_5$</h5>
+            <CoffeeShop id="JguozIFuo" />
+
             <h4>Conclusion</h4>
             <div>
                 We started by looking at what interpolation is and we chose to use polynomials for interpolation. We then applied our knowledge from the
@@ -137,8 +170,7 @@ export function GADesignInterpolatingPoints() {
             </div>
             <div>
                 This process generalizes to any number of points and it uses only very simple GA operations, so it might be preferable over the usual methods like
-                using matrices or Lagrange polynomials. Also while we were focusing on polynomials here, this process works identically with other
-                functions too, as no assumptions about the basis functions were made. The only change is to use a different up function in step 1.
+                using matrices or Lagrange polynomials. It also works with any basis functions, not just polynomials.
             </div>
         </div>
     )
