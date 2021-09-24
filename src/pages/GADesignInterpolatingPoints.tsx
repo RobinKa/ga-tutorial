@@ -102,7 +102,7 @@ export function GADesignInterpolatingPoints() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    p = up(-3, 2) \\wedge up(0, 3) \\wedge up(1, 1) = 36 e_1^* - 17 e_2^* - 7 e_3^* - 12 e_4^*
+                    p = up(-3, 2) \\wedge up(0, 3) \\wedge up(1, 1) = 36 e_0^* - 17 e_1^* - 7 e_2^* - 12 e_3^*
                 \\end{equation}
                 `}
             </div>
