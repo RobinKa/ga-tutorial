@@ -146,7 +146,7 @@ export function GADesignInterpolatingPoints() {
             <h5>$up(x, y) = e_0 + sin(x) e_1 + sin(2x) e_2 + y e_3$</h5>
             <CoffeeShop id="qsxCQ1Ker" />
 
-            <h5>$up(x, y) = e_0 + 2^x e_1 + 3^x e_2 + + 4^x e_3 + 5^x e_4 + y e_5$</h5>
+            <h5>$up(x, y) = e_0 + 2^x e_1 + 3^x e_2 + y e_3$</h5>
             <CoffeeShop id="y8rGJl9mO" />
 
             <h5>Five points</h5>
