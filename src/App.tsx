@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from "react"
 import ReactDOM from "react-dom"
 import { BrowserRouter as Router, Switch, Route, useLocation, Link } from "react-router-dom"
-import { TutorialIndex, GATutorial, PGATutorial, Motivation, PGAGeometryTutorial, GADesign1, GADesign2, SRIntro, SRSpacetimeAlgebra, SRSpacetimeRotors, SRLengthContraction, SRGAReview, SRMeasuring, SRElectromagnetism, SRTimeDilation, GADesignPolynomialInterpolation } from "./pages"
+import { TutorialIndex, GATutorial, PGATutorial, Motivation, PGAGeometryTutorial, GADesign1, GADesign2, SRIntro, SRSpacetimeAlgebra, SRSpacetimeRotors, SRLengthContraction, SRGAReview, SRMeasuring, SRElectromagnetism, SRTimeDilation, GADesignInterpolatingPoints } from "./pages"
 import * as ga from "./ga/ga_pp"
 import * as ga3d from "./ga/ga_ppp"
 import * as pga from "./ga/ga_zpp"
@@ -16,7 +16,7 @@ const breadcrumbPathToName: { [key: string]: string } = {
     "pga-geometry": "PGA Geometry",
     "ga-design-1": "Designing Geometric Algebras - Shapes",
     "ga-design-2": "Designing Geometric Algebras - Rotors",
-    "ga-design-curve-interpolation": "Designing Geometric Algebras - Curve Interpolating",
+    "ga-design-interpolating-points": "Designing Geometric Algebras - Interpolating Points",
     "sr-intro": "Special Relativity with Geometric Algebra - Introduction",
     "sr-ga-review": "Special Relativity with Geometric Algebra - Geometric Algebra Review",
     "sr-spacetime-algebra": "Special Relativity with Geometric Algebra - Spacetime Algebra",
@@ -105,8 +105,8 @@ function TutorialSite() {
                             <Route exact path="/ga-design-2">
                                 <GADesign2 />
                             </Route>
-                            <Route exact path="/ga-design-curve-interpolation">
-                                <GADesignPolynomialInterpolation />
+                            <Route exact path="/ga-design-interpolating-points">
+                                <GADesignInterpolatingPoints />
                             </Route>
                             <Route exact path="/sr-intro">
                                 <SRIntro />

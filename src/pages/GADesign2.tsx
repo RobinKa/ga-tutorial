@@ -302,7 +302,7 @@ export function GADesign2() {
                 Perhaps there's a better way. I don't know whether this works for functions other than polynomials either, it might for some, but it certainly doesn't for many because the correction terms 
                 can not be done with translators, although if we had more rotors in our toolbox than just translators this might be fixable.
             </div>
-            <h4><Link to="/ga-design-curve-interpolation">Next: Design of Geometric Algebras - Curve Interpolation</Link></h4>
+            <h4><Link to="/ga-design-interpolating-points">Next: Design of Geometric Algebras - Interpolating Points</Link></h4>
         </div >
     )
 }

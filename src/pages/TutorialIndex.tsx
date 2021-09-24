@@ -28,7 +28,7 @@ export function TutorialIndex() {
             <ol>
                 <li><Link to="/ga-design-1">Design of Geometric Algebras - Shapes</Link></li>
                 <li><Link to="/ga-design-2">Design of Geometric Algebras - Rotors</Link> <b style={{ color: "red" }}>(WIP, flawed)</b></li>
-                <li><Link to="/ga-design-curve-interpolation">Design of Geometric Algebras - Curve Interpolating</Link></li>
+                <li><Link to="/ga-design-interpolating-points">Design of Geometric Algebras - Curve Interpolating</Link></li>
             </ol>
             <h4>Special Relativity with Geometric Algebra</h4>
             <div>
