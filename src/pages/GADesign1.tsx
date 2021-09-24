@@ -8,7 +8,7 @@ export function GADesign1() {
 
     return (
         <div>
-            <h3>Designing Geometric Algebras - Part 1</h3>
+            <h3>Designing Geometric Algebras - Shapes</h3>
             <div>
                 Typically we choose a Geometric Algebra that will work well with our problem.
                 First there are the object types the different GAs can represent.
@@ -347,7 +347,7 @@ export function GADesign1() {
                 The major thing we are still missing are operations on objects such as rotation and translation for which we want rotors. 
                 For these the metric and whether we use a dual representation or not will actually matter. That will be the topic of the next section.
             </div>
-            <h4><Link to="/ga-design-2">Next: Design of Geometric Algebras - Part 2</Link></h4>
+            <h4><Link to="/ga-design-2">Next: Design of Geometric Algebras - Rotors</Link></h4>
         </div>
     )
 }

@@ -26,8 +26,9 @@ export function TutorialIndex() {
                 Shows how we can create Geometric Algebras which can represent any shape and how we can get useful rotors in them.
             </div>
             <ol>
-                <li><Link to="/ga-design-1">Design of Geometric Algebras - Part 1</Link></li>
-                <li><Link to="/ga-design-2">Design of Geometric Algebras - Part 2</Link> <b style={{ color: "red" }}>(WIP, flawed)</b></li>
+                <li><Link to="/ga-design-1">Design of Geometric Algebras - Shapes</Link></li>
+                <li><Link to="/ga-design-2">Design of Geometric Algebras - Rotors</Link> <b style={{ color: "red" }}>(WIP, flawed)</b></li>
+                <li><Link to="/ga-design-curve-interpolation">Design of Geometric Algebras - Curve Interpolating</Link></li>
             </ol>
             <h4>Special Relativity with Geometric Algebra</h4>
             <div>

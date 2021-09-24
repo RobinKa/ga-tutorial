@@ -8,7 +8,7 @@ export function GADesign2() {
 
     return (
         <div>
-            <h3>Designing Geometric Algebras - Part 2</h3>
+            <h3>Designing Geometric Algebras - Rotors</h3>
             <div>
                 In the first part of this series we learnt how to create geometric algebras that
                 can represent arbitrary objects. In this second part we will learn about how to
@@ -302,7 +302,7 @@ export function GADesign2() {
                 Perhaps there's a better way. I don't know whether this works for functions other than polynomials either, it might for some, but it certainly doesn't for many because the correction terms 
                 can not be done with translators, although if we had more rotors in our toolbox than just translators this might be fixable.
             </div>
-            <h4><Link to="/ga-design-3">Next: Design of Geometric Algebras - Part 3</Link></h4>
+            <h4><Link to="/ga-design-curve-interpolation">Next: Design of Geometric Algebras - Curve Interpolation</Link></h4>
         </div >
     )
 }
