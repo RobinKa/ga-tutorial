@@ -133,7 +133,7 @@ export function GADesignInterpolatingPoints() {
             <h4>Bonus: Different basis functions</h4>
             <div>
                 While we were focusing on polynomials here, this process works identically with other functions too, as no assumptions about the basis functions were made.
-                The only change is to use a different up function in step 1. Below I tried some different basis functions for three points and five points.
+                The only change is to use a different up function. Below I tried some different basis functions for three points and five points.
             </div>
 
             <h5>Three points</h5>
