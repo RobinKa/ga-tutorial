@@ -126,7 +126,7 @@ export function GADesignInterpolatingPoints() {
             </div>
             <ol>
                 <li>We want to interpolate with a polynomial of degree $N-1$ with coefficients $c_n$: {`$y = \\sum_{n=0}^{N - 1} c_n x^n$`}</li>
-                <li>Use GA with N basis vectors and up function: {`$up(x, y) = y e_{N-1} + \\sum_{n=0}^{N - 2} x^n e_n$`}</li>
+                <li>Use GA with N basis vectors and up function: {`$up(x, y) = y e_{N} + \\sum_{n=0}^{N - 1} x^n e_n$`}</li>
                 <li>Build polynomial object $p$ by wedging together N up projected points: {`$p = \\bigwedge_{n=1}^{N} up(x_n, y_n)$`}</li>
                 <li>Extract interpolating polynomial coefficients $c_n$ from $p$: {`$c_n = -\\frac{p_n}{p_N}$`}</li>
             </ol>
@@ -139,7 +139,7 @@ export function GADesignInterpolatingPoints() {
             </div>
             <div>
                 This process generalizes to any number of points and it uses only very simple GA operations, so it might be preferable over the usual methods like
-                using matrices or Lagrange polynomials.  While we were focusing on polynomials here, this process works identically with other functions too, as no assumptions about the basis functions were made.
+                using matrices or Lagrange polynomials. While we were focusing on polynomials here, this process works identically with other functions too, as no assumptions about the basis functions were made.
                 The only change is to use a different up function.
             </div>
 
