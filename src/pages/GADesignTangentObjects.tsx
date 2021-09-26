@@ -99,8 +99,8 @@ export function GADesignTangentObjects() {
                 `}
             </div>
             <div>
-                The result contains the small step $\delta_x$, the x coordinate of the point at which we want the tangent line,
-                the parabola parameters $a, b, c$ and the variable x parameter of the parabola.
+                The result contains the small step $\delta_x$, the x coordinate $u_x$ of the point at which we want the tangent line,
+                the parabola parameters $a, b, c$ and the variable x parameter of the parabola itself.
             </div>
             <div>
                 If we now define the small step to square to $0$, we can simplify and solve for $y$.
@@ -202,7 +202,7 @@ export function GADesignTangentObjects() {
                         including the tangent objects. In our parabola example, $M = 4$ (the GA has 4 basis vectors), $O = 1$ (a 1D curve) and $N = 2$ (the curve lies in a 2D space).
                     </li>
                     <li>We have an object defined by $N - O$ intrinsic equations $f_i(x_1, ..., x_O)$ (one for each extra "physical" dimension higher than the object itself) for which we want to find the tangent object at arbitrary points on it</li>
-                    <li>Choose a point {`$u = (u_1, ..., u_O, f_1(u_1, ..., u_O), ..., f_{1+N-O}(u_1, ..., u_{O}))$`} where we want to find the tangent object that lies on the object.</li>
+                    <li>Choose a point {`$u = (u_1, ..., u_O, f_1(u_1, ..., u_O), ..., f_{1+N-O}(u_1, ..., u_{O}))$`} which lies on the object and is where we want to find the tangent object.</li>
                     <li>
                         Choose $O - 1$ points that are close to the chosen point $u$. Do this by introducing $\delta_x, \delta_y, ...$ that square to zero and adding them to the
                         independent cooordinates of the first point (eg. for a 2D surface in 3D space $v = (u_x + \delta_x, u_y, f(u_x + \delta_x, u_y))$, $w = (u_x, u_y + \delta_y, f(u_x, u_y + \delta_y))$).
