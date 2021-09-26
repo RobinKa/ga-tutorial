@@ -1,7 +1,12 @@
 import React, { useEffect, useMemo } from "react"
 import ReactDOM from "react-dom"
 import { BrowserRouter as Router, Switch, Route, useLocation, Link } from "react-router-dom"
-import { TutorialIndex, GATutorial, PGATutorial, Motivation, PGAGeometryTutorial, GADesign1, GADesign2, SRIntro, SRSpacetimeAlgebra, SRSpacetimeRotors, SRLengthContraction, SRGAReview, SRMeasuring, SRElectromagnetism, SRTimeDilation, GADesignInterpolatingPoints } from "./pages"
+import {
+    TutorialIndex, GATutorial, PGATutorial, Motivation, PGAGeometryTutorial, GADesign1, GADesign2,
+    SRIntro, SRSpacetimeAlgebra, SRSpacetimeRotors, SRLengthContraction, SRGAReview, SRMeasuring,
+    SRElectromagnetism, SRTimeDilation, GADesignInterpolatingPoints, PopulationGrowth,
+    GADesignTangentObjects
+} from "./pages"
 import * as ga from "./ga/ga_pp"
 import * as ga3d from "./ga/ga_ppp"
 import * as pga from "./ga/ga_zpp"
@@ -17,6 +22,7 @@ const breadcrumbPathToName: { [key: string]: string } = {
     "ga-design-1": "Designing Geometric Algebras - Shapes",
     "ga-design-2": "Designing Geometric Algebras - Rotors",
     "ga-design-interpolating-points": "Designing Geometric Algebras - Interpolating Points",
+    "ga-design-tangent-objects": "Designing Geometric Algebras - Tangent Objects",
     "sr-intro": "Special Relativity with Geometric Algebra - Introduction",
     "sr-ga-review": "Special Relativity with Geometric Algebra - Geometric Algebra Review",
     "sr-spacetime-algebra": "Special Relativity with Geometric Algebra - Spacetime Algebra",
@@ -24,6 +30,7 @@ const breadcrumbPathToName: { [key: string]: string } = {
     "sr-spacetime-rotors": "Special Relativity with Geometric Algebra - Spacetime Rotors",
     "sr-length-contraction": "Special Relativity with Geometric Algebra - Length Contraction",
     "sr-electromagnetism": "Special Relativity with Geometric Algebra - Electromagnetism",
+    "population-growth": "Population Growth in Hyperbolic Space with Geometric Algebra",
 }
 
 export const pathToBreadcrumbs = (path: string) => {
@@ -108,6 +115,9 @@ function TutorialSite() {
                             <Route exact path="/ga-design-interpolating-points">
                                 <GADesignInterpolatingPoints />
                             </Route>
+                            <Route exact path="/ga-design-tangent-objects">
+                                <GADesignTangentObjects />
+                            </Route>
                             <Route exact path="/sr-intro">
                                 <SRIntro />
                             </Route>
@@ -131,6 +141,9 @@ function TutorialSite() {
                             </Route>
                             <Route exact path="/sr-electromagnetism">
                                 <SRElectromagnetism />
+                            </Route>
+                            <Route exact path="/population-growth">
+                                <PopulationGrowth />
                             </Route>
                             <Route path="*">
                                 <NotFound />

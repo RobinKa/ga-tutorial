@@ -1,6 +1,7 @@
 import React from "react"
 import { ImageWithSub, useMathJax } from "../util"
 import { CoffeeShop } from "./CoffeeShop"
+import { Link } from "react-router-dom"
 
 export function GADesignInterpolatingPoints() {
     useMathJax()
@@ -142,6 +143,8 @@ export function GADesignInterpolatingPoints() {
                 using matrices or Lagrange polynomials. While we were focusing on polynomials here, this process works identically with other functions too, as no assumptions about the basis functions were made.
                 The only change is to use a different up function.
             </div>
+            
+            <h4><Link to="/ga-design-tangent-objects">Next: Design of Geometric Algebras - Tangent Objects</Link></h4>
 
             <h4>Bonus: Different basis functions</h4>
             <div>Below I tried some different basis functions for the same three points and five points.
