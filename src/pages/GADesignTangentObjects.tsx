@@ -177,7 +177,7 @@ export function GADesignTangentObjects() {
                 Instead of just just one close point we now have $O - 1$ close points offset by $\delta_x, \delta_y, ...$.
             </div>
             <div>
-                Second, We can have $O$ dimensional objects in spaces of dimension $N$ where $N \greater O$, so there are $N - O$ "extra" dimensions.
+                Second, We can have $O$ dimensional objects in spaces of dimension $N$ where $N &gt; O$, so there are $N - O$ "extra" dimensions.
                 This means for each extra dimension we need functions $f_i$ that map from the object's parameters to the values in the extra dimensions.
                 In the parabola example, the parabola is a 1D object in 2D space, so we had $N = 2, O = 1$ and we got $2 - 1 = 1$ function for describing
                 the $y$ coordinate of the parabola which depends on $x$. For curves in 3D space however we would get $3 - 1 = 2$ functions for the $y$ and $z$ coordinate depending on $x$.
