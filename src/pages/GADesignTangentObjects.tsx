@@ -14,7 +14,7 @@ export function GADesignTangentObjects() {
             </div>
             <div>
                 In a curve in 2 dimensional space, the tangent space at a point would just be the tangent line at it.
-                In 3 dimensions, the tangent space of a curve would still be a tangent line, this this time it is a line in 3 dimensions instead of 2.
+                In 3 dimensions, the tangent space of a curve would still be a tangent line, but this time it is a line in 3 dimensions instead of 2.
                 If we look at a surface in 3 dimensions, its tangent space at a point on it would be a plane at that point tangent to the surface.
             </div>
             <div>
