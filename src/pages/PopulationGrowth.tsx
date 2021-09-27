@@ -200,9 +200,12 @@ export function PopulationGrowth() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                P_{2+3} = \\frac{K}{2} (tanh(\\tanh^-1(\\frac{2 P_2}{K} - 1) + \\tanh^-1(\\frac{2 P_3}{K} - 1)) + 1) \\approx 1966
+                P_{2+3} = \\frac{K}{2} tanh(\\tanh^-1(\\frac{2 P_2}{K} - 1) + \\tanh^-1(\\frac{2 P_3}{K} - 1) + 1) \\approx 485
                 \\end{equation}
                 `}
+            </div>
+            <div>
+                which, when added to our initial population of half the carrying capacity, results in $500 + 485 = 985$ which is slightly less than the carrying capacity.
             </div>
             <h4>Population is not relative!</h4>
             <div>
