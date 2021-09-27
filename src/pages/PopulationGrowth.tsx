@@ -155,7 +155,7 @@ export function PopulationGrowth() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                v_2 = R_2 e_1 \\widetilde{R_2} = \\cosh(\\varphi) e_1 + \\sinh(\\varphi) e_2 = \\cosh(\\tanh^-1{\\frac{2 P}{K} - 1}) e_1 + \\sinh(\\tanh^-1{\\frac{2 P}{K} - 1}) e_2
+                v_2 = R_2 e_1 \\widetilde{R_2} = \\cosh(\\varphi) e_1 + \\sinh(\\varphi) e_2 = \\cosh(\\tanh^{-1}{\\frac{2 P}{K} - 1}) e_1 + \\sinh(\\tanh^{-1}{\\frac{2 P}{K} - 1}) e_2
                 \\end{equation}
                 `}
             </div>
@@ -190,7 +190,7 @@ export function PopulationGrowth() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                \\varphi_{2+3} = \\varphi_2 + \\varphi_3 = \\tanh^-1(\\frac{2 P_2}{K} - 1) + \\tanh^-1(\\frac{2 P_3}{K} - 1)
+                \\varphi_{2+3} = \\varphi_2 + \\varphi_3 = \\tanh^{-1}(\\frac{2 P_2}{K} - 1) + \\tanh^{-1}(\\frac{2 P_3}{K} - 1)
                 \\end{equation}
                 `}
             </div>
