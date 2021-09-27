@@ -28,7 +28,7 @@ export function GADesign2() {
                     </tr>
                     <tr>
                         <td>-1</td>
-                        <td>$cos(t) + B sin(t)$</td>
+                        <td>$\cos(t) + B \sin(t)$</td>
                         <td>Rotates between B's two vectors</td>
                     </tr>
                     <tr>
@@ -38,7 +38,7 @@ export function GADesign2() {
                     </tr>
                     <tr>
                         <td>+1</td>
-                        <td>$cosh(t) + B sinh(t)$</td>
+                        <td>$\cosh(t) + B \sinh(t)$</td>
                         <td><a href="https://en.wikipedia.org/wiki/Lorentz_transformation#Physical_formulation_of_Lorentz_boosts">Boosts</a> between B's two vectors</td>
                     </tr>
                 </table>

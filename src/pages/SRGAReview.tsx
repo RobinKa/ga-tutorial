@@ -67,7 +67,7 @@ export function SRGAReview() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    R_{xy} = e^{-\\frac{\\varphi}{2} e_{xy}} = cos(-\\frac{\\varphi}{2}) + sin(-\\frac{\\varphi}{2}) e_{xy}
+                    R_{xy} = e^{-\\frac{\\varphi}{2} e_{xy}} = \\cos(-\\frac{\\varphi}{2}) + \\sin(-\\frac{\\varphi}{2}) e_{xy}
                 \\end{equation}
                 `}
             </div>

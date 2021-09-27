@@ -154,32 +154,32 @@ export function GADesignInterpolatingPoints() {
             <h5>$up(x, y) = e_0 + x e_1 + x^2 e_2 + y e_3$</h5>
             <CoffeeShop id="VQQexSqJn" />
 
-            <h5>$up(x, y) = e_0 + sin(x) e_1 + cos(x) e_2 + y e_3$</h5>
+            <h5>$up(x, y) = e_0 + \sin(x) e_1 + \cos(x) e_2 + y e_3$</h5>
             <CoffeeShop id="sE0Jz4iEG" />
 
-            <h5>$up(x, y) = e_0 + sin(x) e_1 + sin(2x) e_2 + y e_3$</h5>
+            <h5>$up(x, y) = e_0 + \sin(x) e_1 + \sin(2x) e_2 + y e_3$</h5>
             <CoffeeShop id="qsxCQ1Ker" />
 
             <h5>$up(x, y) = e_0 + 2^x e_1 + 3^x e_2 + y e_3$</h5>
             <CoffeeShop id="y8rGJl9mO" />
 
-            <h5>$up(x, y) = sin(y) e_0 + sin(x) e_1 + cos(x) e_2 + sin(x*y) e_3$</h5>
+            <h5>$up(x, y) = \sin(y) e_0 + \sin(x) e_1 + \cos(x) e_2 + \sin(x*y) e_3$</h5>
             <CoffeeShop id="CPm-0o8Zj" />
 
             <h5>Five points</h5>
             <h5>$up(x, y) = e_0 + x e_1 + x^2 e_2 + x^3 e_3 + x^4 e_4 + y e_5$</h5>
             <CoffeeShop id="9j6q1TBbk" />
 
-            <h5>$up(x, y) = e_0 + sin(x) e_1 + cos(x) e_2 + sin(2x) e_3 + cos(2x) e_4 + y e_5$</h5>
+            <h5>$up(x, y) = e_0 + \sin(x) e_1 + \cos(x) e_2 + \sin(2x) e_3 + \cos(2x) e_4 + y e_5$</h5>
             <CoffeeShop id="tGzSdmU6L" />
 
-            <h5>$up(x, y) = e_0 + sin(x) e_1 + sin(2x) e_2 + sin(3x) e_3 + sin(4x) e_4 + y e_5$</h5>
+            <h5>$up(x, y) = e_0 + \sin(x) e_1 + \sin(2x) e_2 + \sin(3x) e_3 + \sin(4x) e_4 + y e_5$</h5>
             <CoffeeShop id="gGQJmaHTe" />
 
             <h5>$up(x, y) = e_0 + 2^x e_1 + 3^x e_2 + 4^x e_3 + 5^x e_4 + y e_5$</h5>
             <CoffeeShop id="JguozIFuo" />
 
-            <h5>$up(x, y) = x e_0 + sin(x) e_1 + cos(x) e_2 + sin(y) e_3 + cos(y) e_4 + y e_5$</h5>
+            <h5>$up(x, y) = x e_0 + \sin(x) e_1 + \cos(x) e_2 + \sin(y) e_3 + \cos(y) e_4 + y e_5$</h5>
             <CoffeeShop id="sp_d8LDjz" />
         </div>
     )

@@ -79,7 +79,7 @@ export function SRLengthContraction() {
                 {`
                 \\begin{equation}
                     \\begin{aligned}
-                        l^{(b)} e_x^{(b)} & = l^{(b)} \\widetilde{R} e_x^{(b)} {R} = l^{(b)} (cosh(\\varphi) e_x^{(a)} + sinh(\\varphi) e_t^{(a)})
+                        l^{(b)} e_x^{(b)} & = l^{(b)} \\widetilde{R} e_x^{(b)} {R} = l^{(b)} (\\cosh(\\varphi) e_x^{(a)} + \\sinh(\\varphi) e_t^{(a)})
                     \\end{aligned}
                     \\label{eq:lengthcontraction2}
                 \\end{equation}
@@ -91,7 +91,7 @@ export function SRLengthContraction() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    l e_x^{(a)} + d e_t^{(a)} = l^{(b)} (cosh(\\varphi) e_x^{(a)} + sinh(\\varphi) e_t^{(a)})
+                    l e_x^{(a)} + d e_t^{(a)} = l^{(b)} (\\cosh(\\varphi) e_x^{(a)} + \\sinh(\\varphi) e_t^{(a)})
                 \\end{equation}
                 `}
             </div>
@@ -101,7 +101,7 @@ export function SRLengthContraction() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    l = l^{(b)} cosh(\\varphi)
+                    l = l^{(b)} \\cosh(\\varphi)
                 \\end{equation}
                 `}
             </div>
@@ -111,7 +111,7 @@ export function SRLengthContraction() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    \\frac{l^{(b)}}{l} = \\frac{1}{cosh(\\varphi)}
+                    \\frac{l^{(b)}}{l} = \\frac{1}{\\cosh(\\varphi)}
                     \\label{eq:lengthcontraction3}
                 \\end{equation}
                 `}
@@ -127,7 +127,7 @@ export function SRLengthContraction() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                \\frac{l^{(b)}}{l} = \\frac{1}{cosh(tanh^{-1}(\\frac{v}{c}))}
+                \\frac{l^{(b)}}{l} = \\frac{1}{\\cosh(\\tanh^{-1}(\\frac{v}{c}))}
                 \\end{equation}
                 `}
             </div>
@@ -146,7 +146,7 @@ export function SRLengthContraction() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                \\frac{l'}{l} = \\frac{1}{cosh(tanh^{-1}(\\frac{v}{c}))} = \\sqrt{1 - \\frac{v^2}{c^2}} = \\frac{1}{\\gamma}
+                \\frac{l'}{l} = \\frac{1}{\\cosh(\\tanh^{-1}(\\frac{v}{c}))} = \\sqrt{1 - \\frac{v^2}{c^2}} = \\frac{1}{\\gamma}
                 \\end{equation}
                 `}
             </div>

@@ -77,7 +77,7 @@ export function SRSpacetimeRotors() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    R(\\varphi) = e^{-\\frac{\\varphi}{2}e_{tx}} = cosh(-\\frac{\\varphi}{2}) + sinh(-\\frac{\\varphi}{2}) e_{tx}
+                    R(\\varphi) = e^{-\\frac{\\varphi}{2}e_{tx}} = \\cosh(-\\frac{\\varphi}{2}) + \\sinh(-\\frac{\\varphi}{2}) e_{tx}
                 \\end{equation}
                 `}
             </div>
@@ -88,7 +88,7 @@ export function SRSpacetimeRotors() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    R(\\varphi) e_t \\widetilde{R}(\\varphi) = cosh(\\varphi) e_t + sinh(\\varphi) e_x
+                    R(\\varphi) e_t \\widetilde{R}(\\varphi) = \\cosh(\\varphi) e_t + \\sinh(\\varphi) e_x
                 \\end{equation}
                 `}
             </div>
@@ -107,15 +107,15 @@ export function SRSpacetimeRotors() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    slope(\\varphi) = \\frac{sinh(\\varphi)}{cosh(\\varphi)} = \\frac{1}{tanh{\\varphi}}
+                    slope(\\varphi) = \\frac{\\sinh(\\varphi)}{\\cosh(\\varphi)} = \\frac{1}{\\tanh{\\varphi}}
                 \\end{equation}
                 `}
             </div>
             <div>
-                So the slope is equal to one over the hyperbolic tangent $tanh$. If you're familiar with neural networks you probably already know how the $tanh$ function looks (and perhaps other fields I'm not familiar with).
+                So the slope is equal to one over the hyperbolic tangent $\tanh$. If you're familiar with neural networks you probably already know how the $\tanh$ function looks (and perhaps other fields I'm not familiar with).
                 Here's a sketch
             </div>
-            <ImageWithSub src="/images/sr-tanh.png" text="Figure 4 - Hyperbolic tangent function, zero at phi equal to 0, one towards positive and negative infinity." width="50%" />
+            <ImageWithSub src="/images/sr-\\tanh.png" text="Figure 4 - Hyperbolic tangent function, zero at phi equal to 0, one towards positive and negative infinity." width="50%" />
             <div>
                 The second part we need for plotting what the result looks like is the length of the resulting vector. The length in our graph is the euclidean length. This is of course not the length / distance
                 we use in the algebra, but in our drawings, if the $e_x$ and $e_t$ components get bigger, then the vector we draw always gets bigger too. So we also have
@@ -124,7 +124,7 @@ export function SRSpacetimeRotors() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    graphlength(\\varphi) = \\sqrt{cosh^2(\\varphi) + sinh^2(\\varphi)}
+                    graphlength(\\varphi) = \\sqrt{\\cosh^2(\\varphi) + \\sinh^2(\\varphi)}
                 \\end{equation}
                 `}
             </div>
@@ -142,14 +142,14 @@ export function SRSpacetimeRotors() {
             <h5>Relation between velocity and angle</h5>
             <div>
                 Given what we learnt, we can try to figure out the relationship between the angle $\varphi$ and the velocity $v$.
-                We know that the slope for light is $1$, so {`$tanh(\\varphi_{light}) = 1$`}. We also know that the rest velocity
-                has slope infinity (vertical), ie. {`$tanh(0) = 0$`}. Based on these two data points, what do you think the relation is?
+                We know that the slope for light is $1$, so {`$\\tanh(\\varphi_{light}) = 1$`}. We also know that the rest velocity
+                has slope infinity (vertical), ie. {`$\\tanh(0) = 0$`}. Based on these two data points, what do you think the relation is?
                 The correct answer that also fits both data points is
             </div>
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    tanh(\\varphi) = \\frac{v}{c}
+                    \\tanh(\\varphi) = \\frac{v}{c}
                     \\label{eq:anglevelocity}
                 \\end{equation}
                 `}
@@ -182,7 +182,7 @@ export function SRSpacetimeRotors() {
             </div>
             {`
             \\begin{equation}
-                v_{ball} = c \\cdot tanh(\\varphi_1 + \\varphi_2) = c \\cdot tanh(tanh^{-1}(0.8) + tanh^{-1}(0.4)) \\approx 0.9c
+                v_{ball} = c \\cdot \\tanh(\\varphi_1 + \\varphi_2) = c \\cdot \\tanh(\\tanh^{-1}(0.8) + \\tanh^{-1}(0.4)) \\approx 0.9c
             \\end{equation}
             `}
             <div>
@@ -195,14 +195,14 @@ export function SRSpacetimeRotors() {
                 We then saw how we can relate velocity vectors using rotors with bivectors that square to $+1$. We noticed that these rotors rotate velocity vectors
                 towards the speed of light but never exceed it. We also saw that the rotors don't change with passive transformations so we could compose them
                 to solve our velocity addition problem. The result was that we can add the rotor angles for rotors in the same plane and relate them to velocities
-                using the formula {`$tanh(\\varphi) = \\frac{v}{c}$`}.
+                using the formula {`$\\tanh(\\varphi) = \\frac{v}{c}$`}.
             </div>
             <h4>Formulas</h4>
             <div>
                 <ul>
-                    <li>Relation between angle and velocity: {`$tanh(\\varphi) = \\frac{v}{c}$`}</li>
+                    <li>Relation between angle and velocity: {`$\\tanh(\\varphi) = \\frac{v}{c}$`}</li>
                     <li>Addition of angles: {`$\\varphi_{a+b} = \\varphi_a + \\varphi_b$`}</li>
-                    <li>Addition of velocities: {`$v_{a+b} = c \\cdot tanh(\\varphi_{a+b}) = c \\cdot tanh(tanh^{-1}(\\frac{v_a}{c}) + tanh^{-1}(\\frac{v_b}{c}))$`}</li>
+                    <li>Addition of velocities: {`$v_{a+b} = c \\cdot \\tanh(\\varphi_{a+b}) = c \\cdot \\tanh(\\tanh^{-1}(\\frac{v_a}{c}) + \\tanh^{-1}(\\frac{v_b}{c}))$`}</li>
                 </ul>
             </div>
             <h4>Up next</h4>

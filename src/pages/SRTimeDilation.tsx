@@ -68,15 +68,15 @@ export function SRTimeDilation() {
                 \\begin{equation}
                 \\begin{aligned}
                 c \\Delta t' & = {e^t}' \\cdot v = R e^t \\widetilde{R} \\cdot v = R e_t \\widetilde{R} \\cdot v \\\\
-                & = (cosh(\\varphi) e_t + sinh(\\varphi) e_x) \\cdot c \\Delta t e_t \\\\
-                & = cosh(\\varphi) c \\Delta t
+                & = (\\cosh(\\varphi) e_t + \\sinh(\\varphi) e_x) \\cdot c \\Delta t e_t \\\\
+                & = \\cosh(\\varphi) c \\Delta t
                 \\end{aligned}
                 \\label{eq:time-dilation}
                 \\end{equation}
                 `}
             </div>
             <div>
-                Because $cosh(\varphi) \geq 1$, the faster Bob moves, the longer it takes for him to see the stop event. Bob sees Alice's clock ticking slower.
+                Because $\cosh(\varphi) \geq 1$, the faster Bob moves, the longer it takes for him to see the stop event. Bob sees Alice's clock ticking slower.
                 This is a phenomenon called time dilation. An observer moving relative to another observer will see the other's time tick slower.
             </div>
             <div>
@@ -88,8 +88,8 @@ export function SRTimeDilation() {
                 \\begin{equation}
                 \\begin{aligned}
                 \\Delta x' & = {e^x}' \\cdot v = R e^x \\widetilde{R} \\cdot v = -R e_x \\widetilde{R} \\cdot v\\\\
-                & = -(cosh(\\varphi) e_x + sinh(\\varphi) e_t) \\cdot c \\Delta t e_t \\\\
-                & = -sinh(\\varphi) c \\Delta t
+                & = -(\\cosh(\\varphi) e_x + \\sinh(\\varphi) e_t) \\cdot c \\Delta t e_t \\\\
+                & = -\\sinh(\\varphi) c \\Delta t
                 \\end{aligned}
                 \\end{equation}
                 `}
@@ -107,9 +107,9 @@ export function SRTimeDilation() {
                 {`
                 \\begin{equation}
                 \\begin{aligned}
-                \\varphi & = tanh^{-1}(\\frac{0.9c}{c}) \\\\
-                \\Delta t' & = cosh(\\varphi) \\Delta t \\approx 23\\mathrm{s} \\\\
-                \\Delta x' & = -sinh(\\varphi) c \\Delta t \\approx -6.2 \\times 10^9\\mathrm{m} \\approx -21 \\mathrm{light seconds}
+                \\varphi & = \\tanh^{-1}(\\frac{0.9c}{c}) \\\\
+                \\Delta t' & = \\cosh(\\varphi) \\Delta t \\approx 23\\mathrm{s} \\\\
+                \\Delta x' & = -\\sinh(\\varphi) c \\Delta t \\approx -6.2 \\times 10^9\\mathrm{m} \\approx -21 \\mathrm{light seconds}
                 \\end{aligned}
                 \\end{equation}
                 `}
@@ -119,24 +119,24 @@ export function SRTimeDilation() {
             </div>
             <h4>Gamma factor</h4>
             <div>
-                We can rearrange {`\\eqref{eq:time-dilation}`} for the ratio of the dilated and the original time, and substitute $\varphi$ using its velocity relation {`$tanh \\varphi = \\frac{v}{c}$`} to get the following equation
+                We can rearrange {`\\eqref{eq:time-dilation}`} for the ratio of the dilated and the original time, and substitute $\varphi$ using its velocity relation {`$\tanh \\varphi = \\frac{v}{c}$`} to get the following equation
             </div>
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                \\frac{\\Delta t'}{\\Delta t} = cosh(\\varphi) = cosh(tanh^{-1}(\\frac{v}{c}))
+                \\frac{\\Delta t'}{\\Delta t} = \\cosh(\\varphi) = \\cosh(\\tanh^{-1}(\\frac{v}{c}))
                 \\end{equation}
                 `}
             </div>
             <div>
                 In ordinary Special Relativity the ratio we arrived is called the <a href="https://en.wikipedia.org/wiki/Lorentz_factor">Gamma factor or Lorentz factor</a> {`$\\gamma = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}}$`}.
                 and is used all over the place there. However the expression we have right now involves hyperbolic functions does not look exactly like the gamma factor yet.
-                To bring it into the same form, we use the identity {`$cosh(tanh^{-1}(x)) = \\frac{1}{\\sqrt{1 - x^2}}$`}.
+                To bring it into the same form, we use the identity {`$\\cosh(\\tanh^{-1}(x)) = \\frac{1}{\\sqrt{1 - x^2}}$`}.
             </div>
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                \\frac{\\Delta t'}{\\Delta t} = cosh(tanh^{-1}(\\frac{v}{c})) = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}} = \\gamma
+                \\frac{\\Delta t'}{\\Delta t} = \\cosh(\\tanh^{-1}(\\frac{v}{c})) = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}} = \\gamma
                 \\end{equation}
                 `}
             </div>
@@ -154,7 +154,7 @@ export function SRTimeDilation() {
             <h4>Formulas</h4>
             <div>
                 <ul>
-                    <li>Gamma factor for observer moving with velocity $v$: {`$\\gamma(v) = cosh(tanh^{-1}(\\frac{v}{c})) = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}}$`}</li>
+                    <li>Gamma factor for observer moving with velocity $v$: {`$\\gamma(v) = \\cosh(\\tanh^{-1}(\\frac{v}{c})) = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}}$`}</li>
                     <li>Time dilation for observer moving with relative velocity $v$: {`$\\frac{\\Delta t'}{\\Delta t} = \\gamma(v)$`}</li>
                 </ul>
             </div>

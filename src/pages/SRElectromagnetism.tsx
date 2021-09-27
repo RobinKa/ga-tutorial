@@ -90,8 +90,8 @@ export function SRElectromagnetism() {
                 {`
                 \\begin{equation}
                 \\begin{aligned}
-                {e^{tx}}' & = R_y {e^{tx}} \\widetilde{R}_y = R_y e_{tx} \\widetilde{R}_y = cosh(\\varphi_y) e_{tx} + sinh(\\varphi) e_{xy} \\\\
-                {e^{xy}}' & = R_y {e^{xy}} \\widetilde{R}_y = -R_y e_{xy} \\widetilde{R}_y = -(cosh(\\varphi_y) e_{xy} + sinh(\\varphi) e_{tx})
+                {e^{tx}}' & = R_y {e^{tx}} \\widetilde{R}_y = R_y e_{tx} \\widetilde{R}_y = \\cosh(\\varphi_y) e_{tx} + \\sinh(\\varphi) e_{xy} \\\\
+                {e^{xy}}' & = R_y {e^{xy}} \\widetilde{R}_y = -R_y e_{xy} \\widetilde{R}_y = -(\\cosh(\\varphi_y) e_{xy} + \\sinh(\\varphi) e_{tx})
                 \\end{aligned}
                 \\end{equation}
                 `}
@@ -104,8 +104,8 @@ export function SRElectromagnetism() {
                 {`
                 \\begin{equation}
                     \\begin{aligned}
-                    F'_{tx} & = {e^{tx}}' \\cdot F = E_x cosh(\\varphi_y) \\\\
-                    F'_{xy} & = {e^{xy}}' \\cdot F = -E_x sinh(\\varphi_y) \\\\
+                    F'_{tx} & = {e^{tx}}' \\cdot F = E_x \\cosh(\\varphi_y) \\\\
+                    F'_{xy} & = {e^{xy}}' \\cdot F = -E_x \\sinh(\\varphi_y) \\\\
                     \\end{aligned}
                     \\label{eq:transform-faraday}
                 \\end{equation}
@@ -121,8 +121,8 @@ export function SRElectromagnetism() {
                 {`
                 \\begin{equation}
                     \\begin{aligned}
-                        E_x' & = E_x cosh(\\varphi_y) \\\\
-                        B_z' & = -E_x sinh(\\varphi_y)
+                        E_x' & = E_x \\cosh(\\varphi_y) \\\\
+                        B_z' & = -E_x \\sinh(\\varphi_y)
                     \\end{aligned}
                 \\end{equation}
                 `}

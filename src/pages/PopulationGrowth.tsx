@@ -52,17 +52,17 @@ export function PopulationGrowth() {
             </div>
             <div>
                 Now the key part which is also the reason why I started looking at population growth in the first
-                place: equation {`\\eqref{eq:popgrowth-rewritten}`} contains the sigmoid function which is just an offset and rescaled version of the $tanh$ function.
-                If you are into Machine-Learning you might already be familiar with this. The sigmoid function {`$\\sigma(x) = \\frac{1}{1 + e^{-x}} = \\frac{tanh(x) + 1}{2}$`}.
+                place: equation {`\\eqref{eq:popgrowth-rewritten}`} contains the sigmoid function which is just an offset and rescaled version of the $\tanh$ function.
+                If you are into Machine-Learning you might already be familiar with this. The sigmoid function {`$\\sigma(x) = \\frac{1}{1 + e^{-x}} = \\frac{\\tanh(x) + 1}{2}$`}.
             </div>
             <div>
-                The $tanh$ function is interesting because it pops up in Special Relativity and Hyperbolic Space.
+                The $\tanh$ function is interesting because it pops up in Special Relativity and Hyperbolic Space.
                 With this, equation {`\\eqref{eq:popgrowth-rewritten}`} can be rewritten to
             </div>
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    P(t) = \\frac{K}{2} (tanh(r t) + 1)
+                    P(t) = \\frac{K}{2} (\\tanh(r t) + 1)
                     \\label{eq:popgrowth-tanh}
                 \\end{equation}
                 `}
@@ -75,18 +75,18 @@ export function PopulationGrowth() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    tanh(\\varphi) = \\frac{v}{c}
+                    \\tanh(\\varphi) = \\frac{v}{c}
                     \\label{eq:tanh-relation-sr}
                 \\end{equation}
                 `}
             </div>
             <div>
-                We can compare this to our population growth model. Let's solve equation {`\\eqref{eq:popgrowth-tanh}`} for the $tanh$ term.
+                We can compare this to our population growth model. Let's solve equation {`\\eqref{eq:popgrowth-tanh}`} for the $\tanh$ term.
             </div>
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    tanh(r t) = \\frac{2 P}{K} - 1
+                    \\tanh(r t) = \\frac{2 P}{K} - 1
                 \\end{equation}
                 `}
             </div>
@@ -96,7 +96,7 @@ export function PopulationGrowth() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                    tanh(\\varphi) = \\frac{2 P}{K} - 1
+                    \\tanh(\\varphi) = \\frac{2 P}{K} - 1
                     \\label{eq:tanh-relation-pg}
                 \\end{equation}
                 `}
@@ -132,7 +132,7 @@ export function PopulationGrowth() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                v = R e_1 \\widetilde{R} = cosh(\\varphi) e_1 + sinh(\\varphi) e_2
+                v = R e_1 \\widetilde{R} = \\cosh(\\varphi) e_1 + \\sinh(\\varphi) e_2
                 \\end{equation}
                 `}
             </div>
@@ -155,7 +155,7 @@ export function PopulationGrowth() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                v_2 = R_2 e_1 \\widetilde{R_2} = cosh(\\varphi) e_1 + sinh(\\varphi) e_2 = cosh(\\tanh^-1{\\frac{2 P}{K} - 1}) e_1 + sinh(\\tanh^-1{\\frac{2 P}{K} - 1}) e_2
+                v_2 = R_2 e_1 \\widetilde{R_2} = \\cosh(\\varphi) e_1 + \\sinh(\\varphi) e_2 = \\cosh(\\tanh^-1{\\frac{2 P}{K} - 1}) e_1 + \\sinh(\\tanh^-1{\\frac{2 P}{K} - 1}) e_2
                 \\end{equation}
                 `}
             </div>
@@ -200,7 +200,7 @@ export function PopulationGrowth() {
             <div style={{ padding: 20 }}>
                 {`
                 \\begin{equation}
-                P_{2+3} = \\frac{K}{2} tanh(\\tanh^-1(\\frac{2 P_2}{K} - 1) + \\tanh^-1(\\frac{2 P_3}{K} - 1) + 1) \\approx 485
+                P_{2+3} = \\frac{K}{2} \\tanh(\\tanh^{-1}(\\frac{2 P_2}{K} - 1) + \\tanh^{-1}(\\frac{2 P_3}{K} - 1) + 1) \\approx 485
                 \\end{equation}
                 `}
             </div>

@@ -153,7 +153,7 @@ export function GATutorial() {
                 using <a href="https://en.wikipedia.org/wiki/Euler%27s_formula">Euler's formula</a>
 
                 {`\\begin{equation}
-                R(\\phi) = e^{\\phi e_{yx}} = cos(\\phi) + e_{yx} sin(\\phi)
+                R(\\phi) = e^{\\phi e_{yx}} = \\cos(\\phi) + e_{yx} \\sin(\\phi)
                 \\end{equation}`}
 
                 The object $R$ you get after exponentiating is called a rotor
@@ -167,8 +167,8 @@ export function GATutorial() {
             />
             <div>
                 {`\\begin{equation}
-                R(\\phi) v = (cos(\\phi) + e_{yx} sin(\\phi)) (x e_x + y e_y) =
-                e_x (x cos(\\phi) - y sin(\\phi)) + e_y (x sin(\\phi) + y cos(\\phi))
+                R(\\phi) v = (\\cos(\\phi) + e_{yx} \\sin(\\phi)) (x e_x + y e_y) =
+                e_x (x \\cos(\\phi) - y \\sin(\\phi)) + e_y (x \\sin(\\phi) + y \\cos(\\phi))
                 \\end{equation}`}
             </div>
 
@@ -249,7 +249,7 @@ export function GATutorial() {
                 <ul>
                     <li><b>Geometric product rule 1</b>: basis vectors square to +1 ({`$e_x e_x = e_{xx} = 1, e_y e_y = e_{yy} = 1$`})</li>
                     <li><b>Geometric product rule 2</b>: different basis vectors anti-commute ({`$e_x e_y = e_{xy} =  -e_{yx} = -e_y e_x$`})</li>
-                    <li><b>Rotor in XY plane rotating by $\phi$ counter-clockwise</b>: {`$R(\\phi) = e^{\\phi e_{yx}} = cos(\\phi) + e_{yx} sin(\\phi)$`}</li>
+                    <li><b>Rotor in XY plane rotating by $\phi$ counter-clockwise</b>: {`$R(\\phi) = e^{\\phi e_{yx}} = \\cos(\\phi) + e_{yx} \\sin(\\phi)$`}</li>
                     <li><b>Reversion</b>: reverse order of basis vectors (eg. {`$e_{xyz} = e_{zyx} = -e_{xyz}$`}), inverts rotors</li>
                     <li><b>Apply Rotor $R$ to $x$ using sandwich product</b>: {`$x' = R x \\widetilde{{R}}$`}</li>
                 </ul>
