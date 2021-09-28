@@ -176,7 +176,7 @@ const terminologyRowProps: BasicRowProps[] = [
         notation: "$R$",
         description: "Product of an even number of normalized vectors. Used for example for performing rotations. Often obtained by exponentiating bivectors.",
         examples: <ul>
-            <li>{`$R_{xy} = e^{-\\frac{\\varphi}{2} e_{xy}}, v' = R_{xy} v \\widetilde{R}_{xy}$`} Rotates the vector $v$ by $\varphi$ clockwise in the XY plane.</li>
+            <li>{`$R_{xy} = e^{-\\frac{\\varphi}{2} e_{xy}}, v' = R_{xy} v \\widetilde{R}_{xy}$`} Rotates the vector $v$ by $\varphi$ counterclockwise in the XY plane.</li>
         </ul>
     },
 ]
