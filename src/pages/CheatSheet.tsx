@@ -150,16 +150,16 @@ const terminologyRowProps: BasicRowProps[] = [
         </ul>
     },
     {
-        name: "Simple",
-        description: "Elements are simple if they square to scalars.",
+        name: "Simple Bivector",
+        description: "Bivectors are simple if they square to scalars.",
         examples: <ul>
             <li>{`$e_{12}$ is simple because $e_{12}^2 = -1$`}</li>
         </ul>
     },
     {
-        name: "Exponential of a simple element",
+        name: "Exponential of element squaring to scalar",
         notation: "$e^{s B}$",
-        description: "If an element is simple (ie. squares to a scalar) we have easy formulas for the exponential of them (see examples).",
+        description: "Elements squaring to scalars, such as simple bivectors, have easy formulas for the exponential:",
         examples: <ul>
             <li>{`$B^2 = -1 \\implies e^{s B} = \\cos(s) + \\sin(s) B$`} </li>
             <li>{`$B^2 = 1 \\implies e^{s B} = \\cosh(s) + \\sinh(s) B$`} </li>
@@ -169,7 +169,7 @@ const terminologyRowProps: BasicRowProps[] = [
     {
         name: "Exponential of a general element",
         notation: "$e^A$",
-        description: "We can often decompose general elements into simple elements using the invariant decomposition and then apply the exponential to the simple elements.",
+        description: "We can often decompose general elements into commuting elements squaring to scalars using the invariant decomposition. We can then calculate the exponential of these elements and multiply them to get the exponential of the general element.",
     },
     {
         name: "Rotor",
@@ -178,6 +178,14 @@ const terminologyRowProps: BasicRowProps[] = [
         examples: <ul>
             <li>{`$R_{xy} = e^{-\\frac{\\varphi}{2} e_{xy}}, v' = R_{xy} v \\widetilde{R}_{xy}$`} Rotates the vector $v$ by $\varphi$ counterclockwise in the XY plane.</li>
         </ul>
+    },
+    {
+        name: "Simple Rotor",
+        description: "Rotors are simple if they are composed of two reflections.",
+    },
+    {
+        name: "Logarithm of a simple rotor",
+        description: "The logarithm of a simple rotor is a simple bivector.",
     },
 ]
 
@@ -223,6 +231,23 @@ const operationRowProps: BasicRowProps[] = [
         examples: <ul>
             <li>{`$e_1^2 = e_1 e_1 = 1 = e_1 \\widetilde{e_1}$`}</li>
             <li>{`$e_{12}^2 = e_{12} e_{12} = -1 \\neq e_{12} \\widetilde{e_{12}} = 1$`}</li>
+        </ul>
+    },
+    {
+        name: "Inverse",
+        notation: "$A^{-1}, A A^{-1} = 1, A^{-1} A = 1$",
+        description: "The inverse of an element is defined such that multiplying it with the element results in $1$. A left inverse is an inverse such that it results in $1$ when multiplied from the left, and similarly for right inverses. Not every element has an inverse.",
+        examples: <ul>
+            <li>{`$e_1^{-1} = e_1$ because $e_1 e_1 = 1$`}</li>
+            <li>{`$e_{12}^{-1} = -e_{12}$ because $e_{12} -e_{12} = 1$`}</li>
+        </ul>
+    },
+    {
+        name: "Division",
+        notation: "$\\frac{A}{B}$",
+        description: "Ambiguous. Can mean left or right multiplication by the inverse of $B$, which is sometimes but not always the same.",
+        examples: <ul>
+            <li>{`$\\frac{e_1}{e_2} = e_1 e_2^{-1} = e_{12}$`}</li>
         </ul>
     },
     {
