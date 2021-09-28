@@ -4,9 +4,13 @@ import { Link } from "react-router-dom"
 export function TutorialIndex() {
     return (
         <div>
-            <h3>Index</h3>
+            <h3>Geometric Algebra Tutorial</h3>
             <div>
-
+                This site is a collection of introductions to Geometric Algebra itself as well as further applications using it.
+                Common notation, terminology, operations and equations of Geometric Algebra on the site linked below.
+            </div>
+            <div>
+                <Link to="/cheat-sheet">Geometric Algebra Cheat Sheet</Link>
             </div>
             <h4>Geometric Algebra and Projective Geometric Algebra Introduction</h4>
             <div>
@@ -59,6 +63,6 @@ export function TutorialIndex() {
             <ol>
                 <li><Link to="/population-growth">Population Growth in Hyperbolic Space with Geometric Algebra</Link></li>
             </ol>
-        </div>
+        </div >
     )
 }

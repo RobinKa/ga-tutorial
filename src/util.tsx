@@ -1,10 +1,25 @@
 import { useEffect } from "react"
 
+export function mathJaxReset() {
+    // eslint-disable-next-line no-eval
+    eval("if (MathJax && MathJax.typeset) { MathJax.texReset(); }")
+}
+
+export function mathJaxTypeset() {
+    // eslint-disable-next-line no-eval
+    eval("if (MathJax && MathJax.typeset) { MathJax.typeset(); }")
+}
+
+export function mathJaxTypesetPromise() {
+    // eslint-disable-next-line no-eval
+    eval("if (MathJax && MathJax.typeset) { MathJax.typesetPromise(); }")
+}
+
 export function useMathJax() {
     // Need to retrigger equation typesetting as it's only done once on startup
     useEffect(() => {
-        // eslint-disable-next-line no-eval
-        eval("if (MathJax && MathJax.typeset) { MathJax.texReset(); MathJax.typeset(); }")
+        mathJaxReset()
+        mathJaxTypesetPromise()
     }, [])
 }
 

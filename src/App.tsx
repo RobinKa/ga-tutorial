@@ -11,6 +11,8 @@ import * as ga from "./ga/ga_pp"
 import * as ga3d from "./ga/ga_ppp"
 import * as pga from "./ga/ga_zpp"
 import * as viz from "./ga/viz2d"
+import { CheatSheet } from "./pages/CheatSheet"
+import ReactTooltip from "react-tooltip"
 
 // Dictionary of path elements to replace with full names
 // in the breadcrumbs.
@@ -31,6 +33,7 @@ const breadcrumbPathToName: { [key: string]: string } = {
     "sr-length-contraction": "Special Relativity with Geometric Algebra - Length Contraction",
     "sr-electromagnetism": "Special Relativity with Geometric Algebra - Electromagnetism",
     "population-growth": "Population Growth in Hyperbolic Space with Geometric Algebra",
+    "cheat-sheet": "Geometric Algebra Cheat Sheet",
 }
 
 export const pathToBreadcrumbs = (path: string) => {
@@ -89,6 +92,7 @@ function TutorialSite() {
                     <div className="demo-crumbs mdl-color-text--grey-500">
                         {breadcrumbs}
                     </div>
+                    <ReactTooltip />
                     <div id="section-to-print">
                         <Switch>
                             <Route path="/motivation">
@@ -102,6 +106,9 @@ function TutorialSite() {
                             </Route>
                             <Route path="/pga-geometry">
                                 <PGAGeometryTutorial />
+                            </Route>
+                            <Route exact path="/cheat-sheet">
+                                <CheatSheet />
                             </Route>
                             <Route exact path="/">
                                 <TutorialIndex />
